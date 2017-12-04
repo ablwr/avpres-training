@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MediaInfo
+    xmlns="https://mediaarea.net/mediainfo"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://mediaarea.net/mediainfo https://mediaarea.net/mediainfo/mediainfo_2_0.xsd"
+    version="2.0beta1">
+<creatingLibrary version="0.7.82" url="https://mediaarea.net/MediaInfo">MediaInfoLib</creatingLibrary>
+<media ref="/Users/ashleyblewer/test.mkv">
+<track type="General">
+<UniqueID>210039541963482596675132607154803005700</UniqueID>
+<Format>Matroska</Format>
+<Format_Version>4</Format_Version>
+<FileSize>109007</FileSize>
+<Duration>1.000</Duration>
+<OverallBitRate>872056</OverallBitRate>
+<FrameRate>25.000</FrameRate>
+<FrameCount>25</FrameCount>
+<StreamSize>2169</StreamSize>
+</track>
+
+<track type="Video">
+<StreamOrder>0</StreamOrder>
+<ID>1</ID>
+<UniqueID>1</UniqueID>
+<Format>FFV1</Format>
+<Format_Version>1</Format_Version>
+<CodecID>V_MS/VFW/FOURCC / FFV1</CodecID>
+<Duration>1.000</Duration>
+<BitRate>854702</BitRate>
+<Width>320</Width>
+<Height>240</Height>
+<PixelAspectRatio>1.000</PixelAspectRatio>
+<DisplayAspectRatio>1.333</DisplayAspectRatio>
+<FrameRate_Mode>CFR</FrameRate_Mode>
+<FrameRate>25.000</FrameRate>
+<FrameCount>25</FrameCount>
+<ColorSpace>RGB</ColorSpace>
+<BitDepth>8</BitDepth>
+<Compression_Mode>Lossless</Compression_Mode>
+<Delay>0.000</Delay>
+<StreamSize>106838</StreamSize>
+<Encoded_Library>Lavc56.60.100 ffv1</Encoded_Library>
+<Default>Yes</Default>
+<Forced>No</Forced>
+<extra>
+<DURATION>00:00:01.000000000</DURATION>
+<coder_type>Golomb Rice</coder_type>
+</extra>
+</track>
+
+</media>
+</MediaInfo>
+
+

@@ -33,3 +33,7 @@ a:hover {
 a:visited {
   color: #028602;
 }
+
+img {
+  max-width: 800px;
+}

@@ -1,0 +1,165 @@
+---
+layout: presentation
+title: XSLT
+---
+This page intentionally left blank.
+---
+background-image: url({{ site.baseurl }}/img/cool.png)
+
+# XSLT
+
+
+
+---
+
+# XSLT
+
+How is XSLT different from other programming languages? XSLT can mediate between different documents.
+
+---
+
+# XSLT
+
+## is a *transformation* language 
+
+It's different from HTML (markup language), CSS (styling language), JS (programming language) and SQL (query language)
+
+---
+
+# XML <-> XML
+# XML <-> HTML
+# XML <-> TEXT
+
+---
+
+# XSLT in action!
+
+![]({{ site.baseurl }}/img/mms1.png)
+
+---
+# XSLT in action!
+
+![]({{ site.baseurl }}/img/mms2.png)
+
+---
+# XSLT in action!
+
+![]({{ site.baseurl }}/img/dc2.png)
+
+---
+# XSLT in action!
+
+![]({{ site.baseurl }}/img/dc3.png)
+
+---
+# XSLT in action!
+
+![]({{ site.baseurl }}/img/mc1.png)
+
+---
+# XSLT in action!
+
+![]({{ site.baseurl }}/img/mc2.png)
+
+---
+
+# XPath 
+
+Nodes: Elements, attributes, siblings, ancestors, children, descendents?
+
+/Element  
+@attribute  
+parent/..  
+../child(ren)  
+
+---
+
+# Namespaces 
+
+.center[![]({{ site.baseurl }}/img/ns.png)]
+
+---
+
+# Workshop time! 
+
+I use command line validators but Oxygen is great for thorough debugging, so we will use Oxygen. Download [here](https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html) if you don't already have it, register for a free 30-day trial, and confirm code.
+
+- Setting it up
+- How to use it
+- Valid or not?
+
+---
+
+# Nodes 
+
+Elements, attributes, siblings, ancestors, children, descendents?
+
+/Element
+@attribute
+parent/..
+../child(ren)
+
+---
+
+# Notes on nodes
+
+.. --  gets you up to the parent element
+
+/.. -- gets you to the child element
+
+ancestor::___ -- gets you up as high as it needs to go
+// -- finds everything underneath, like text//p finds all p under text, no matter how far down it is. All descendants.
+
+select="following-sibling::\_" -- all nodes after that node
+gt for greater than and lt for lesser than when testing logic statements. Can't use < or > because that is used in the XML structure.
+
+Three conditional statements: if, choose, for each.
+
+---
+
+# Examples 
+
+* Example: Roles
+* Example 2: [PBCore to DublinCore](https://github.com/ablwr/MIRCDVRXSLT/blob/master/pbcore_to_dc.xsl)
+* Example 3: [MediaConch](https://mediaarea.net/MediaConch) output to HTML, to TXT, to XML
+* Example 4: MARC to MODS in NYPL Metadata Management System
+* Example 5: MODS to NYPL Digital Collections
+* Example 6: [LoC MARC to MODS XSL](http://www.loc.gov/standards/mods/v3/MARC21slim2MODS3-3.xsl)
+
+---
+
+# Workshoppin'
+
+* scripts/mediainfo [xml]({{ site.baseurl }}/scripts/mediainfo.xml) [xsl]({{ site.baseurl }}/scripts/mediainfo_simple.xsl)
+* scripts/roles [xml]({{ site.baseurl }}/scripts/roles.xml) [xsl]({{ site.baseurl }}/scripts/roles.xsl)
+* scripts/movies [xml]({{ site.baseurl }}/scripts/movies.xml) [xsl]({{ site.baseurl }}/scripts/movies.xsl) | [answers]({{ site.baseurl }}/scripts/movies_answer.xsl)
+* scripts/movies (html) [xsl]({{ site.baseurl }}/scripts/movies_html.xsl) | [answers]({{ site.baseurl }}/scripts/movies_html_answer.xsl)
+
+---
+
+# When in doubt...
+
+.center[![]({{ site.baseurl }}/img/stack.png)]
+
+---
+
+# Additional Resources
+
+## Understanding XPath
+
+### Resources
+
+[XSLT & XPath Cheatsheet](http://scraping.pro/res/xpath-cheat/XSLT-1.pdf)  
+[XPath/CSS/DOM/Selenium Rosetta Stone](http://scraping.pro/res/xpath-cheat/xpath_css_dom_recipes.pdf)       
+[XSL functions](http://www.w3schools.com/xsl/xsl_functions.asp)  
+
+## Command line tools
+
+[xsltproc](http://xmlsoft.org/XSLT/xsltproc2.html) (Macs)  
+[ffmpeg](https://ffmpeg.org/)  
+
+---
+
+# Learning more 
+
+[Home]({{ site.baseurl}}/)  
