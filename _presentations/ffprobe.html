@@ -1,0 +1,267 @@
+---
+layout: presentation
+title: FFprobe
+---
+This page intentionally left blank.
+---
+
+class: middle, center    
+.center[![ffmpeg]({{ site.baseurl }}/img/ffmpeg.png)]
+
+# FFprobe
+
+---
+
+# What is FFprobe?
+
+FFprobe is a simple multimedia streams analyzer. You can use it to output all kinds of information about an input including duration, frame rate, frame size, etc. It is also useful for gathering specific information about an input to be used in a script. 
+---
+
+# Why is FFprobe important?
+
+Gives you more information than you could ever want about a file. Good for debugging troublesome videos!
+
+---
+
+# Installation 
+
+Check if installed:  
+
+`ffprobe -h`  
+
+---
+
+# Metadata!
+
+**`-show_data`** adds a short “hexdump” to show_streams command output  
+**`-show_format`** outputs file container information  
+**`-show_streams`** outputs audio and video codec information  
+**`-show_frames`** information about each frame and subtitle contained in the input multimedia stream  
+**`-show_packets`** information about each packet contained in the input multimedia stream  
+---
+
+# -show_data
+
+```
+Input #0, matroska,webm, from 'new_file.mkv':
+  Metadata:
+    ENCODER         : Lavf57.83.100
+  Duration: 00:00:10.00, start: 0.000000, bitrate: 976 kb/s
+    Stream #0:0: Video: ffv1 (FFV1 / 0x31564646), yuv420p(progressive), 720x576, SAR 1:1 DAR 5:4, 25 fps, 25 tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      ENCODER         : Lavc57.107.100 ffv1
+      DURATION        : 00:00:10.000000000
+    Stream #0:1: Audio: pcm_s16le, 48000 Hz, 1 channels, s16, 768 kb/s (default)
+    Metadata:
+      ENCODER         : Lavc57.107.100 pcm_s16le
+      DURATION        : 00:00:10.000000000
+```
+
+---
+
+# -show_format
+
+```
+format.filename="new_file.mkv"
+format.nb_streams=2
+format.nb_programs=0
+format.format_name="matroska,webm"
+format.format_long_name="Matroska / WebM"
+format.start_time="0.000000"
+format.duration="10.000000"
+format.size="1220703"
+format.bit_rate="976562"
+format.probe_score=100
+format.tags.ENCODER="Lavf57.83.100"
+```
+
+---
+
+# -show_streams (video)
+
+```
+streams.stream.0.index=0
+streams.stream.0.codec_name="ffv1"
+streams.stream.0.codec_long_name="FFmpeg video codec #1"
+streams.stream.0.profile="unknown"
+streams.stream.0.codec_type="video"
+streams.stream.0.codec_time_base="1/25"
+streams.stream.0.codec_tag_string="FFV1"
+streams.stream.0.codec_tag="0x31564646"
+streams.stream.0.width=720
+streams.stream.0.height=576
+streams.stream.0.coded_width=720
+streams.stream.0.coded_height=576
+streams.stream.0.has_b_frames=0
+streams.stream.0.sample_aspect_ratio="1:1"
+streams.stream.0.display_aspect_ratio="5:4"
+streams.stream.0.pix_fmt="yuv420p"
+streams.stream.0.level=-99
+streams.stream.0.color_range="unknown"
+streams.stream.0.color_space="unknown"
+streams.stream.0.color_transfer="unknown"
+streams.stream.0.color_primaries="unknown"
+streams.stream.0.chroma_location="unspecified"
+streams.stream.0.field_order="progressive"
+streams.stream.0.timecode="N/A"
+streams.stream.0.refs=1
+streams.stream.0.id="N/A"
+streams.stream.0.r_frame_rate="25/1"
+streams.stream.0.avg_frame_rate="25/1"
+streams.stream.0.time_base="1/1000"
+streams.stream.0.start_pts=0
+streams.stream.0.start_time="0.000000"
+streams.stream.0.duration_ts="N/A"
+streams.stream.0.duration="N/A"
+streams.stream.0.bit_rate="N/A"
+streams.stream.0.max_bit_rate="N/A"
+streams.stream.0.bits_per_raw_sample="N/A"
+streams.stream.0.nb_frames="N/A"
+streams.stream.0.nb_read_frames="N/A"
+streams.stream.0.nb_read_packets="N/A"
+streams.stream.0.disposition.default=1
+streams.stream.0.disposition.dub=0
+streams.stream.0.disposition.original=0
+streams.stream.0.disposition.comment=0
+streams.stream.0.disposition.lyrics=0
+streams.stream.0.disposition.karaoke=0
+streams.stream.0.disposition.forced=0
+streams.stream.0.disposition.hearing_impaired=0
+streams.stream.0.disposition.visual_impaired=0
+streams.stream.0.disposition.clean_effects=0
+streams.stream.0.disposition.attached_pic=0
+streams.stream.0.disposition.timed_thumbnails=0
+streams.stream.0.tags.ENCODER="Lavc57.107.100 ffv1"
+streams.stream.0.tags.DURATION="00:00:10.000000000"
+```
+
+---
+
+# show_streams (audio)
+
+```
+streams.stream.1.index=1
+streams.stream.1.codec_name="pcm_s16le"
+streams.stream.1.codec_long_name="PCM signed 16-bit little-endian"
+streams.stream.1.profile="unknown"
+streams.stream.1.codec_type="audio"
+streams.stream.1.codec_time_base="1/48000"
+streams.stream.1.codec_tag_string="[0][0][0][0]"
+streams.stream.1.codec_tag="0x0000"
+streams.stream.1.sample_fmt="s16"
+streams.stream.1.sample_rate="48000"
+streams.stream.1.channels=1
+streams.stream.1.channel_layout="unknown"
+streams.stream.1.bits_per_sample=16
+streams.stream.1.id="N/A"
+streams.stream.1.r_frame_rate="0/0"
+streams.stream.1.avg_frame_rate="0/0"
+streams.stream.1.time_base="1/1000"
+streams.stream.1.start_pts=0
+streams.stream.1.start_time="0.000000"
+streams.stream.1.duration_ts="N/A"
+streams.stream.1.duration="N/A"
+streams.stream.1.bit_rate="768000"
+streams.stream.1.max_bit_rate="N/A"
+streams.stream.1.bits_per_raw_sample="N/A"
+streams.stream.1.nb_frames="N/A"
+streams.stream.1.nb_read_frames="N/A"
+streams.stream.1.nb_read_packets="N/A"
+streams.stream.1.disposition.default=1
+streams.stream.1.disposition.dub=0
+streams.stream.1.disposition.original=0
+streams.stream.1.disposition.comment=0
+streams.stream.1.disposition.lyrics=0
+streams.stream.1.disposition.karaoke=0
+streams.stream.1.disposition.forced=0
+streams.stream.1.disposition.hearing_impaired=0
+streams.stream.1.disposition.visual_impaired=0
+streams.stream.1.disposition.clean_effects=0
+streams.stream.1.disposition.attached_pic=0
+streams.stream.1.disposition.timed_thumbnails=0
+streams.stream.1.tags.ENCODER="Lavc57.107.100 pcm_s16le"
+streams.stream.1.tags.DURATION="00:00:10.000000000"
+```
+
+---
+
+# -show_frames 
+*Just one frame!*
+```
+frames.frame.718.media_type="audio"
+frames.frame.718.stream_index=1
+frames.frame.718.key_frame=1
+frames.frame.718.pkt_pts=9984
+frames.frame.718.pkt_pts_time="9.984000"
+frames.frame.718.pkt_dts=9984
+frames.frame.718.pkt_dts_time="9.984000"
+frames.frame.718.best_effort_timestamp=9984
+frames.frame.718.best_effort_timestamp_time="9.984000"
+frames.frame.718.pkt_duration=16
+frames.frame.718.pkt_duration_time="0.016000"
+frames.frame.718.pkt_pos="1218729"
+frames.frame.718.pkt_size="1536"
+frames.frame.718.sample_fmt="s16"
+frames.frame.718.nb_samples=768
+frames.frame.718.channels=1
+frames.frame.718.channel_layout="unknown"
+```
+
+---
+
+# -show_packets
+*Just one packet!*
+```
+[PACKET]
+codec_type=audio
+stream_index=1
+pts=9984
+pts_time=9.984000
+dts=9984
+dts_time=9.984000
+duration=16
+duration_time=0.016000
+convergence_duration=N/A
+convergence_duration_time=N/A
+size=1536
+pos=1218729
+flags=K_
+[/PACKET]
+```
+
+---
+
+# Example
+
+## `ffprobe -i input_file -show_format -show_streams -show_data -print_format xml`
+
+---
+
+# Example, explained
+
+**`ffprobe`** starts the command  
+**`-i input_file`** path, name and extension of the input file  
+**`-show_format`** outputs file container informations  
+**`-show_streams`** outputs audio and video codec informations  
+**`-show_data`** adds a short “hexdump” to show_streams command output  
+**`-print_format`** Set the output printing format (in this example “xml”; other formats include “json” and “flat”)   
+
+---
+
+# Additional Resources
+
+- [ffmprovisr](https://amiaopensource.github.io/ffmprovisr/)
+- [reto.ch - Probe and generate JSON report](https://avpres.net/FFmpeg/probe_json.html)
+- [FFprobeTips](https://trac.ffmpeg.org/wiki/FFprobeTips)
+
+---
+
+# Learning more 
+
+
+- [FFmpeg]({{ site.baseurl }}/presentations/ffmpeg.html)  
+- [FFmpeg & Art]({{ site.baseurl }}/presentations/ffmpeg-art.html)  
+- [FFmpeg & Preservation]({{ site.baseurl }}/presentations/ffmpeg-preservation.html)  
+- [FFprobe]({{ site.baseurl }}/presentations/ffprobe.html)  
+
+[Home]({{ site.baseurl}}/)  

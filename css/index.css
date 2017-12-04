@@ -1,0 +1,62 @@
+body { 
+  font-family: 'Gill Sans';
+  background-color: #bdf5bd;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4em;
+  margin: 4em;
+}
+
+.box {
+  background-color: black;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5em;
+  font-size: 2em;
+}
+
+.box:hover {
+  background-color: #4e4e4e;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 3.5em;
+  font-weight: normal
+}
+
+.header, .header:hover {
+  background-color: #4a6f4a;
+}
+
+.footer, .footer:hover {
+  background-color: #4a6f4a;
+  font-size: 1.5em;
+  padding: 1.5em;
+}
+
+.footer a {
+  color: #bdf5bd;
+}
+
+.copyleft {
+  display: inline-block;
+  text-align: right;
+  margin: 0px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}

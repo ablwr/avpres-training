@@ -1,0 +1,7 @@
+title: avpres-training
+description:
+baseurl: /avpres-training
+url: http://ablwr.github.io
+collections: 
+  presentations:
+    output: true

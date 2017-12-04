@@ -1,0 +1,23 @@
+# avpres-training
+
+### What is this?
+
+This is a repository of educational material suitable for presentations, workshops, or independently-driven self-education focused around audiovisual preservation, broadly defined.
+
+### How is this made? 
+
+This site was made with Remark.js and Jekyll.
+
+[Remark](https://github.com/gnab/remark) is a slideshow-publishing platform that transforms Markdown files into web-based presentations. It is written in JavaScript.  
+
+[Jekyll](https://jekyllrb.com/docs/home/) is a static site generator written in Ruby.  
+
+### Can I use this? 
+
+Yes! This is licensed as CC-BY-SA. That means you are free use this as long as you share your content openly too.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+### How to contribute
+
+I would love to have contributions of content and/or corrections/additions to existing content. If you are familiar with Github and Markdown, you can submit a pull request directly to the presentation in question. If not, you can file an [Issue](https://github.com/ablwr/avpres-training/issues).

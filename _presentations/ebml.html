@@ -1,0 +1,60 @@
+---
+layout: presentation
+title: EBML
+---
+
+---
+class: middle, center    
+  
+.center[![mediainfo](img/matroska.jpg)]
+
+# EBML
+
+---
+
+# What is EBML?
+
+* Extensible Binary Meta Language (EBML is a Binary XML format)
+* An EBML Schema defines an EBML Document like an XML Schema defines an XML Document
+* Matroska and webm are EBML Document Types
+* Storage is based on a structure of Element ID, Element Data Size, and Element Data
+* Unlike XML, an EBML Document requires an EBML Schema to be interpreted semantically
+
+---
+
+# Example
+
+```
+<EBML>
+  <EBMLVersion>1</EBMLVersion>
+  <EBMLReadVersion>1</EBMLReadVersion>
+  <EBMLMaxIDLength>4</EBMLMaxIDLength>
+  <EBMLMaxSizeLength>8</EBMLMaxSizeLength>
+  <DocType>matroska</DocType>
+  <DocTypeVersion>4</DocTypeVersion>
+  <DocTypeReadVersion>2</DocTypeReadVersion>
+</EBML>
+```
+---
+
+# Actively in development!
+
+Thanks to the IETF CELLAR working group, EBML and Matroska are actively being standardized. The work is being done on the CELLAR listserv and on Github.
+
+- [IETF CELLAR Working Group](https://datatracker.ietf.org/wg/cellar/charter/)
+- [Specification on Github](https://github.com/Matroska-Org/ebml-specification)
+- [Specification on Github](https://github.com/Matroska-Org/matroska-specification)
+
+---
+
+# Additional Resources
+
+- [IETF CELLAR Working Group](https://datatracker.ietf.org/wg/cellar/charter/)
+- [No Time To Wait! Symposium](https://github.com/preforma/notimetowait)
+---
+
+# Learning more 
+
+- [Matroska]({{ site.baseurl }}/presentations/matroska.html)  
+
+[Home]({{ site.baseurl}}/)  

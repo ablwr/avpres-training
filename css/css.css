@@ -1,0 +1,47 @@
+body { 
+  font-family: 'Iowan Old Style', 'Athelas', 'Century Schoolbook', 'Century';
+}
+
+.remark-slide-scaler {
+  box-shadow: 0 0 0 0;
+}
+
+.button {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-size: 1rem;
+  display: inline-block;
+  background: rgb(22, 160, 133);
+  line-height: 2.4rem;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1, h2, h3 {
+  font-family: 'Gill Sans';
+  font-weight: normal;
+}
+
+.remark-container {
+  background: black;
+}
+
+.remark-code, .remark-inline-code {
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: normal; 
+  font-family: monospace; 
+}
+
+a {
+  color: #028602;
+}
+
+a:hover {
+  color: #5cb85c;
+}
+
+a:visited {
+  color: #028602;
+}

@@ -1,0 +1,282 @@
+---
+layout: presentation
+title: FFmpeg
+---
+This page intentionally left blank.
+---
+
+class: middle, center    
+.center[![ffmpeg]({{ site.baseurl }}/img/ffmpeg.png)]
+
+---
+
+# What is FFmpeg?
+
+“A complete, cross-platform solution to record, convert, and stream audio and video.”  
+
+FFmpeg is the de-facto audiovisual file manipulation tool, used in countless programs.  
+
+Here are a few: VLC, Handbrake, YouTube, Audacity.  
+
+And, in the avpres world: QCTools, vrecord.
+
+---
+
+# Why is FFmpeg important?
+
+Audiovisual preservationists need to be able to 
+
+* make access copies of files 
+* inspect files 
+* store preservation metadata for files
+* handle weird media 
+
+And FFmpeg can do all of this and more!
+
+---
+
+# Things FFmpeg can do 
+
+* Make derivatives
+* Re-wrap files
+* Edit files
+* Generate checksums
+* Visualize metadata
+* Manipulate streams
+* Generate test sources
+* Add video/audio effects
+* More, more, more! 
+
+---
+
+# Basic command 
+
+A very basic FFmpeg command looks like this:
+
+<h1><code>ffmpeg -i input_file.ext -flag some_action output_file.ext</code></h1>
+
+---
+
+# Basic command, explained
+
+#### **`ffmpeg`** 
+starts the command  
+#### **`-i input_file.ext`** 
+path and name of the input file  
+#### **`-flag some_action`** 
+tell FFmpeg to do something, by supplying a valid flag and action  
+#### **`output_file.ext`** 
+path and name of the output file.  
+
+---
+
+# Installation 
+
+The biggest hurdle for learning and using FFmpeg is the installation process. It will be the hardest part!  
+
+After FFmpeg is installed, it gets a lot easier from there. 😘
+
+---
+
+# Basic installation 
+
+#### Option 1 (direct download)
+- Go to http://ffmpeg.org/download.html 
+- Click on the download icon that says Download ffmpeg-3.4.tar.bz2 (or current)
+- Save to downloads and extract from downloads folder to desired location on computer.
+- This program is run through command line.
+
+#### Extended directions for Windows installation
+- http://adaptivesamples.com/how-to-install-ffmpeg-on-windows/
+
+#### More options (Mac)
+- Homebrew: `brew install ffmpeg` (see next page for customization)
+- Guide to installing ffmpeg on Mac: https://trac.ffmpeg.org/wiki/CompilationGuide/MacOSX
+
+---
+
+# Better installation 
+
+General advice on installation from Reto Kromer: [ffmpeg cookbook](https://avpres.net/FFmpeg/)
+
+`brew install ffmpeg --with-sdl2 --with-freetype --with-openjpeg --with-x265 --with-rubberband --with-tesseract`
+
+#### What does this mean? 
+
+These flags, used during install, allow for...
+
+- *sdl2* include ffplay
+- *freetype* include type for (sub)titles
+- *openjpg* include JPEG2000 encoding/decoding
+- *x265* include H.265(HEVC) encoding
+- *rubberband* include audio filtering
+- *tesseract* include optical character recognition (OCR)
+
+---
+
+# Checking your installation 
+
+Is your installation working properly? If so, you should be able to type 
+
+## `ffmpeg -version`
+
+into your terminal and get a bundle of information back as the result.
+
+If you get something like
+
+## `-bash: ffmpeg: command not found`
+
+then there is a problem!
+
+---
+
+# Normal Installation
+
+```
+ffmpeg version 3.4 Copyright (c) 2000-2017 the FFmpeg developers
+built with Apple LLVM version 9.0.0 (clang-900.0.38)
+configuration: --prefix=/usr/local/Cellar/ffmpeg/3.4 --enable-shared --enable-pthreads --enable-version3 --enable-hardcoded-tables --enable-avresample --cc=clang --host-cflags= --host-ldflags= --enable-gpl --enable-ffplay --enable-libfreetype --enable-libmp3lame --enable-librubberband --enable-libtesseract --enable-libx264 --enable-libx265 --enable-libxvid --enable-opencl --enable-videotoolbox --disable-lzma --enable-libopenjpeg --disable-decoder=jpeg2000 --extra-cflags=-I/usr/local/Cellar/openjpeg/2.3.0/include/openjpeg-2.3
+libavutil      55. 78.100 / 55. 78.100
+libavcodec     57.107.100 / 57.107.100
+libavformat    57. 83.100 / 57. 83.100
+libavdevice    57. 10.100 / 57. 10.100
+libavfilter     6.107.100 /  6.107.100
+libavresample   3.  7.  0 /  3.  7.  0
+libswscale      4.  8.100 /  4.  8.100
+libswresample   2.  9.100 /  2.  9.100
+libpostproc    54.  7.100 / 54.  7.100
+```
+
+---
+
+# Example 1
+
+Make a file out of nothing! 
+
+`ffmpeg -f lavfi -i smptebars=size=720x576:rate=25 -f lavfi -i "sine=frequency=1000:sample_rate=48000" -c:a pcm_s16le -t 10 -c:v ffv1 new_file.mkv`
+
+This makes a file that plays SMPTE bars and a 1kHz audio testsignal sine wave for 10 seconds.
+
+.center[![ffmpeg]({{ site.baseurl }}/img/smpte.png)]
+
+---
+
+# Example 1 (breaking it down)
+
+  
+**`ffmpeg`** starts the command  
+**`-f lavfi`** tells FFmpeg to use the libavfilter input virtual device  
+**`-i smptebars=size=720x576:rate=25`** asks for the smptebars test filter as input. Adjusting the size and rate options allows you to choose a specific frame size and framerate.  
+**`-f lavfi`** use libavfilter again, but now for audio  
+**`-i "sine=frequency=1000:sample_rate=48000"`** Sets the signal to 1000 Hz, sampling at 48 kHz.  
+**`-c:a pcm_s16le`** encodes the audio codec in pcm_s16le (the default encoding for wav files). pcm represents pulse-code modulation format (raw bytes), 16 means 16 bits per sample, and le means "little endian"  
+**`-t 10`** specifies recording time of 10 seconds  
+**`-c:v ffv1`** Encodes to FFV1. Alter this setting to set your desired codec.  
+**`new_file.mkv`** path, name and extension of the output file. This can be set to any video container's file extension. Here, we are using .mkv, but something like .avi also works.  
+
+---
+
+# Example 2: Re-wrapping
+
+## First! What does re-wrapping mean? 
+--
+To re-wrap a file is to change the file's **container**. 
+
+---
+
+# Example 2: Re-wrapping
+
+`ffmpeg -i new_file.mkv -c copy -map 0 new_file.avi`
+
+.center[![ffmpeg]({{ site.baseurl }}/img/smpte.png)]
+
+---
+
+# Example 2: Re-wrapping (breaking it down)
+
+`ffmpeg -i new_file.mkv -c copy -map 0 new_file.avi`
+
+**`ffmpeg`** starts the command  
+
+**`-i input_file.ext`** path and name of the input file  
+
+**`-c copy`** copy the streams directly, without re-encoding.  
+
+**`-map 0`** map all streams of the input to the output. By default, FFmpeg will only map one stream of each type (video, audio, subtitles) to the output file. However, files may have multiple streams of a given type - for example, a video may have several audio tracks for different languages. Therefore, if you want to preserve all the streams in the original, it's necessary to use this option.  
+
+**`output_file.ext`** path and name of the output file. The new container you are rewrapping to is defined by the filename extension used here, e.g. .mkv, .mp4, .mov.   
+
+---
+
+# Example 3: Transcoding
+
+## First! What is transcoding? 
+--
+Transcoding is changing a media file's encoding format (commonly referred to as its **codec**) from one type to another. 
+
+---
+
+# Example 3: Transcoding
+
+`ffmpeg -i new_file.avi -c:v prores -profile:v 1 -vf yadif -c:a pcm_s16le new_file.mov`
+
+.center[![ffmpeg]({{ site.baseurl }}/img/smpte.png)]
+---
+
+# Example 3: Transcoding (breaking it down)
+
+`ffmpeg -i new_file.avi -c:v prores -profile:v 1 -vf yadif -c:a pcm_s16le new_file.mov`  
+  
+**`ffmpeg`** starts the command  
+**`-i new_file.avi`** path, name and extension of the input file  
+**`-c:v prores`** tells FFmpeg to transcode the video stream into Apple ProRes 422  
+**`-profile:v`** 1 Declares profile of ProRes you want to use.  
+  
+The profiles are: 0 = ProRes 422 (Proxy) 1 = ProRes 422 (LT) 2 = ProRes 422 (Standard) 3 = ProRes 422 (HQ)  
+  
+**`-vf yadif`** Runs a deinterlacing video filter (yet another deinterlacing filter) on the new file. -vf is an alias for -filter:v.  
+**`-c:a pcm_s16le`** tells FFmpeg to encode the audio stream in 16-bit linear PCM  
+**`new_file.mov`** path, name and extension of the output file The extension for the QuickTime container is .mov.   
+
+---
+
+# Bonus: Do both! 
+
+The following command re-wraps the file and transcodes at the same time. 
+
+`ffmpeg -i new_file.mov -c:v libx264 -c:a aac new_file.mp4`
+
+.center[![ffmpeg]({{ site.baseurl }}/img/smpte.png)]
+
+---
+
+# Bonus bonus: an easy one! 
+
+`ffmpeg -i new_file.mp4 new_file2.avi`
+
+Sometimes ffmpeg knows what to do and you don't need to be explicit to get the file to work. However, this could result in unexpected codec changes.
+
+.center[![ffmpeg]({{ site.baseurl }}/img/smpte.png)]
+
+---
+
+# Additional Resources 
+
+- [ffmprovisr](https://amiaopensource.github.io/ffmprovisr/)
+- [ffmpeg documentation](https://www.ffmpeg.org/ffmpeg.html)
+
+# OPP (Other People's Presentations)
+
+- [Demystifying ffmpeg](https://github.com/privatezero/NDSR/blob/master/Demystifying_FFmpeg_Slides.pdf) (Andrew Weaver)
+- [ffmpeg](https://docs.google.com/presentation/d/1NuusF948E6-gNTN04Lj0YHcVV9-30PTvkh_7mqyPPv4/edit#slide=id.g2974defaca_0_231) (Ben Turkus)
+
+---
+
+# Learning more 
+
+- [FFmpeg & Art]({{ site.baseurl }}/presentations/ffmpeg-art.html)  
+- [FFmpeg & Preservation]({{ site.baseurl }}/presentations/ffmpeg-preservation.html)  
+- [FFplay]({{ site.baseurl }}/presentations/ffplay.html)  
+- [FFprobe]({{ site.baseurl }}/presentations/ffprobe.html)  
+
+[Home]({{ site.baseurl}}/)

@@ -1,0 +1,69 @@
+---
+layout: presentation
+title: Matroska
+---
+
+---
+
+class: middle, center    
+  
+.center[![mediainfo](img/matroska.jpg)]
+
+# Matroska
+
+---
+
+# What is Matroska?
+
+Matroska as an audiovisual file format has been in use since 2002, with widespread internet usage. Matroska has been adopted as the foundation of Google’s webm format -- a file format optimized specifically for web-streaming. Some of Matroska’s features -- such as subtitle management, chaptering, extensible structured metadata, file attachments, and broad support of audiovisual encodings -- have facilitated its adoption in a number of media communities. Matroska has also been implemented into many home media environments such as Xbox and Playstation and works “out of the box” in the Windows 10 operating system. 
+
+---
+
+# Why Matroska?
+
+- Active use since 2002
+- Widespread adoption as internet video format
+- Foundation of Google's webm (web-streaming video)
+- Subtitle management, chaptering abilities
+- Extensible structured metadata
+- File attachment capabilities (mostly used for subtitles)
+- Broad support of audiovisual encodings
+
+# Why Matroska?
+
+The Matroska wrapper is organized into sectional elements [link], and each element may have a dedicated checksum associated with it, which is one of the important reasons why it is deemed such a suitable format for digital preservation. Specific sections of a file can be checked for errors, which means error detection can be more specific to the error’s region (as opposed to having to identify the error within the entire file). For example, a checksum mismatch specific to the descriptive metadata section of the file can be assessed and corrected without having to do quality control and analysis on the file’s content streams. The Matroska format features embeddable technical and descriptive metadata so that contextual information about the file can be embedded within the file itself, not just provided alongside in a different type of document.
+
+---
+
+# What about EBML?
+
+- Extensible Binary Meta Language (EBML is a Binary XML format)
+- An EBML Schema defines an EBML Document like an XML Schema defines an XML Document
+- Matroska and webm are EBML Document Type
+- Storage is based on a structure of Element ID, Element Data Size, and Element Data
+- Unlike XML, an EBML Document requires an EBML Schema to be interpreted semantically
+
+---
+
+# Actively in development!
+
+Thanks to the IETF CELLAR working group, EBML and Matroska are actively being standardized. The work is being done on the CELLAR listserv and on Github.
+
+- [IETF CELLAR Working Group](https://datatracker.ietf.org/wg/cellar/charter/)
+- [Specification on Github](https://github.com/Matroska-Org/ebml-specification)
+- [Specification on Github](https://github.com/Matroska-Org/matroska-specification)
+
+---
+
+# Additional Resources
+
+- [Status of CELLAR: Update from an IETF Working Group for Matroska and FFV1](http://ashleyblewer.com/img/blewer_rice_ipres_status_of_cellar.pdf)
+- [IETF CELLAR Working Group](https://datatracker.ietf.org/wg/cellar/charter/)
+- [Specification on Github](https://github.com/Matroska-Org/matroska-specification)
+- [No Time To Wait! Symposium](https://github.com/preforma/notimetowait)
+
+# Learning more 
+
+- [EBML]({{ site.baseurl }}/presentations/ebml.html)  
+
+[Home]({{ site.baseurl}}/) 
