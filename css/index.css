@@ -10,6 +10,12 @@ body {
   margin: 4em;
 }
 
+@media only screen and (max-width: 800px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
 .box {
   background-color: black;
   color: #fff;
