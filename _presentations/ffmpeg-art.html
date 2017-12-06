@@ -63,7 +63,21 @@ ffmpeg -f rawvideo -video_size 1280x720 -pixel_format yuv420p -framerate 25 \
 
 # Force pixel format 
 
+1. Make a file: `ffmpeg -f lavfi -i smptebars=size=720x576:rate=25 -f lavfi -i "sine=frequency=1000:sample_rate=48000" -c:a pcm_s16le -t 10 -c:v ffv1 new_file.mkv`  
+2. Probe it! `ffmpeg -i new_file.mkv` This one should be set to `yuv420p(progressive)`
+3. Pick a filter! `ffmpeg -pix_fmts` Watch out -- there are a lot! 
+4. Re-re-remix! `ffmpeg -loglevel error -i new_file.mkv -f rawvideo - | ffmpeg -y -f rawvideo -framerate 25 -video_size 1280x720 -pixel_format yuv420p16le -i - -pix_fmt yuv420p wild_video.mkv`
+5. See next slide for results.  
+
+
 [source](https://stackoverflow.com/questions/15792105/simulating-tv-noise)
+---
+
+# Force pixel format 
+
+The previous should turn regular SMPTE bars into this:
+
+![ffmpeg]({{ site.baseurl }}/img/pixel-format.gif)
 ---
 
 # Slit-scan
