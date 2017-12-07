@@ -1,50 +1,189 @@
 ---
 layout: presentation
 title: Command Line
-published: false
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰
 ---
-
+class: middle, center
+.center[![hacking]({{ site.baseurl }}/img/hacking.gif)]
 # Command Line Interface
-
 ---
 
 # What is Command Line Interface?
 
-A terminal window, is a text-only window in a graphical user interface (GUI) that emulates a console.
+A **terminal window** is a text-only window in a **graphical user interface** (GUI) that emulates a console.
 
 A GUI is a type of human-computer interface (i.e., a system for people to interact with a computer) that uses windows, icons, pull-down menus and a pointer and that can be manipulated by a mouse (and usually to some extent by a keyboard as well). 
 
-A command is an instruction telling a computer to do something, such as launch a program.
+A **command** is an instruction telling a computer to do something, such as launch a program.
 
-A command line interface (CLI) is an all-text display mode that has a command interpreter running in it and that shows commands, including their arguments, and other data as they are typed in at the keyboard as well as the results of most such commands. 
+A **command line interface** (CLI) is an all-text display mode that has a command interpreter running in it and that shows commands, including their arguments, and other data as they are typed in at the keyboard as well as the results of most such commands. 
 
-
-A command interpreter, also referred to as a shell, is a program whose primary function is to read commands that are typed into a console or terminal window and then execute (i.e., run) them.
+A command interpreter, also referred to as a **shell**, is a program whose primary function is to read commands that are typed into a console or terminal window and then execute (i.e., run) them.
 
 [source](http://www.linfo.org/terminal_window.html)
 ---
 
-# Why is Command Line Interface important?
+# Access on macOS: Terminal
+
+For Mac OSX you'll need to do this:
+
+* Hold down the command key and hit the spacebar.
+* Spotlight Search should appear.
+* Type: terminal
+* Click on the Terminal application. It looks like a black box with `>_` inside.
+
+Terminal should now be open.
 
 ---
 
-# Example 1
+# Access on Windows: Command Prompt or PowerShell
+
+* Click Start.
+* In "Search programs and files" type: `cmd` (or `powershell`)
+* Hit Enter.
 
 ---
 
-# Example 2 
+# Windows options 
+
+[Running Linux on Windows10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  
+
+[Command Prompt](https://en.wikipedia.org/wiki/Cmd.exe)  
+The default command line shell installed in Windows.  
+
+[PowerShell](https://en.wikipedia.org/wiki/PowerShell)  
+PowerShell is a command line shell, scripting language, and task automation program native in Windows.  
+
+[Cygwin](http://cygwin.com/)  
+Cygwin is a "Linux-like environment" for Windows.  
+
+[gow](https://github.com/bmatzelle/gow)  
+gow is short for Gnu On Windows and is a UNIX command line substitute.  
+
+Mac: [iTerm2](https://iterm2.com/)  
+Another option instead of the Terminal with some bonus configuration features.  
+---
+
+# Directories
+
+Directory is another word for what the GUI represents as a "folder."
+---
+
+# Show current directory
+
+## Mac: `pwd`
+
+## Windows: `ch` or `chdir`
+
+---
+
+# Change current directory
+
+## Mac: `cd` /Path/to/change/to
+
+## Windows: `cd` \Path\to\change\to
+
+`..` will take you "up" one level.
+
+---
+
+# List **this** directory's contents
+
+## Mac: `ls`
+
+## Windows: `dir`
+
+---
+
+# List **that** directory's contents
+
+## Mac: `ls`
+
+## Windows: `dir`
+
+---
+
+# Create a file 
+
+## Mac: `touch example.txt`
+
+## Windows: 🤔 `New-Item -ItemType file example.txt`
+
+
+---
+
+# Create a directory
+
+## Mac: `mkdir name-of-directory`
+
+## Windows: `mkdir name-of-directory`
+
+---
+
+# Copy a file
+
+## Mac: `cp name-of-file.txt`
+
+## Windows: `copy name-of-file.txt`
+
+---
+
+# Move a file
+
+## Mac: `mv name-of-file.txt`
+
+## Windows: `move name-of-file.txt`
+
+---
+
+# Rename a file
+
+## Mac: `mv name-of-file.txt`
+
+## Windows: `ren name-of-file.txt`
+
+Note that `mv` performs the function of moving or renaming.
+
+---
+
+# A note about deleting
+
+### ⚠️ ⚠️ ⚠️ It's dangerous! ⚠️ ⚠️ ⚠️  
+
+When you delete something on the command line, it deletes it instantly and forever. It does not put it in the Recycle Bin or Trash.
+---
+
+# Removing directories
+
+## Mac: `rmdir name-of-directory`
+
+## Windows: `rmdir name-of-directory`
+
+---
+
+# Removing files
+
+## Mac: `rm name-of-file.txt`
+
+## Windows: `rm name-of-file.txt`
 
 ---
 
 # Additional Resources
 
+- [Command Line Cheat Sheet](https://www.git-tower.com/blog/posts/command-line-cheat-sheet)
+- [Command Prompt Cheat Sheet](http://simplyadvanced.net/blog/cheat-sheet-for-windows-command-prompt/)
+
+- [ExplainShell.com](https://explainshell.com/)
+- [Command Line Crash Course](https://learnpythonthehardway.org/book/appendixa.html)
 - [Script Ahoy](http://dd388.github.io/crals/)
 - [the sourcecaster](https://datapraxis.github.io/sourcecaster/)
 
 ## OPP (Other People's Presentations)
-[kara digipres101](https://docs.google.com/presentation/d/1c3xhHbgpF3KQVwY9P_VpECZbwCTqwdQFh1DiBjWDue0/edit#slide=id.p)
+[Digipres101](https://docs.google.com/presentation/d/1c3xhHbgpF3KQVwY9P_VpECZbwCTqwdQFh1DiBjWDue0/edit#slide=id.p)
+
+---
 
 # Learning more 
 
