@@ -6,7 +6,7 @@ body {
   box-shadow: 0 0 0 0;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Gill Sans';
   font-weight: normal;
 }
