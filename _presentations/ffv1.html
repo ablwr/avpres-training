@@ -60,6 +60,16 @@ This will losslessly transcode your video with the FFV1 Version 3 codec in a Mat
 [source](https://amiaopensource.github.io/ffmprovisr/#create_FFV1_mkv)
 
 ---
+# Preservation recommendations 
+
+When encoding FFV1 for preservation include the options:
+
+`-level  3` and `-slicecrc  1` to request FFV1 version 3 with slice crcs enabled.
+Use an FFV1 GOP size of 1 with `-g 1`.
+Use a high slice count (at least 24) during FFV1 encoding, `-slices 24`.
+Avoid  setting  FFV1  values  of  picture_structure,  sar_num, sar_den to an ‘unknown’ value.
+
+---
 # Additional Resources
 
 - [Standardization on Github](https://github.com/ffmpeg/ffv1)
