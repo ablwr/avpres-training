@@ -18,35 +18,128 @@ Matroska as an audiovisual file format has been in use since 2002, with widespre
 # Why Matroska?
 
 - Active use since 2002
-- Widespread adoption as internet video format
+- Widespread adoption
 - Foundation of Google's webm (web-streaming video)
-- Subtitle management, chaptering abilities
+- Subtitle management
+- Chaptering abilities
 - Extensible structured metadata
-- File attachment capabilities (mostly used for subtitles)
+- File attachment capabilities
 - Broad support of audiovisual encodings
-
----
-# Why Matroska?
-
-The Matroska wrapper is organized into sectional elements [link], and each element may have a dedicated checksum associated with it, which is one of the important reasons why it is deemed such a suitable format for digital preservation. Specific sections of a file can be checked for errors, which means error detection can be more specific to the error’s region (as opposed to having to identify the error within the entire file). For example, a checksum mismatch specific to the descriptive metadata section of the file can be assessed and corrected without having to do quality control and analysis on the file’s content streams. The Matroska format features embeddable technical and descriptive metadata so that contextual information about the file can be embedded within the file itself, not just provided alongside in a different type of document.
 
 ---
 # What about EBML?
 
-- Extensible Binary Meta Language (EBML is a Binary XML format)
-- An EBML Schema defines an EBML Document like an XML Schema defines an XML Document
-- Matroska and webm are EBML Document Type
-- Storage is based on a structure of Element ID, Element Data Size, and Element Data
-- Unlike XML, an EBML Document requires an EBML Schema to be interpreted semantically
+Yeah! Matroska is based on and dependent on the [EBML Specification](https://github.com/Matroska-Org/ebml-specification/blob/master/specification.markdown).  
 
+Learn more about EBML [here]({{ site.baseurl }}/presentations/ebml.html)  
+
+---
+# What is EBML?
+
+* Extensible Binary Meta Language (EBML is a Binary XML format)
+* An EBML Schema defines an EBML Document like an XML Schema defines an XML Document
+* Matroska and webm are EBML Document Types
+* Storage is based on a structure of Element ID, Element Data Size, and Element Data
+* Unlike XML, an EBML Document requires an EBML Schema to be interpreted semantically
+
+---
+# Did you say Binary XML?
+
+The benefits of binary XML are: 
+
+- less verbose 
+- quicker parsing 
+- compact
+
+Negatives:
+
+- can't use a regular text editor
+- must be decoded to understand
+
+---
+# (Partial) Example
+
+```
+<EBML>
+  <EBMLVersion>1</EBMLVersion>
+  <EBMLReadVersion>1</EBMLReadVersion>
+  <EBMLMaxIDLength>4</EBMLMaxIDLength>
+  <EBMLMaxSizeLength>8</EBMLMaxSizeLength>
+  <DocType>matroska</DocType>
+  <DocTypeVersion>4</DocTypeVersion>
+  <DocTypeReadVersion>2</DocTypeReadVersion>
+</EBML>
+```
+
+---
+# libebml 
+
+libebml is a C++ libary to parse EBML files  
+
+More information: [https://matroska-org.github.io/libebml/](https://matroska-org.github.io/libebml/)  
+Codebase: [https://github.com/Matroska-Org/libebml](https://github.com/Matroska-Org/libebml)  
+
+---
+
+# Matroska Structure 
+
+The Matroska wrapper is organized  into  top-level  sectional elements for the storage of attachments, chapter information, metadata and tags, indexes, track descriptions, and encoding audiovisual data.
+
+---
+# Why Matroska?: Checksum Elements
+
+The Matroska wrapper is organized into sectional elements, and each element may have a dedicated checksum associated with it, which is one of the important reasons why it is deemed such a suitable format for digital preservation. Specific sections of a file can be checked for errors, which means error detection can be more specific to the error’s region (as opposed to having to identify the error within the entire file). For example, a checksum mismatch specific to the descriptive metadata section of the file can be assessed and corrected without having to do quality control and analysis on the file’s content streams. The Matroska format features embeddable technical and descriptive metadata so that contextual information about the file can be embedded within the file itself, not just provided alongside in a different type of document.
+
+---
+# Why Matroska?: Metadata
+
+In addition to the robust checksum features, Matroska can carry a significant amount of self-description.
+
+Metadata is held in Matroska as tags. See the [Tagging documentation](https://matroska.org/technical/specs/tagging/index.html) for more details.
+
+---
+# Why Matroska?: Chapters
+
+Chapters can replicate the structure of a DVD or CD, or more complex handling.
+
+---
+# Why Matroska?: Subtitling
+
+Matroska can have subtitles embedded into the file.
+
+---
+# Why Matroska?: Attachments
+
+Files can be added to Matroska as attachments. This capability is mostly used for subtitles by adding a specific font as an attachment but doesn't have to be limited to this purpose.
+
+---
+# Why Matroska?: Format support
+
+Matroska is a wrapper that accepts a wide variety of video encoding formats. 
+
+---
+# WebM 
+
+WebM is a royalty-free media file format intended for usage on the web. Development is sponsored by Google and the format is open under the BSD license. It is based on the Matroska profile.
+
+---
+# MKVToolNix
+
+[MKVToolNix](https://mkvtoolnix.download/) is a suite of software tools created to work with Matroska files. It was designed and is maintained by Moritz Bunkus, a core developer of Matroska and EBML. There is a GUI and the following command-line tools:
+
+**mkvmerge** merges multimedia streams into a Matroska file.
+**mkvinfo** lists all elements contained in a Matroska file.
+**mkvextract** extracts specific parts from a Matroska file to other formats.
+**mkvpropedit** allows to analyze and modify some Matroska file properties. 
+    
 ---
 # Actively in development!
 
 Thanks to the IETF CELLAR working group, EBML and Matroska are actively being standardized. The work is being done on the CELLAR listserv and on Github.
 
 - [IETF CELLAR Working Group](https://datatracker.ietf.org/wg/cellar/charter/)
-- [Specification on Github](https://github.com/Matroska-Org/ebml-specification)
-- [Specification on Github](https://github.com/Matroska-Org/matroska-specification)
+- [EBML Specification on Github](https://github.com/Matroska-Org/ebml-specification)
+- [Matroska Specification on Github](https://github.com/Matroska-Org/matroska-specification)
 
 ---
 # Additional Resources
