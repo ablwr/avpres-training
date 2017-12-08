@@ -4,12 +4,12 @@ title: EBML
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰
 ---
+class: middle, center
 .center[![matroska]({{ site.baseurl }}/img/matroska.jpg)]
 
 # EBML
 
 ---
-
 # What is EBML?
 
 * Extensible Binary Meta Language (EBML is a Binary XML format)
@@ -19,8 +19,21 @@ This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰
 * Unlike XML, an EBML Document requires an EBML Schema to be interpreted semantically
 
 ---
+# Did you say Binary XML?
 
-# Example
+The benefits of binary XML are: 
+
+- less verbose 
+- quicker parsing 
+- compact
+
+Negatives:
+
+- can't use a regular text editor
+- must be decoded to understand
+
+---
+# (Partial) Example
 
 ```
 <EBML>
@@ -33,8 +46,16 @@ This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰
   <DocTypeReadVersion>2</DocTypeReadVersion>
 </EBML>
 ```
----
 
+---
+# libebml 
+
+libebml is a C++ libary to parse EBML files  
+
+More information: [https://matroska-org.github.io/libebml/](https://matroska-org.github.io/libebml/)  
+Codebase: [https://github.com/Matroska-Org/libebml](https://github.com/Matroska-Org/libebml)  
+
+---
 # Actively in development!
 
 Thanks to the IETF CELLAR working group, EBML and Matroska are actively being standardized. The work is being done on the CELLAR listserv and on Github.
@@ -44,13 +65,12 @@ Thanks to the IETF CELLAR working group, EBML and Matroska are actively being st
 - [Specification on Github](https://github.com/Matroska-Org/matroska-specification)
 
 ---
-
 # Additional Resources
 
 - [IETF CELLAR Working Group](https://datatracker.ietf.org/wg/cellar/charter/)
 - [No Time To Wait! Symposium](https://github.com/preforma/notimetowait)
----
 
+---
 # Learning more 
 
 - [Matroska]({{ site.baseurl }}/presentations/matroska.html)  

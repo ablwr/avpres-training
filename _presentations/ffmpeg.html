@@ -4,12 +4,11 @@ title: FFmpeg
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰
 ---
-
 class: middle, center    
 .center[![ffmpeg]({{ site.baseurl }}/img/ffmpeg.png)]
+# FFmpeg
 
 ---
-
 # What is FFmpeg?
 
 “A complete, cross-platform solution to record, convert, and stream audio and video.”  
@@ -21,7 +20,6 @@ Here are a few: VLC, Handbrake, YouTube, Audacity.
 And, in the avpres world: QCTools, vrecord.
 
 ---
-
 # Why is FFmpeg important?
 
 Audiovisual preservationists need to be able to 
@@ -34,7 +32,6 @@ Audiovisual preservationists need to be able to
 And FFmpeg can do all of this and more!
 
 ---
-
 # Things FFmpeg can do 
 
 * Make derivatives
@@ -48,7 +45,6 @@ And FFmpeg can do all of this and more!
 * More, more, more! 
 
 ---
-
 # Basic command 
 
 A very basic FFmpeg command looks like this:
@@ -56,7 +52,6 @@ A very basic FFmpeg command looks like this:
 <h1><code>ffmpeg -i input_file.ext -flag some_action output_file.ext</code></h1>
 
 ---
-
 # Basic command, explained
 
 #### **`ffmpeg`** 
@@ -69,7 +64,6 @@ tell FFmpeg to do something, by supplying a valid flag and action
 path and name of the output file.  
 
 ---
-
 # Installation 
 
 The biggest hurdle for learning and using FFmpeg is the installation process. It will be the hardest part!  
@@ -77,7 +71,6 @@ The biggest hurdle for learning and using FFmpeg is the installation process. It
 After FFmpeg is installed, it gets a lot easier from there. 😘
 
 ---
-
 # Basic installation 
 
 #### Option 1 (direct download)
@@ -94,7 +87,6 @@ After FFmpeg is installed, it gets a lot easier from there. 😘
 - Guide to installing ffmpeg on Mac: https://trac.ffmpeg.org/wiki/CompilationGuide/MacOSX
 
 ---
-
 # Better installation 
 
 General advice on installation from Reto Kromer: [ffmpeg cookbook](https://avpres.net/FFmpeg/)
@@ -113,7 +105,6 @@ These flags, used during install, allow for...
 - *tesseract* include optical character recognition (OCR)
 
 ---
-
 # Checking your installation 
 
 Is your installation working properly? If so, you should be able to type 
@@ -129,7 +120,6 @@ If you get something like
 then there is a problem!
 
 ---
-
 # Normal Installation
 
 ```
@@ -148,7 +138,6 @@ libpostproc    54.  7.100 / 54.  7.100
 ```
 
 ---
-
 # Example 1
 
 Make a file out of nothing! 
@@ -160,7 +149,6 @@ This makes a file that plays SMPTE bars and a 1kHz audio testsignal sine wave fo
 .center[![ffmpeg]({{ site.baseurl }}/img/smpte.png)]
 
 ---
-
 # Example 1 (breaking it down)
 
   
@@ -175,7 +163,6 @@ This makes a file that plays SMPTE bars and a 1kHz audio testsignal sine wave fo
 **`new_file.mkv`** path, name and extension of the output file. This can be set to any video container's file extension. Here, we are using .mkv, but something like .avi also works.  
 
 ---
-
 # Example 2: Re-wrapping
 
 ## First! What does re-wrapping mean? 
@@ -183,7 +170,6 @@ This makes a file that plays SMPTE bars and a 1kHz audio testsignal sine wave fo
 To re-wrap a file is to change the file's **container**. 
 
 ---
-
 # Example 2: Re-wrapping
 
 `ffmpeg -i new_file.mkv -c copy -map 0 new_file.avi`
@@ -191,7 +177,6 @@ To re-wrap a file is to change the file's **container**.
 .center[![ffmpeg]({{ site.baseurl }}/img/smpte.png)]
 
 ---
-
 # Example 2: Re-wrapping (breaking it down)
 
 `ffmpeg -i new_file.mkv -c copy -map 0 new_file.avi`
@@ -207,7 +192,6 @@ To re-wrap a file is to change the file's **container**.
 **`output_file.ext`** path and name of the output file. The new container you are rewrapping to is defined by the filename extension used here, e.g. .mkv, .mp4, .mov.   
 
 ---
-
 # Example 3: Transcoding
 
 ## First! What is transcoding? 
@@ -215,14 +199,13 @@ To re-wrap a file is to change the file's **container**.
 Transcoding is changing a media file's encoding format (commonly referred to as its **codec**) from one type to another. 
 
 ---
-
 # Example 3: Transcoding
 
 `ffmpeg -i new_file.avi -c:v prores -profile:v 1 -vf yadif -c:a pcm_s16le new_file.mov`
 
 .center[![ffmpeg]({{ site.baseurl }}/img/smpte.png)]
----
 
+---
 # Example 3: Transcoding (breaking it down)
 
 `ffmpeg -i new_file.avi -c:v prores -profile:v 1 -vf yadif -c:a pcm_s16le new_file.mov`  
@@ -239,7 +222,6 @@ The profiles are: 0 = ProRes 422 (Proxy) 1 = ProRes 422 (LT) 2 = ProRes 422 (Sta
 **`new_file.mov`** path, name and extension of the output file The extension for the QuickTime container is .mov.   
 
 ---
-
 # Bonus: Do both! 
 
 The following command re-wraps the file and transcodes at the same time. 
@@ -249,7 +231,6 @@ The following command re-wraps the file and transcodes at the same time.
 .center[![ffmpeg]({{ site.baseurl }}/img/smpte.png)]
 
 ---
-
 # Bonus bonus: an easy one! 
 
 `ffmpeg -i new_file.mp4 new_file2.avi`
@@ -259,7 +240,6 @@ Sometimes ffmpeg knows what to do and you don't need to be explicit to get the f
 .center[![ffmpeg]({{ site.baseurl }}/img/smpte.png)]
 
 ---
-
 # Additional Resources 
 
 - [ffmprovisr](https://amiaopensource.github.io/ffmprovisr/)
@@ -271,7 +251,6 @@ Sometimes ffmpeg knows what to do and you don't need to be explicit to get the f
 - [ffmpeg](https://docs.google.com/presentation/d/1NuusF948E6-gNTN04Lj0YHcVV9-30PTvkh_7mqyPPv4/edit#slide=id.g2974defaca_0_231) (Ben Turkus)
 
 ---
-
 # Learning more 
 
 - [FFmpeg & Art]({{ site.baseurl }}/presentations/ffmpeg-art.html)  

@@ -10,19 +10,18 @@ class: middle, center
 # Art with FFmpeg
 
 ---
-
 # Art with FFmpeg?
 
 Well, maybe not art. But here are some ways to manipulate or create interesting video files.
----
 
+---
 # Fuzzing
 
 Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program.
 
 [source](https://en.wikipedia.org/wiki/Fuzzing)
----
 
+---
 # Noise 
 
 Random damage can be assigned to video and audio streams using the ["noise" bitstream filter](http://ffmpeg.org/ffmpeg-bitstream-filters.html#noise). This is good for making "bad" test video files to push your player or quality analysis to its limits, especially if you repeat the noise generation in multiple sweeps.
@@ -30,7 +29,6 @@ Random damage can be assigned to video and audio streams using the ["noise" bits
 `ffmpeg -i input.mp4 -codec:v huffyuv -bsf:v noise -codec:a copy noise.mkv`
 
 ---
-
 # Random "TV" noise
 
 ```
@@ -44,7 +42,6 @@ ffmpeg -f lavfi -i nullsrc=s=1280x720 -filter_complex \
 [source](https://stackoverflow.com/questions/15792105/simulating-tv-noise)
 
 ---
-  
 # Random "TV" noise in color (Mac only)
 
 ```
@@ -58,7 +55,6 @@ ffmpeg -f rawvideo -video_size 1280x720 -pixel_format yuv420p -framerate 25 \
 [source](https://stackoverflow.com/questions/15792105/simulating-tv-noise)
 
 ---
-
 # Force pixel format 
 
 1. Make a file: `ffmpeg -f lavfi -i smptebars=size=720x576:rate=25 -f lavfi -i "sine=frequency=1000:sample_rate=48000" -c:a pcm_s16le -t 10 -c:v ffv1 new_file.mkv`  
@@ -69,15 +65,15 @@ ffmpeg -f rawvideo -video_size 1280x720 -pixel_format yuv420p -framerate 25 \
 
 
 [source](https://stackoverflow.com/questions/15792105/simulating-tv-noise)
----
 
+---
 # Force pixel format 
 
 The previous should turn regular SMPTE bars into this:
 
 ![ffmpeg]({{ site.baseurl }}/img/pixel-format.gif)
----
 
+---
 # Slit-scan
 
 .center[![ffmpeg]({{ site.baseurl }}/img/slitscan.png)]
@@ -85,7 +81,6 @@ The previous should turn regular SMPTE bars into this:
 [source](http://oioiiooixiii.blogspot.com/2017/11/ffmpeg-temporal-slice-stacking-effect.html)
 
 ---
-
 # Rainbow trail!
 
 .center[![ffmpeg]({{ site.baseurl }}/img/rainbow.png)]
@@ -93,14 +88,13 @@ The previous should turn regular SMPTE bars into this:
 [source](http://oioiiooixiii.blogspot.com/2017/09/ffmpeg-rainbow-trail-chromakey-effect.html)
 
 ---
-
 # Life 
 
 .center[![ffmpeg]({{ site.baseurl }}/img/life.gif)]
 
 *Conway's Game of Life*
----
 
+---
 # Life
 
 Play it:
@@ -118,7 +112,6 @@ ffmpeg -f lavfi -i life=s=300x200:mold=10:r=60:ratio=0.1:death_color=#C83232:lif
 [documentation](https://ffmpeg.org/ffmpeg-filters.html#life)
 
 ---
-
 # Video countdown 
 
 `ffplay -f lavfi "color=s=2x2:r=1:d=10,format=gray,geq=lum=9-N,datascope=s=24x12,crop=6:12:10:0,scale=iw*30:ih*30:flags=neighbor,pad=720:480:(720-iw)/2:(480-ih)/2"`
@@ -128,13 +121,11 @@ ffmpeg -f lavfi -i life=s=300x200:mold=10:r=60:ratio=0.1:death_color=#C83232:lif
 [source](https://twitter.com/dericed/status/935660022289387523)
 
 ---
-
 # Additional Resources 
 
 - [oioiiooixiii blog](http://oioiiooixiii.blogspot.com/)  
 
 ---
-
 # Learning more 
 
 - [FFmpeg]({{ site.baseurl }}/presentations/ffmpeg.html)  

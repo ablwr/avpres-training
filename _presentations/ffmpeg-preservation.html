@@ -4,15 +4,12 @@ title: FFmpeg & Pres
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰
 ---
-
 class: middle, center    
-
 .center[![ffmpeg]({{ site.baseurl }}/img/ffmpeg.png)]
 
 # FFmpeg for preservation
 
 ---
-
 # Using FFmpeg for preservation
 
 FFmpeg is a powerful audiovisual manipulation tool in many ways, and is also great for digital preservation. 
@@ -22,7 +19,6 @@ FFmpeg is a powerful audiovisual manipulation tool in many ways, and is also gre
 - helps read and write closed captioning data
 
 ---
-
 # Checksums 
 
 "By producing checksums on a more granular level, such as per frame, it is more feasible to assess the extent or location of digital change in the event of a checksum mismatch. In recalling the analogy of a whole-file checksum for audiovisual data as a neighborhood file alarm, the additional generation of more granular checksums enables tracking of digital change or alarms with greater precision."
@@ -30,7 +26,6 @@ FFmpeg is a powerful audiovisual manipulation tool in many ways, and is also gre
 *Dave Rice, [Reconsidering the Checksum for Audiovisual Preservation](http://dericed.com/papers/reconsidering-the-checksum-for-audiovisual-preservation/)*
 
 ---
-
 # framehash 
 
 A list of supported cryptographic hashing functions:
@@ -41,7 +36,6 @@ That's a lot!
 [documentation](https://ffmpeg.org/ffmpeg-formats.html#framehash-1)
 
 ---
-
 # framemd5
 
 framemd5: A varient of the above `framehash` muxer, but defaults to md5. 
@@ -51,8 +45,8 @@ framemd5: A varient of the above `framehash` muxer, but defaults to md5.
 [framemd5 documentation](https://ffmpeg.org/ffmpeg-formats.html#framemd5-1)
 
 \* *Muxers are configured elements in FFmpeg which allow writing multimedia streams to a particular type of file.*
----
 
+---
 # framecrc
 
 framecrc: "This muxer computes and prints the Adler-32 CRC for each audio and video packet. By default audio frames are converted to signed 16-bit raw audio and video frames to raw video before computing the CRC."
@@ -60,8 +54,8 @@ framecrc: "This muxer computes and prints the Adler-32 CRC for each audio and vi
 [framecrc documentation](https://ffmpeg.org/ffmpeg-formats.html#framecrc-1)
 
 \* *Muxers are configured elements in FFmpeg which allow writing multimedia streams to a particular type of file.*
----
 
+---
 # Checksums (video samples)
 
 `ffmpeg -i input_file -f framemd5 -an output_file`
@@ -75,9 +69,7 @@ This will create an MD5 checksum per video frame.
 **`output_file`** path, name and extension of the output file   
 
 ---
-
 # Checksums (audio samples)
-
 
 `ffmpeg -i input_file -af "asetnsamples=n=48000" -f framemd5 -vn output_file`
 
@@ -97,7 +89,6 @@ Note: This filter trandscodes audio to 16 bit PCM by default. The generated fram
 **`output_file`** path, name and extension of the output file   
     
 ---
-
 # Check FFV1 Fixity 
 
 `ffmpeg -report -i input_file -f null -`
@@ -113,8 +104,7 @@ Frame CRCs are enabled by default in FFV1 Version 3.
 **`-`** FFmpeg syntax requires a specified output, and - is just a place holder. No file is actually created.   
     
 ---
-
-# Metadata!
+# Metadata (reading)!
 
 Archivists love XML. `ffprobe` helps give you a lot.  
 
@@ -126,13 +116,22 @@ But you can also get `json` or plain text (`flat`).
 See the [FFprobe]({{ site.baseurl }}/presentations/ffprobe.html) presentation for a lot more details about metadata extraction with ffprobe.
 
 ---
+# Metadata (writing)!
 
+Adding metadata is also easy with FFmpeg when writing or copying a file. Just add this flag:
+
+`-metadata KEY="VALUE"`
+
+for each metadata tag.
+
+You can see these tags using `ffprobe`. Try it!
+
+---
 # Read/Extract EIA-608 (Line 21) Closed Captioning
 
 `ffprobe -f lavfi -i movie=input_file,readeia608 -show_entries frame=pkt_pts_time:frame_tags=lavfi.readeia608.0.line,lavfi.readeia608.0.cc,lavfi.readeia608.1.line,lavfi.readeia608.1.cc -of csv > input_file.csv`
 
 ---
-
 # Additional Resources 
 
 - [ffmprovisr](https://amiaopensource.github.io/ffmprovisr/)
@@ -141,7 +140,6 @@ See the [FFprobe]({{ site.baseurl }}/presentations/ffprobe.html) presentation fo
 - [Reconsidering the Checksum for Audiovisual Preservation](http://dericed.com/papers/reconsidering-the-checksum-for-audiovisual-preservation/)
 
 ---
-
 # Learning more 
 
 - [FFmpeg]({{ site.baseurl }}/presentations/ffmpeg.html)  

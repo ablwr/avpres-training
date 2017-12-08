@@ -4,14 +4,12 @@ title: FFplay
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰
 ---
-
 class: middle, center    
 .center[![ffmpeg]({{ site.baseurl }}/img/ffmpeg.png)]
 
 # FFplay
 
 ---
-
 # What is FFplay?
 
 FFplay is a very simple and portable media player using the FFmpeg libraries and the SDL library. It is mostly used as a testbed for the various FFmpeg APIs. But can be useful for archivists, too.
@@ -24,18 +22,14 @@ FFplay is a very simple and portable media player using the FFmpeg libraries and
 - fun things
 
 ---
-
----
-
-# Example 1
+# Example
 
 Show all pixels outside of acceptable broadcast range.  
 
 ## `ffplay -f lavfi "movie='input.mp4', signalstats=out=brng:color=cyan[out]"`
 
 ---
-
-# Example 1, explained
+# Example, explained
 
 **`ffplay`** starts the command  
 **`-f lavfi`** tells ffplay to use the Libavfilter input virtual device  
@@ -46,21 +40,19 @@ Show all pixels outside of acceptable broadcast range.
 **`:`** indicates there’s another parameter coming  
 **`color=cyan[out]`** sets the color of out-of-range pixels to cyan  
 **`"`** quotation mark to end the lavfi filtergraph   
----
 
-# Example 1, looks like:
+---
+# Example, looks like:
 
  .center[![ffmpeg]({{ site.baseurl }}/img/brng.gif)]
 
 ---
-
 # Additional Resources
 
 - [ffmprovisr](https://amiaopensource.github.io/ffmprovisr/)
 - [ffplay documentation](https://ffmpeg.org/ffplay.html)
 
 ---
-
 # Learning more 
 
 - [FFmpeg]({{ site.baseurl }}/presentations/ffmpeg.html)  

@@ -4,21 +4,17 @@ title: FFV1
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰
 ---
-
 class: middle, center    
-  
 .center[![ffmpeg]({{ site.baseurl }}/img/ffmpeg.png)]
 
 # FFV1
 
 ---
-
 # What is FFV1?
 
 FFV1 is an efficient, lossless video encoding that is designed in a manner responsive to the requirements of digital preservation.  FFV1 has rapid traction in both the development and digital preservation communities and is widely and freely distributed with the ubiquitous ffmpeg and libav libraries for video processing. FFV1’s lossless compression algorithm allows for a reduction in filesize without loss of quality. Additionally, FFV1 version 3 is a very flexible codec, allowing adjustments to the encoding process based on different priorities such as size efficiency, data resilience, or encoding speed.  FFV1 is a strong candidate for video files undergoing file format normalization prior to the OAIS-compliant repository ingestion phase. Artefactual’s Archivematica (a free and open-source digital preservation system) recommends pre- and post-normalization FFV1+MKV validation methods.
 
 ---
-
 # Why FFV1?
 
 - Losslessness
@@ -27,25 +23,21 @@ FFV1 is an efficient, lossless video encoding that is designed in a manner respo
 - Size
 
 ---
-
 # Why FFV1?
 
 Checksum information can be automatically gathered upon file creation for each individual frame within the video stream. FFV1 version 3 stores CRCs (cyclic redundancy check) in frame headers to allow verification of the encoded data and ability to store error status messages. With frame CRCs, a preservationist is able to determine exactly which frame is affected by any error of digital storage. With this level of specificity, the exact error and severity of damage is easily able to be identified.
 
 ---
-
 # Why FFV1?
 
 Another benefit of FFV1 is that it is a multithreaded codec. FFV1 frames may be sliced into components to be encoded or decoded on multiple cores of processors. This multithreading support allows FFV1 to achieve speeds far greater than other lossless video codecs. Additionally FFV1 allows CRC at the slice level. This feature enables an FFV1 decoder to conceal the specific damaged slice of a frame by substituting the corresponding slice of the previous frame. The decoder can still log all CRC mismatches but with sliceCRC the damage may be effectively concealed as well, as each frame may be documented by up to 31 individual CRC checksums.
 
 ---
-
 # Why FFV1? 
 
 Checksum information can be automatically gathered upon file creation for each individual frame within the video stream. FFV1 version 3 stores CRCs (cyclic redundancy check) in frame headers to allow verification of the encoded data and ability to store error status messages. With frame CRCs, a preservationist is able to determine exactly which frame is affected by any error of digital storage. With this level of specificity, the exact error and severity of damage is easily able to be identified.
 
 ---
-
 # History 
 
 * 2003: Created in Open Source project "FFmpeg"
@@ -59,7 +51,6 @@ Checksum information can be automatically gathered upon file creation for each i
 * 2016: Added 16bit RGB
 
 ---
-
 # Making a perfect file 
 
 `ffmpeg -i input_file -map 0 -dn -c:v ffv1 -level 3 -g 1 -slicecrc 1 -slices 16 -c:a copy output_file.mkv -f framemd5 -an framemd5_output_file`
@@ -67,8 +58,8 @@ Checksum information can be automatically gathered upon file creation for each i
 This will losslessly transcode your video with the FFV1 Version 3 codec in a Matroska container. In order to verify losslessness, a framemd5 of the source video is also generated. 
 
 [source](https://amiaopensource.github.io/ffmprovisr/#create_FFV1_mkv)
----
 
+---
 # Additional Resources
 
 - [Standardization on Github](https://github.com/ffmpeg/ffv1)
@@ -77,9 +68,9 @@ This will losslessly transcode your video with the FFV1 Version 3 codec in a Mat
 - [Introduction to FFV1 and Matroska for Film Scans](https://kieranjol.wordpress.com/2016/10/07/introduction-to-ffv1-and-matroska-for-film-scans/)
 - [Library of Congress Sustainability of Digital Formats](https://www.loc.gov/preservation/digital/formats/fdd/fdd000341.shtml)
 - [No Time To Wait! Symposium](https://github.com/preforma/notimetowait)
+
 ---
 # Learning more 
-
 
 - [FFmpeg]({{ site.baseurl }}/presentations/ffmpeg.html)  
 - [FFmpeg & Art]({{ site.baseurl }}/presentations/ffmpeg-art.html)  
