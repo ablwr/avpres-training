@@ -1,15 +1,233 @@
 ---
 layout: presentation
 title: Git 101
-published: false
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰
 ---
 class: middle, center    
-
-# Git, or Git102
+.center[![git]({{ site.baseurl }}/img/git.png)]
+# Git 101
 
 ---
+# Hello 
+
+This assumes you already have a basic understanding of how to use git and have used the command line before. If not, try check out [Git101: GitHub]({{ site.baseurl}}/presentations/git-on-github.html) and [CLI]({{ site.baseurl}}/presentations/cli.html) first! 
+
+---
+# Part 1: Starting things 
+
+- Structure
+- `git init`
+- `git clone`
+
+---
+# Structure of a `git` command 
+
+`git [command] [flags and other commands]`  
+ 
+`git`: Call the program called Git.  
+`[command]`: Call the secondary program within `git`  
+`[flags and other commands]`: All the extra stuff!  
+
+To learn more about a command, type `git command -h` to pull up the help page. For example, `git status -h` will explain the different ways in which you can use the `status` command.
+
+OK let's go!
+
+---
+# git init
+
+`git init [project-name]`
+
+`git` is a version control system that has to be set up on a per-folder basis and this is how you set one up. It doesn't have to be connected to anything else. 
+---
+# git clone [url]
+
+If you want to start with an existing git repository, like one you find on GitHub or GitLab, you can clone it using the above command.
+
+---
+# Part 2: Getting information
+
+- `git status`
+- `git diff`
+- `git log`
+
+---
+# git status 
+
+What's going on? This will let you know what files have been changed but not "saved" as a commit: new files, deleted files, and modified files.
+
+---
+# git diff 
+
+`git diff` can be used alone, which will tell you all the difference between how your folder currently looks compared to the previous commit. 
+
+You can also use it on a single file, like `git diff example.txt`.
+
+*Bonus*: You can use `git diff --word-diff` on a file to see a more granular version, which is good for documentation or text changes that are written in human languages.
+
+---
+# git log 
+
+Another way to check on whats going on is `git log`, which simply gives you the last so-and-so number of commits and their messages. 
+
+(If you hit `git log` but don't use the CLI often, you might not know how to escape! Just type `q` if on a Mac. `q` is for quit. On Windows, use `ctrl + c` to quit.)
+
+---
+# Part 3: Adding things
+
+- `git add`
+- `git commit`
+- `git rm`
+- `git mv`
+
+---
+# git add 
+
+`git add example.txt` is a way to add your changes to "stage" them for a commit. Every change you have made has to be "added" to staging in this way, and then when you make a commit, it will commit everything on staging. 
+
+This is good because you might have changed many files, but only want to make a commit for one of them. 
+
+`git add .` will add everything in your folder.
+
+---
+# git commit -m "your commit message"
+
+Finally, you can make a commit for all the files in "staging." You can check on this at any time by using `git status` and seeing what is listed after "Changes to be committed:"
+
+---
+# git rm 
+
+`git rm` deletes a file. It deletes it for-real and also within `git`'s index.  
+
+⚠️ And remember that if you delete a file via the command line, you are deleting it for real. It doesn't go to a Trash can for perma-deletion later!  
+
+---
+# git mv file.txt newfile.txt 
+
+Speaking of `git`'s index -- which is its foundation, but kind of complicated, so I'm not gonna get into it right now... You can make a new file, copy stuff from the old file into it, and then delete the first file. That is fine. But it helps `git` know what you are doing if you move the file instead, especially with `git` as the prefix. Then it can keep track of all of the file's history too, instead of having that history get lost. 
+
+---
+# Part 4: Sending things 
+
+- `git pull`
+- `git push`
+- `git remote`
+
+---
+# git pull 
+
+You are pulling from another place to get changes from there. Sometimes you have to be explicit in this:
+
+`git pull origin master`
+
+In the above command:  
+
+git: calling git  
+pull: telling it to pull in changes  
+origin: the name of the remote source you are pulling from  
+master: the name of the branch you are pulling from  
+
+This does not always go smoothly, but I will save that for later.
+
+---
+# git push 
+
+Likewise, `git push` is pushing your changes out to another place. 
+
+Just like above, you sometimes have to be explicit in telling git where to go:  
+
+`git push origin master`
+
+---
+# git remote 
+
+What is `origin`?  
+If the repository is yours and you set it up, it is probably that.  
+If you forked a repository and cloned it, the origin is probably the original repository.  
+
+You can find out by typing `git remote -v` and it will give the full address for each remote resource.  
+
+---
+# get remote
+
+You might need to add a "remote" and you add it by using this command:
+
+`git remote add origin [server address here]`
+
+Like I explained at the top of the slidedeck, it might seem more natural to put `add` before `remote` (I do this pretty much every time) but remember that we have to call the `git` function, call the `remote` function, and then explain what we want to do.
+
+---
+# Part 5: Branching 
+
+Branching is an important and powerful part of using `git`!
+
+---
+# Forking 
+
+Before we get into branching, I want to mention forking because sometimes people get them confused (for a good reason). "Forking" is something you do on GitHub, not with Git. But what it means is you are copying an existing repository for yourself.
+
+Fork: Copying the entire repository and working off of the copy instead of the original.
+Branch: Working in and on top of the same repository. 🤔
+
+---
+# git branch 
+
+Typing `git branch` by itself will list all of the branches associated with your repository. If you haven't set any up, you'll just have `master`. 
+
+To make a new branch, the command is `git checkout -b name-of-new-branch`
+
+Making a new branch will automatically take you to the new branch. It will also let you know if you have any unstaged changes that you are moving over to that branch with you.
+
+---
+# git checkout 
+
+If you want to move between branches, you use `git checkout`.
+
+The command is `get checkout name-of-branch`
+
+This is good but you can only do it if you have no changes or only unstaged changes.
+
+---
+# git merge 
+
+`git merge` is a way to merge another branch into the one you are currently in. 
+
+`git` will try to do this automatically (as well as when doing `git pull`) but sometimes it doesn't always work right.
+
+---
+# Conflict! ⚠️
+
+When the same line has been changed in two different places, `git` doesn't know which one to pick and you get something like this: 
+
+```
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+---
+# Conflict! ⚠️
+
+You then have to go into the problem-file (sometimes there is more than one problem per file, and sometimes there is more than one file) and you'll see something like:
+
+```
+<<<<<<< HEAD:index.html
+hey heyyy
+=======
+hey hey!
+>>>>>>> sha1-hash-of-the-commit:index.html
+```
+
+Its basically asking you to make a decision here and pick one change or the other. You should get rid of anything with `<<<` and anything with `>>>`, the `===` bar, and the line you do not want. 
+
+Quick note:  
+HEAD = Where you are at.  
+Random string = The thing you are trying to pull or merge into your thing.  
+
+---
+# Bye
+
+Okay, that's it for now! These are just some of the basics of `git` that I use every day. There are a lot more features but this is the minimal functioning knowledge. Play around!
 
 ---
 ## Additional Resources 
@@ -21,5 +239,7 @@ class: middle, center
 ## Learning more 
 
 - [Git101: GitHub]({{ site.baseurl}}/presentations/git-on-github.html) 
+
+Maybe I will make a Git102?
 
 [Home]({{ site.baseurl}}/) 
