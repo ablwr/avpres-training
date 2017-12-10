@@ -1,7 +1,6 @@
 ---
 layout: presentation
-title: mediainfo
-published: false
+title: MediaInfo
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰
 ---
@@ -13,22 +12,226 @@ class: middle, center
 ---
 # What is MediaInfo?
 
+"MediaInfo is a convenient unified display of the most relevant technical and tag data for video and audio files." (From the [MediaInfo website](https://mediaarea.net/en/MediaInfo))
+
+MediaInfo is a *metadata extraction tool*. It neatly displays technical and tag information for many types of files, with a focus on audio/video.
 ---
-# Why is MediaInfo important?
+# Why MediaInfo?
+
+- Robust format support
+- Robust data
+- Versatile
+- Works everywhere
+- Open source 
+- Microservice
+- Easy to use
 
 ---
-# Example 1
+# Robust format support
+
+<table>
+<tr>
+<td>
+Matroska (mkv/mka/mks)<br>
+Ogg (ogg/ogm)<br>
+Riff (avi/wav)<br>
+Mpeg 1&2 container (mpeg/mpg/vob)  <br>
+Mpeg 4 container (mp4)  <br>
+Mpeg video specific (mpgv/mpv/m1v/m2v)  <br>
+Mpeg audio specific (mp2/mp3)<br>
+Windows Media (asf/wma/wmv)<br>
+Quicktime (qt/mov)<br>
+Real (rm/rmvb/ra)<br>
+DVD-Video (ifo)<br>
+AC3 (ac3)<br>
+DTS (dts)<br>
+AAC (aac)<br>
+Monkey's Audio (ape/mac)
+</td>
+<td>
+Flac (flac)<br>
+CDXA, like Video-CD (dat)<br>
+Apple/SGI (aiff/aifc)<br>
+Sun/NeXT (au)<br>
+Amiga IFF/SVX8/SV16 (iff)<br>
+Ensoniq PARIS (paf)<br>
+Sound Designer 2 (sd2)<br>
+Berkeley/IRCAM/CARL (irca)<br>
+SoundFoundry WAVE 64 (w64)<br>
+Matlab (mat)<br>
+Portable Voice format (pvf)<br>
+FastTracker2 Extanded (xi)<br>
+Midi Sample dump Format (sds)<br>
+Audio Visual Research (avr)<br>
+</td>
+</tr>
+</table>
+
+[source -- MediaInfo official website](https://mediaarea.net/en/MediaInfo)
+---
+# All parts of a file 
+
+- **General**: Title, author, director, album, track number, date, duration
+- **Video**: codec, aspect ratio, framerate, bitrate
+- **Audio**: codec, sample rate, channels, language, bitrate
+- **Text**: subtitle language
+- **Chapters**: numbers of chapters, list of chapters
 
 ---
-# Example 2 
+# Data display
 
+- Container: format, profile, commercial name of the format, duration, overall bit rate, writing application and library, title, author, director, album, track number, date, duration, et cetera
+- Video: format, codec id, aspect, frame rate, bit rate, color space, chroma subsampling, bit depth, scan type, scan order, et cetera
+- Audio: format, codec id, sample rate, channels, bit depth, language, bit rate, et cetera
+- Text: format, codec id, language of subtitle, et cetera
+- Chapters: count of chapters, list of chapters, et cetera
+
+[source -- MediaInfo official website](https://mediaarea.net/en/MediaInfo)
+---
+# Format analysis 
+
+- Container: MPEG-4, QuickTime, Matroska, AVI, MPEG-PS (including unprotected DVD), MPEG-TS (including unprotected Blu-ray), MXF, GXF, LXF, WMV, FLV, Real, et cetera
+- Tags: Id3v1, Id3v2, Vorbis comments, APE tags, et cetera
+- Video: MPEG-1/2 Video, H.263, MPEG-4 Visual (including DivX, XviD), H.264/AVC, H.265/HEVC, FFV1, et cetera
+- Audio: MPEG Audio (including MP3), AC3, DTS, AAC, Dolby E, AES3, FLAC, et cetera
+- Subtitles: CEA-608, CEA-708, DTVCC, SCTE-20, SCTE-128, ATSC/53, CDP, DVB Subtitle, Teletext, SRT, SSA, ASS, SAMI, et cetera
+- Metadata: Container-specific, Ancillary data, Time codes (MXF, GXF, QuickTime), Bar data, AFD, AS-11/DPP, RDD18/EBU Tech 3349 Acquisition Metadata, et cetera
+
+[source -- MediaInfo official website](https://mediaarea.net/en/MediaInfo)
+---
+# Versatile
+
+Input formats: 
+ 
+- Files (local/network)
+- FTP/FTPS/SFTP
+- HTTP/HTTPS (including Amazon S3)
+- Direct memory access
+
+Export formats:
+
+- Flat text
+- XML
+- EBUCore (1.5/1.6)
+- PBCore (1.2/2.0)
+- MPEG-7
+- FIMS (1.1/1.2)
+
+[source -- MediaInfo official website](https://mediaarea.net/en/MediaInfo)
+
+---
+# Works everywhere
+
+Works on all popular operating systems: Windows, macOS, and major Linux flavors (Ubuntu, Mint, RHEL/CentOS, Fedora,
+SuSE, Solaris, maybe more). And if not, binaries are available and the sourcecode is online.
+
+Downloads page: [https://mediaarea.net/en/MediaInfo/Download](https://mediaarea.net/en/MediaInfo/Download)
+
+Can also be downloaded via Homebrew or Linxubrew.
+
+Available as a command line interface, graphical user interface, or API/library. 
+
+Bindings are available C, C++, C#/Mono, VB.net, Python, Java, JavaScript, Ruby, and probably more.
+
+---
+# Here's the GUI!
+
+.center[![mediainfo]({{ site.baseurl }}/img/mediainfo-gui.png)]
+
+---
+# Open source 
+
+MediaInfo is open source under a [BSD-2-Clause](https://mediaarea.net/en/MediaInfo/License) License. It can be used or modified, and re-used in open source or closed source software. 
+---
+# Microservice
+
+MediaInfo is easily integrated as a microservice into workflows, and can easily be wrapped in a simple script as an automated service.
+
+---
+# Easy to use
+ 
+It's as easy as `mediainfo file.mkv`!
+
+And much more. See `mediainfo -h` for the manpage.
+
+---
+# Example - General stream
+
+```
+General  
+Unique ID                                : 216146348446563005301353248875103189802 (0xA29C45C1884826066521D86C6288FB2A)  
+Complete name                            : new_file.mkv  
+Format                                   : Matroska  
+Format version                           : Version 4 / Version 2  
+File size                                : 1.16 MiB  
+Duration                                 : 10 s 0 ms  
+Overall bit rate                         : 977 kb/s  
+Writing application                      : Lavf57.83.100  
+Writing library                          : Lavf57.83.100  
+ErrorDetectionType                       : Per level 1  
+```
+
+---
+# Example -- Video stream
+
+```
+Video  
+ID                                       : 1  
+Format                                   : FFV1  
+Format version                           : Version 0  
+Codec ID                                 : V_MS/VFW/FOURCC / FFV1  
+Duration                                 : 10 s 0 ms  
+Width                                    : 720 pixels  
+Height                                   : 576 pixels  
+Display aspect ratio                     : 5:4  
+Frame rate mode                          : Constant  
+Frame rate                               : 25.000 FPS  
+Standard                                 : PAL  
+Color space                              : YUV  
+Chroma subsampling                       : 4:2:0  
+Bit depth                                : 8 bits  
+Compression mode                         : Lossless  
+Writing library                          : Lavc57.107.100 ffv1  
+Default                                  : Yes  
+Forced                                   : No  
+DURATION                                 : 00:00:10.000000000  
+coder_type                               : Golomb Rice  
+```
+
+---
+# Example -- Audio stream
+
+```
+Audio  
+ID                                       : 2  
+Format                                   : PCM  
+Codec ID                                 : A_PCM/INT/LIT  
+Duration                                 : 10 s 0 ms  
+Bit rate mode                            : Constant  
+Channel(s)                               : 1 channel  
+Sampling rate                            : 48.0 kHz  
+Bit depth                                : 16 bits  
+Writing library                          : Lavc57.107.100 pcm_s16le  
+Default                                  : Yes  
+Forced                                   : No  
+DURATION                                 : 00:00:10.000000000  
+
+```
 ---
 # Additional Resources
 
+- [MediaInfo official website](https://mediaarea.net/en/MediaInfo)
+
+### Similar tools 
+
+- [ffprobe](http://www.ffmpeg.org/ffprobe.html)
+- [Exiftool](http://owl.phy.queensu.ca/~phil/exiftool/)
+
 ---
 # Learning more 
- 
-- [MediaConch]({{ site.baseurl }}/presentations/mediaconch.html)  
-- [MediaTrace]({{ site.baseurl }}/presentations/mediatrace.html)  
+
+- [ffprobe]({{ site.baseurl }}/presentations/ffprobe.html)   
+<!-- - [MediaConch]({{ site.baseurl }}/presentations/mediaconch.html)  
+- [MediaTrace]({{ site.baseurl }}/presentations/mediatrace.html)   -->
 
 [Home]({{ site.baseurl}}/) 
