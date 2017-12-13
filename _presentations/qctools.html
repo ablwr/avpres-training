@@ -89,32 +89,100 @@ But what do all of these charts mean?
 ---
 # Y U V
 
+- Y = luma (brightness)
+- U and V = chrominance (color)
+
+These filters have subfilters:
+
+- MIN  = minimum
+- AVG  = average
+- MAX  = maximum 
+- LOW  = mostly minimum (the 10th percentile)
+- HIGH = mostly minimum (the 90th percentile)
+
+The bottom two can general covers things outside of legal broadcast range.
+
+[docs](http://bavc.github.io/qctools/filter_descriptions.html#yuv)
+
 ---
 # YDiff UDiff VDiff and Diffs
+
+These show the difference between a frame and the frame that precedes/follows it. You often get a lot of spikes here when working with edited media because scene changes cause an abrupt switch. So, sharp spikes are usually OK, but wobbly, lingering spikes could indicate a problem. 
+
+[docs](http://bavc.github.io/qctools/filter_descriptions.html#diff)
 
 ---
 # Sat
 
+Sat is short for Saturation. 
+
+More than 118 is too much.
+
+[docs](http://bavc.github.io/qctools/filter_descriptions.html#saturation)
+
 ---
 # Hue
 
----
-# Tout
+Hue captures the overall ~vibe~ of each frame. 
 
+- green   = ~38 degrees
+- yellow  = ~99 degrees
+- red     = ~161 degrees
+- magenta = ~218 degrees
+- blue    = ~279 degrees
+- cyan    = ~341 degrees
+
+[docs](http://bavc.github.io/qctools/filter_descriptions.html#hue)
+
+---
+To better understand how hue works, this is an approximation of a flattened YUV colorspace, and the somewhat-arbitrarily assigned in radians.
+
+.center[![yuv]({{ site.baseurl }}/img/yuv-flat.png)]
+
+---
+# TOUT
+
+TOUT is short for Temporal Outliers. It finds those annoying speckles in analog video.  
+
+Results should be in the The range of 0-0.009 and not higher.
+
+[docs](http://bavc.github.io/qctools/filter_descriptions.html#tout)
 ---
 # VREP
 
+VREP is short for Vertical Line Repetitions and checks for repeated frames that occur as a way for a TBC to make up for dropped signal. Too much is bad! Anything above 0.04 should be noted.
+
+[docs](http://bavc.github.io/qctools/filter_descriptions.html#vrep)
 ---
 # BRNG
+
+BRNG is short for Broadcast Range. Anything less than 16 or higher than 235 is abnormal.
 
 ---
 # CropW, CropH, CropF
 
+These can be used to detect pillarboxing using the FFmpeg `cropdetect` feature. This is probably good for something but I don't know what.
+
 ---
-# MSEf, PSNRf, SSIMf
+# PSNR, MSE, SSIM
+
+
+PSNR is short for Peak Signal to Noise Ratio.
+
+MSE is short for Mean Square Error.
+
+SSIM is short for Structural SImilarity Metric.  
+
+These shouldn't be "too low." If it dips downward notably, its probably worth investigating.   
 
 ---
 # idet S, idet M, idet R 
+
+idet is short for Interlacement Detection.
+
+S = Single frame  
+M = Multiple frames  
+R = Repeated fields
 
 ---
 # Also! SignalServer 
