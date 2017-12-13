@@ -158,11 +158,13 @@ VREP is short for Vertical Line Repetitions and checks for repeated frames that 
 
 BRNG is short for Broadcast Range. Anything less than 16 or higher than 235 is abnormal.
 
+[docs](http://bavc.github.io/qctools/filter_descriptions.html#brng)
 ---
 # CropW, CropH, CropF
 
 These can be used to detect pillarboxing using the FFmpeg `cropdetect` feature. This is probably good for something but I don't know what.
 
+[docs](http://bavc.github.io/qctools/filter_descriptions.html#cropw)
 ---
 # PSNR, MSE, SSIM
 
@@ -173,7 +175,9 @@ MSE is short for Mean Square Error.
 
 SSIM is short for Structural SImilarity Metric.  
 
-These shouldn't be "too low." If it dips downward notably, its probably worth investigating.   
+These shouldn't be "too low." If it dips downward notably, its probably worth investigating. 
+
+[docs](http://bavc.github.io/qctools/filter_descriptions.html#psnrf)  
 
 ---
 # idet S, idet M, idet R 
@@ -184,6 +188,15 @@ S = Single frame
 M = Multiple frames  
 R = Repeated fields
 
+[docs](http://bavc.github.io/qctools/filter_descriptions.html#singleframe)
+---
+# Audio 
+
+There are several audio filters too!!
+
+For now, check out the docs for more:
+
+[docs](http://bavc.github.io/qctools/filter_descriptions.html#r128)
 ---
 # Also! SignalServer 
 
