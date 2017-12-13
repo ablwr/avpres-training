@@ -43,12 +43,111 @@ Very recent versions of QCTools can be downloaded via [nightly builds](https://m
 ![]({{ site.baseurl }}/img/qct2.png)
 
 ---
+# Make a test file 
+
+If you don't have any cool files lying around, just make one: 
+
+`ffmpeg -f lavfi -i smptebars=r=30000/1001:s=720x480 -c:v dvvideo -pix_fmt yuv411p -t 10 new_file.mov`
+
+This makes a file that plays SMPTE bars.
+
+.center[![ffmpeg]({{ site.baseurl }}/img/smpte.png)]
+
+---
+# Fuzz that test file! 
+
+Fuzzing intentionally damages a file by adding randomness. We can do this with FFmpeg's `noise` [bitstream filter](http://www.ffmpeg.org/ffmpeg-bitstream-filters.html#noise). 
+
+`ffmpeg -i new_file.mov -bsf noise -map 0 -c copy fuzzed.mov`
+
+.center[![ffmpeg]({{ site.baseurl }}/img/smpte-fuzzed.png)]
+
+---
+# Fuzz that test file more! 
+
+Not enough? You can fuzz it more intensely by adding a number parameter after `noise`
+
+`ffmpeg -i new_file.mov -bsf noise=80 -map 0 -c copy super_fuzzed.mov`
+
+.center[![ffmpeg]({{ site.baseurl }}/img/smpte-fuzzed2.png)]
+
+---
+# Add these files to QCTools: normal
+
+.center[![ffmpeg]({{ site.baseurl }}/img/qct-normal.png)]
+
+---
+# Add these files to QCTools: fuzzed
+
+.center[![ffmpeg]({{ site.baseurl }}/img/qct-abnormal.png)]
+
+---
+# Surprise -- they are different
+
+But what do all of these charts mean?
+
+---
+# Y U V
+
+---
+# YDiff UDiff VDiff and Diffs
+
+---
+# Sat
+
+---
+# Hue
+
+---
+# Tout
+
+---
+# VREP
+
+---
+# BRNG
+
+---
+# CropW, CropH, CropF
+
+---
+# MSEf, PSNRf, SSIMf
+
+---
+# idet S, idet M, idet R 
+
+---
+# Also! SignalServer 
+
+SignalServer is a web app to accompany QCTools for large-scale digitization projects.  
+
+---
+# Installation 
+
+SignalServer installation instructions are available on github:
+
+[https://github.com/bavc/signalserver](https://github.com/bavc/signalserver)
+
+---
+# SignalServer in action!
+
+![]({{ site.baseurl }}/img/ss1.png)
+
+---
+# SignalServer in action!
+
+![]({{ site.baseurl }}/img/ss2.png)
+
+---
 # Additional Resources
+
+- [QCTools Documentation](http://bavc.github.io/qctools/)
+- [Seattle Municipal Archives User Guide](https://github.com/bavc/qctools-documentation/tree/master/SeattleMunicipalArchives)
+- [QCTools Cheat Sheet](https://github.com/bavc/qctools-documentation/blob/master/qctools/QCToolsWorkshopCheatSheet.pdf)
+- [A/V Artifact Atlas](https://bavc.github.io/avaa/index.html)
+- [ffmpeg - signalstats](https://www.ffmpeg.org/ffmpeg-filters.html#signalstats)
 
 ---
 # Learning more 
- 
-<!-- - [SignalServer]({{ site.baseurl }}/presentations/signalserver.html)   -->
-<!-- - [signalstats]({{ site.baseurl }}/presentations/signalstats.html)   -->
 
 [Home]({{ site.baseurl}}/)  

@@ -24,11 +24,27 @@ Fuzzing or fuzz testing is an automated software testing technique that involves
 ---
 # Noise 
 
-Random damage can be assigned to video and audio streams using the ["noise" bitstream filter](http://ffmpeg.org/ffmpeg-bitstream-filters.html#noise). This is good for making "bad" test video files to push your player or quality analysis to its limits, especially if you repeat the noise generation in multiple sweeps.
+Random damage can be assigned to video and audio streams using the ["noise" bitstream filter](http://ffmpeg.org/ffmpeg-bitstream-filters.html#noise). 
+
+This is good for making "bad" test video files to push your player or quality analysis to its limits, especially if you repeat the noise generation in multiple sweeps.
+
+Here's an example of mixing things up:  
 
 `ffmpeg -i input.mp4 -codec:v huffyuv -bsf:v noise -codec:a copy noise.mkv`
 
 ---
+# More Noise 
+
+`ffmpeg -i new_file.mov -bsf noise -map 0 -c copy fuzzed.mov` is the basic script for adding some noise. Play around with containers and codecs to learn how different errors manifest themselves.
+
+If you want MORE, you can simply up the noise filter (default is 1), like this:
+
+`ffmpeg -i new_file.mov -bsf noise=80 -map 0 -c copy fuzzed.mov`
+
+.center[![ffmpeg]({{ site.baseurl }}/img/smpte-fuzzed2.png)]
+
+---
+
 # Random "TV" noise
 
 ```
@@ -129,9 +145,8 @@ ffmpeg -f lavfi -i life=s=300x200:mold=10:r=60:ratio=0.1:death_color=#C83232:lif
 # Learning more 
 
 - [FFmpeg]({{ site.baseurl }}/presentations/ffmpeg.html)  
-- [FFmpeg & Art]({{ site.baseurl }}/presentations/ffmpeg-art.html)  
 - [FFplay]({{ site.baseurl }}/presentations/ffplay.html) 
-- [FFmpeg & Preservation]({{ site.baseurl }}/presentations/ffmpeg-preservation.html)  
 - [FFprobe]({{ site.baseurl }}/presentations/ffprobe.html)  
+- [FFmpeg & Preservation]({{ site.baseurl }}/presentations/ffmpeg-preservation.html)  
 
 [Home]({{ site.baseurl}}/)  
