@@ -218,19 +218,44 @@ DURATION                                 : 00:00:10.000000000
 
 ```
 ---
+# More? 
+
+If the above results still aren't enough for you, you can use the `-f` flag. `f` stands for FULL!
+
+`mediainfo -f new_file.mkv`
+
+---
+# Export options 
+
+By default, MediaInfo displays results in text format on screen. But other formats can be specified, like HTML, XML, PBCore, EBUCore, or PBCore 2.0.
+
+Like this:  
+
+`mediainfo --Output=XML new_file.mkv`
+
+---
+# MediaTrace 
+
+MediaTrace is a way to get binary analysis of files. It can be accessed via MediaInfo like this: 
+
+`mediainfo --Details=1 new_file.mkv`
+
+Just like MediaInfo, by default, it exports as text. You can specify XML with the `--Output=XML` flag. 
+
+---
 # Additional Resources
 
 - [MediaInfo official website](https://mediaarea.net/en/MediaInfo)
 
 ### Similar tools 
 
-- [ffprobe](http://www.ffmpeg.org/ffprobe.html)
+- [FFprobe](http://www.ffmpeg.org/ffprobe.html)
 - [Exiftool](http://owl.phy.queensu.ca/~phil/exiftool/)
 
 ---
 # Learning more 
 
-- [ffprobe]({{ site.baseurl }}/presentations/ffprobe.html)   
+- [FFprobe]({{ site.baseurl }}/presentations/ffprobe.html)   
 - [MediaConch]({{ site.baseurl }}/presentations/mediaconch.html)  
 
 [Home]({{ site.baseurl}}/) 
