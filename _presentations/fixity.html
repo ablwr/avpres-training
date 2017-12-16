@@ -1,0 +1,109 @@
+---
+layout: presentation
+title: Fixity
+---
+This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
+---
+# Fixity 
+
+- Intro 
+- Purpose
+- Algorithms
+- Tools 
+
+---
+# What is a checksum? 
+
+Just a random string... sorta. As long as that string is the same now as it is later, things are good.
+
+---
+# Crytopgraphy 
+
+Prevents man-in-the-middle attacks during transfer across insecure lines.
+
+It allows encrypted passwords or other sensitive information can pass through a network to another location without that information being compromised. 
+
+---
+# Salting 
+
+Salt is a random string, which is linked to existing password hashes and then hashed again for extra layers of protection. The salt value and resulting hash is then stored in the database. You are able to encrypt that information, but without both parts, it cannot be un-encrypted. 
+
+---
+# Hash collision 
+
+A collision attack attempts to find two arbitrary outputs which produce the same hash value -- hence, a collision.
+
+If someone can fake your checksum, they can get to the information they want. 
+
+Or someone can inject bad information into your files.
+
+Or you can just receive the wrong thing!  
+
+---
+# Broken? 
+
+"Broken" means "the technology that keeps these file fingerprints secure can be corrupted if the algorithm can be decrypted by computers. 
+
+1. It's the ability to break the code at all, and 
+2. the amount of time and money necessary to cause that break to happen. 
+
+If an algorithm would take modern computers years to decrypt, it's still pretty secure.
+
+---
+# But preservation??? 
+
+But for preservation purposes, checksums are used for FIXITY!!! So we don't have to worry about security!
+
+---
+# FIXITY!
+
+We care about file integrity, file location authentication -- are the files there and are they what they used to be?
+
+---
+# Storage, too
+
+You can also use checksums to abstract larger files away for quicker access and validation.
+
+---
+# Algorithms 
+
+---
+# CRC 
+
+CRC! This stands for Cycle Redundancy Check.
+
+The CRC was invented by W. Wesley Peterson way back in 1961; CRC32 is the work of several researchers and was published in 1975.
+
+It's a lot older and more basic of a process, so obviously there are lots of limitations here... not good for security, can be faked easily. But it is used in file format verification, Matroska files being an example of this, using a self-check mechanism.
+---
+# SHA 
+
+SHA stands for Secure Hash Algorithm. It was developed by the National Institute of Standards and Technology (NIST) as a U.S. Federal Information Processing Standard (FIPS). 
+
+SHA is very common, but it gets a little complicated because there are different numbers meaning different things.
+
+The lower, less secure versions (SHA-1) are used to generate small unique identifiers, like git commits. Git uses SHA-1 so you have unique commits. 
+            
+---
+# SHA-1 is Broken? 
+
+HTTPS used to use SHA-1, but that's been broken for a while. It now uses SHA-2 (That's the SHA-256 version, not the SHA-512 version -- the algorithm is basically the same but there are different version) to determine if you are legitimately on the website you intend to be on via the SSL certificate. 
+
+---
+# MD5 
+
+Archives like MD5. BitTorrent files also use MD5 for fixity and file integrity.
+
+MD5 stands for Message Digest algorithm 5 (y'know, because computer scientists are great at naming things) and was invented by Ronald Rivest in 1991 to replace the old MD4 standard (you can guess what MD4 stood for). It's broken, though.
+
+---
+# Tools 
+
+
+---
+# Additional Resources
+
+---
+# Learning more  
+
+[Home]({{ site.baseurl}}/)  

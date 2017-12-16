@@ -1,6 +1,8 @@
 ---
 layout: presentation
 title: FFmpeg+Preservation
+description: ffmpeg in action!
+tag: ffmpeg
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
 ---
@@ -79,6 +81,9 @@ The number of samples per group can be set arbitrarily, but it's good practice t
 Examples for other sample rates:
 * 44.1 kHz: "asetnsamples=n=44100"  
 * 96 kHz: "asetnsamples=n=96000"  
+
+---
+# Checksums (audio samples) 2 
 
 Note: This filter trandscodes audio to 16 bit PCM by default. The generated framemd5s will represent this value. Validating these framemd5s will require using the same default settings.  
 
