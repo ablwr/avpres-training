@@ -29,7 +29,7 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
-  .wrapper {
+  .wrapper, .suggest, .head {
     grid-template-columns: 1fr;
   }
 }
