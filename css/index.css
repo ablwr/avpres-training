@@ -7,9 +7,9 @@ body {
 
 .head {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 3fr; 
   margin: 1em;
-  margin-bottom: 8em;
+  margin-bottom: 6em;
 }
 
 .suggest {
@@ -91,11 +91,12 @@ a {
   text-align: center;
 }
 
-.footer, .footer:hover {
+.info, .info:hover {
   background-color: white;
   color: black;
   font-size: 1.5em;
-  padding-bottom: 4em;
+  padding-bottom: 2em;
+  padding-top: 1em;
   border: 0;
   text-align: right;
 }
