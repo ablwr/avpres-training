@@ -74,7 +74,7 @@ h3 {
 .box:hover {
   color: #4cb6b4;
   text-decoration: wavy underline;
-  border-bottom: 0.8em solid #4cb6b4; 
+  border-bottom: 0.8em solid #b64c4e; 
   padding-bottom: 0em
 }
 
@@ -106,7 +106,7 @@ a {
 }
 
 a:hover {
-  color: #b64c83;
+  color: #b64c4e;
 }
 
 hr {
