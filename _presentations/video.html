@@ -5,13 +5,13 @@ title: Video
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
 ---
 class: middle    
-## 📼
-## 📼 📼 📼
-## 📼 📼 📼 📼 📼
-## 📼 📼 📼 📼 Video
-## 📼 📼 📼 📼 📼
-## 📼 📼 📼 
-## 📼
+### 📼
+### 📼 📼 📼
+### 📼 📼 📼 📼 📼
+### 📼 📼 📼 📼 Video
+### 📼 📼 📼 📼 📼
+### 📼 📼 📼 
+### 📼
 ---
 # What is Video?
 
@@ -36,6 +36,7 @@ class: middle
 These may also be known as "formats" or "wrappers."
 
 [Full list supported by FFmpeg](https://www.ffmpeg.org/general.html#Supported-File-Formats_002c-Codecs-or-Features)
+
 ---
 # Popular containers (video)
 
@@ -95,6 +96,11 @@ You'll see some repeats from the containers section.
 # Both?
 
 I know, sometimes it can get confusing because the wrapper and the codec have the same name. Sometimes it's because they can only be used with each other.
+
+For example, the Windows Media Player container can only contain the Windows Media Player codec. They are tied together in that way.
+
+Other containers, especially open ones, do not care about the bitstream inside (or they care... less).
+
 ---
 # Streams
 
@@ -104,51 +110,122 @@ I know, sometimes it can get confusing because the wrapper and the codec have th
 - Subtitles/text
 - Chapters
 
+The extent and availability of the above is contingent on the parameters of the container in use.  
+
 ---
 # Colorspaces
 
-- CIE 
+How is color organized, translated, conveyed, and presented?  
+
 - RGB 
-- YUV 
+- YUV  
 - YCbCr 
 - YCoCg
 - and more
 
 ---
+# RGB 
+
+Red, Green, Blue 
+---
+# YUV 
+
+- Y = luma (brightness)
+- U and V = chrominance (color)
+
+U and V are **red-difference** and **blue-difference**
+
+---
+# YCbCr / YPbPr
+
+- Y = luma (brightness)
+- Cb and Cr = chrominance (color)
+
+Cb and Cr are **blue-difference** and **red-difference**
+
+YPbPr: Analog components... kindaaaaa
+
+---
+# YCoCg 
+
+- Y = luma (brightness)
+- Co and Cg = chrominance (color)
+
+Co and Cg re **orange-difference** and **green-difference**
+
+---
 # Chroma subsampling 
 
+A thing we do because human eyes can't really see color that well. Chroma subsampling is "the practice of encoding images by implementing less resolution for chroma information than for luma information."
+
+Some common ones for preservation (because we want the best): 
 - 4:2:0 
 - 4:2:2 
 - 4:4:4 
 
 ---
+# Chroma subsampling, all of 'em
+
+- 4:4:4
+- 4:2:2
+- 4:2:1
+- 4:1:1
+- 4:2:0
+- 4:1:0
+- 3:1:1
+
+---
+# Chroma subsampling, explained 
+
+[Click here](http://www.nattress.com/Chroma_Investigation/chromasampling.htm)  
+
+---
 # Television display systems 
+
+Good news, there are only three systems: 
 
 - NTSC 
 - PAL 
 - SECAM 
 
----
-# Pixel width 
-
-Wait -- pixels can be different SIZES?  
-
-![]({{ site.baseurl }}/img/elmo-in-hell.gif)
+Bad news, they are completely incompatible with each other.
 
 ---
-# Ahem... Pixel width
+# NTSC 
 
-That's right, just when you think you were started to understand how video works...
+National Television Standards Committee  
 
-- PAR 
-- SAR 
-- DAR 
+Developed in the USA in 1954.
+
+- Lines: 625
+- Frame rate: 29.97 Hz
+- Picture resolutions: 720x480; 704x480; 352x480; 352x240
+
+---
+# PAL 
+
+Phase Alternating Line
+
+Developed in 1967 by the United Kingdom & Germany.
+
+- Lines: 525
+- Frame rate: 25 Hz
+- Picture resolution: 720x576; 704x576; 352x576; 352x288
+
+---
+# SECAM 
+
+Séquentiel couleur à mémoire ("Sequential colour with memory")
+
+Developed in France in 1967. 
+
+SECAM uses the same bandwidth and resolution (720x576) as PAL but transmits color differently.
 
 ---
 # Compression 
 
-- Uncompressed 
-- Compressed 
+- Uncompressed: Raw data stream  
+- Compressed: Data is smushed in some way  
 - Losslessly compressed 
 
 ---
@@ -163,7 +240,25 @@ That's right, just when you think you were started to understand how video works
 But of course it's even more complicated than that. 
 
 ---
+# Pixel Aspect Ratio
+
+Wait -- pixels can be different SIZES?  
+
+![]({{ site.baseurl }}/img/elmo-in-hell.gif)
+
+---
+# Ahem... Pixel Aspect Ratio
+
+That's right, just when you think you were started to understand how video works...
+
+- PAR 
+- SAR 
+- DAR 
+
+---
 # Frame rates 
+
+How fast do things go? 
 
 - Pre-video rates
 - 24
@@ -179,11 +274,22 @@ But of course it's even more complicated than that.
 - 16:9 (1.77:1) 	HD
 - 21:9 (2.35:1) 	Movies
 - 19:10 (1.9:1) 	IMAX
+- and more
+
+Practice: [Beyonce game](https://ablwr.github.io/beyonce_quiz/)  
 
 ---
 # Interlacing 
 
-annoying lines that mess up your anime music videos 
+Interlacing is for optimizing perceived motion in lossy video. 
+
+.center[![]({{ site.baseurl }}/img/interlacing.png)]
+
+---
+# Interlacing 
+
+"Interlacing issues can be seen during movement, where squiggly lines appear in places of motion. The concept of interlacing involves each frame containing 50% of the line information required for a full picture, and having even and odd frames play back half of the information quickly enough would result in a full-looking image. This was done because it was faster to send video signals, like in the case of television, when this kind of technique is used. Now it just lingers around making everything look like garbage."
+-- [Format-ion: Video playback errors in Beyoncé’s latest music video](https://ablwr.github.io/blog/2016/02/08/format-ion-video-playback-errors-in-beyonces-latest-music-video/)
 
 ---
 # TFF, BFF 
@@ -191,10 +297,15 @@ annoying lines that mess up your anime music videos
 TFF = Top Field First (TFF)
 BFF = Bottom Field First (BFF)
 
+When interlacing, every other line is skipped. Which gets skipped depends on if the Scan Order is set to TFF or BFF. 
+
 ---
 # 3D and beyond?
 
-??? 
+- 3D 
+- 360 video 
+- Virtual Reality
+- all of the above???
 
 ---
 # Additional Resources
@@ -207,7 +318,7 @@ BFF = Bottom Field First (BFF)
 ---
 # Learning more 
 
-- [ffmpeg]({{ site.baseurl }}/presentations/ffmpeg.html)   
+- [FFmpeg]({{ site.baseurl }}/presentations/ffmpeg.html)   
 - [MediaInfo]({{ site.baseurl }}/presentations/mediainfo.html)  
 - [QCTools]({{ site.baseurl }}/presentations/qctools.html)  
 
