@@ -1,13 +1,31 @@
+/*http://www.colorhexa.com/4cb6b4*/
+
 body { 
   font-family: 'Gill Sans';
-  background-color: #bdf5bd;
+  background-color: #fff;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  margin: 1em;
+  margin-bottom: 8em;
+}
+
+.suggest {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-column-gap: 1em;
+  grid-row-gap: 4em;
+  margin: 4em; 
 }
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4em;
-  margin: 4em;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 4em;
+  margin: 1em;
 }
 
 @media only screen and (max-width: 800px) {
@@ -16,53 +34,91 @@ body {
   }
 }
 
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: normal;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+.suggestions ul {
+  list-style: cjk-decimal;
+}
+
 .box {
-  background-color: black;
-  color: #fff;
-  border-radius: 5px;
-  padding: 0.5em;
-  font-size: 1.8em;
+  background-color: white;
+  color: black;
+  border: 0.1em solid grey;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding: 1em;
+  padding-bottom: 0.8em;
+  font-size: 1.2em;
+  hyphens: auto;
+}
+
+.box h2 {
+  font-size: 1.2em;
 }
 
 .box:hover {
-  background-color: #4e4e4e;
+  color: #4cb6b4;
+  text-decoration: wavy underline;
+  border-bottom: 0.9em solid #4cb6b4; 
+  padding-bottom: 0em
 }
 
 a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4 {
-  font-weight: normal;
-}
-
-h1 {
-  font-size: 3.5em;
-  font-weight: normal
-}
-
 .header, .header:hover {
-  background-color: #4a6f4a;
+  background-color: white;
+  border: 2px solid #aededd;
+  padding-top: 4em;
+  padding: 2em;
+  font-size: 1.8em;
+  text-align: center;
 }
 
 .footer, .footer:hover {
-  background-color: #4a6f4a;
+  background-color: white;
+  color: black;
   font-size: 1.5em;
-  padding: 1.5em;
-}
-
-.footer a {
-  color: #bdf5bd;
-}
-
-.copyleft {
-  display: inline-block;
+  padding-bottom: 4em;
+  border: 0;
   text-align: right;
-  margin: 0px;
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
+}
+
+a {
+  color: #45a9a7;
+}
+
+hr {
+  border: 1px solid grey;
+}
+
+.left {
+  border: 1px solid #aededd; 
+  width: 60vw;
+  float:left;
+}
+
+.right {
+  border: 1px solid #aededd; 
+  width: 60vw; 
+  float:right;
 }
