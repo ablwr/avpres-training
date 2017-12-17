@@ -1,7 +1,7 @@
 title: avpres-training
 description:
-baseurl: /avpres-training
-url: http://ablwr.github.io
+baseurl: 
+url: http://training.ashleyblewer.com
 collections: 
   presentations:
     output: true
