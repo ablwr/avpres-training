@@ -7,7 +7,7 @@ body {
 
 .head {
   display: grid;
-  grid-template-columns: 1fr 3fr; 
+  grid-template-columns: 1fr 2fr; 
   margin: 1em;
   margin-bottom: 6em;
 }
@@ -87,8 +87,16 @@ a {
   border: 2px solid #aededd;
   padding-top: 4em;
   padding: 2em;
-  font-size: 1.8em;
-  text-align: center;
+}
+
+.header h1 {
+  font-size: 5em;
+  margin-bottom: 0;
+}
+
+.header img {
+  float: right;
+  margin: 0;
 }
 
 .info, .info:hover {
