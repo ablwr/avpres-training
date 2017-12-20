@@ -19,10 +19,10 @@ class: middle
 - Codecs 
 - Streams 
 - Colorspaces 
+- Compression
 - Chroma subsampling
 - Television display 
-- Pixel width 
-- Compression 
+- Pixel width  
 - Resolutions 
 - Frame rates 
 - Aspect ratios 
@@ -38,7 +38,7 @@ These may also be known as "formats" or "wrappers."
 [Full list supported by FFmpeg](https://www.ffmpeg.org/general.html#Supported-File-Formats_002c-Codecs-or-Features)
 
 ---
-# Popular containers (video)
+# Some popular containers (video)
 
 - AVI 
 - Matroska (.mkv, .mk3d, .mka, .mks, .webm)
@@ -48,7 +48,7 @@ These may also be known as "formats" or "wrappers."
 - Quicktime (.mov, .qt)
 
 ---
-# Popular containers (audio)
+# Some popular containers (audio)
 
 - AAC 
 - AIFF
@@ -65,7 +65,7 @@ A codec is an encoder/decoder responsible for a video or audio stream in a video
 [Full list supported by FFmpeg](https://www.ffmpeg.org/general.html#Supported-File-Formats_002c-Codecs-or-Features)
 
 ---
-# Popular codecs (video)
+# Some popular codecs (video)
 
 - Daala 
 - Dirac
@@ -81,7 +81,7 @@ A codec is an encoder/decoder responsible for a video or audio stream in a video
 - x265
 
 ---
-# Popular codecs (audio)
+# Some popular codecs (audio)
 
 You'll see some repeats from the containers section. 
 
@@ -126,7 +126,8 @@ How is color organized, translated, conveyed, and presented?
 ---
 # RGB 
 
-Red, Green, Blue 
+Red, Green, Blue, like most modern computer monitors.
+ 
 ---
 # YUV 
 
@@ -134,6 +135,8 @@ Red, Green, Blue
 - U and V = chrominance (color)
 
 U and V are **red-difference** and **blue-difference**
+
+Sometimes people say YUV when they actually mean something else:
 
 ---
 # YCbCr / YPbPr
@@ -154,30 +157,52 @@ YPbPr: Analog components... kindaaaaa
 Co and Cg re **orange-difference** and **green-difference**
 
 ---
+# Compression 
+
+- Uncompressed: Raw data stream  
+- Compressed: Data is smushed in some way, but can be un-smushed  
+- Losslessly compressed: Data is smushed and this cannot be undone 
+
+---
 # Chroma subsampling 
 
 A thing we do because human eyes can't really see color that well. Chroma subsampling is "the practice of encoding images by implementing less resolution for chroma information than for luma information."
 
 Some common ones for preservation (because we want the best): 
-- 4:2:0 
-- 4:2:2 
-- 4:4:4 
+- 4:4:4 (not actually subsampling)
+- 4:2:2 (this is broadcast standard)
+- 4:2:0 (also common in production)
 
----
-# Chroma subsampling, all of 'em
-
-- 4:4:4
-- 4:2:2
-- 4:2:1
-- 4:1:1
-- 4:2:0
-- 4:1:0
-- 3:1:1
+Remember that in video, chroma is in both the Cb and Cr channels so each get subsampled.
 
 ---
 # Chroma subsampling, explained 
 
-[Click here](http://www.nattress.com/Chroma_Investigation/chromasampling.htm)  
+What do these numbers mean? 
+
+x:y:z  
+x = width (horizontal) of sample size  
+y = number of chroma samples in the first row  
+z = number of chroma samples in the second row   
+
+---
+# Chroma subsampling, explained 
+
+⬛️ = checked pixel  
+⬜️ = ignored pixel  
+
+- 4:4:4 is full chroma and not subsampling at all because everything is being sampled.  
+⬛️ ⬛️ ⬛️ ⬛️  
+⬛️ ⬛️ ⬛️ ⬛️  
+
+- 4:2:2 is checking every other pixel horizontally and vertically  
+⬛️ ⬜️ ⬛️ ⬜️  
+⬛️ ⬜️ ⬛️ ⬜️ 
+
+- 4:2:0 is checking every other pixel horizontally but not vertically   
+⬛️ ⬜️ ⬛️ ⬜️  
+⬜️ ⬜️ ⬜️ ⬜️  
+
 
 ---
 # Television display systems 
@@ -193,7 +218,7 @@ Bad news, they are completely incompatible with each other.
 ---
 # NTSC 
 
-National Television Standards Committee  
+*National Television Standards Committee*  
 
 Developed in the USA in 1954.
 
@@ -204,7 +229,7 @@ Developed in the USA in 1954.
 ---
 # PAL 
 
-Phase Alternating Line
+*Phase Alternating Line*
 
 Developed in 1967 by the United Kingdom & Germany.
 
@@ -215,18 +240,11 @@ Developed in 1967 by the United Kingdom & Germany.
 ---
 # SECAM 
 
-Séquentiel couleur à mémoire ("Sequential colour with memory")
+*Séquentiel couleur à mémoire* ("Sequential colour with memory")
 
 Developed in France in 1967. 
 
 SECAM uses the same bandwidth and resolution (720x576) as PAL but transmits color differently.
-
----
-# Compression 
-
-- Uncompressed: Raw data stream  
-- Compressed: Data is smushed in some way  
-- Losslessly compressed 
 
 ---
 # Display resolutions
@@ -311,6 +329,8 @@ When interlacing, every other line is skipped. Which gets skipped depends on if 
 # Additional Resources
 
 - [Chroma Sampling: An Investigation](http://www.nattress.com/Chroma_Investigation/chromasampling.htm)
+- [Charles Poynton / Chroma subsampling notation](http://poynton.ca/PDFs/Chroma_subsampling_notation.pdf)
+- [Computerphile - Compression](https://www.youtube.com/watch?v=Lto-ajuqW3w)
 - [h264 is Magic](https://sidbala.com/h-264-is-magic/) (a primer for compression)
 - [How JPG Works](https://medium.freecodecamp.org/how-jpg-works-a4dbd2316f35) (similar to above)
 - [Lurker's Guide to Video Systems](https://lurkertech.com/lg/video-systems/)

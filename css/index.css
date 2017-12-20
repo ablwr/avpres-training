@@ -7,9 +7,10 @@ body {
 
 .head {
   display: grid;
-  grid-template-columns: 1fr 2fr; 
+  grid-template-columns: 2fr 3fr; 
   margin: 1em;
-  margin-bottom: 6em;
+  padding: 2em;
+  margin-bottom: 8em;
 }
 
 .suggest {
@@ -123,12 +124,12 @@ hr {
 
 .left {
   border: 1px solid #aededd; 
-  width: 60vw;
+  width: 80vw;
   float:left;
 }
 
 .right {
   border: 1px solid #aededd; 
-  width: 60vw; 
+  width: 80vw; 
   float:right;
 }
