@@ -1,14 +1,13 @@
 ---
 layout: presentation
 title: Computers
-published: false
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
 ---
 # Computers 
 
-- Bits and bytes 
 - Binary 
+- Bits and bytes 
 - Endian-ness
 - Unicode 
 - Hex 
@@ -17,25 +16,99 @@ This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start sl
 - Networks 
 
 ---
-# Bits and bytes  
+# Binary
+
+Computers are made up of "ones and zeros."
+
+It means it's made up of a binary system where everything is translated down into 0 or 1, or "no" and "yes" or "off" and "on."
+
+It's similar to how Morse Code is composed completely of dots and dashes.
+
+I'm not going to get into how computers make sense of all of this, but binary counting is explained well [here](https://medium.com/basecs/bits-bytes-building-with-binary-13cb4289aafa).
 
 ---
-# Binary 
+# Bits and bytes  
+
+bit = BInary digiT   
+byte = 8 bits  
+
+A lot of things get sorted out at the byte-level, which is why it is referred to so often.  
 
 ---
 # Little endian, Big endian 
 
+Endianness refers to how bytes have been arranged and it necessary to know how to read a file. It's *sort of* like whether a file is held in memory backwards or forwards (but it's more complicated than that).
+
+Big endian = Bytes are ordered from the most significant bit  
+Little endian = Bytes are ordered from the least significant bit.  
+
+---
+# Bit significance? 
+
+The most significant bit is the one of highest significance, often read as the number on the most left. If a bit string was read in the same way we counted, it would be the ten-million point.
+
+Conversely, the least significant bit is the one on the far right.
+
+*I think this is true but it might be more complicated than this*
+
+---
+# ASCII, Hexadecimal, Unicode 
+
+These are all character encodings that help you talk to your computer, or for your programs to talk to your computer. They are like human-computer translation devices. 
+
+---
+# Back to Base 
+
+We count in base-10, which means we get to nine and then we go to one-plus-zero, or ten. Binary is just 0 and 1.  
+
+Hexadecimal is base16, which means it gets to 16 and then starts over. It's confusing to think about. But they are represented in our common human-language as 0-9 and A-F.
+
+---
+# Hexadecimal
+
+One Hexadecimal can represent four bits. That's half a byte (also known as a nibble -- yeah, really).
+
+So hexadecimal in pairs, you can do cool stuff with. For example, the way color is displayed on computers using RGB is made up of 6 hex numbers (which is why A-F are in there too) and are broken into [Red part] | [Green part] | [Blue part] !
+
+A really great overview is available [here](https://medium.com/basecs/hexs-and-other-magical-numbers-9785bc26b7ee).
+
 ---
 # Unicode 
 
---- 
-# Hex 
-
---- 
-# Magic numbers 
+I think it's well-known that emoji is possible because of Unicode. Unicode is another way to encode characters. Although Unicode isn't just Unicode, there are many different kinds of Unicode. Anyway, it's true what they say about emoji. Unicode also allows for very large and complex languages, like those based on Chinese characters, to be presented properly on screens.
 
 ---
-# Compiled languages
+# � Mojibake! � � � �
+
+(It's pronounced moh-gee-bah-k, not "'moji bake" like a BBQ featuring emoji)
+
+Mojibake is what happens when computers don't speak the same language to each other. But because computers seem to aim to please, they do their best to give you what you want anyway, which sometimes just looks like garbage. 
+
+---
+# Magic numbers 
+
+Magic numbers (can mean a lot of things but also) are one way for file formats to identify themselves, usually but not necessarily at the beginning of a file. In this case, they might also be referred to as "file signatures."
+
+The magic number for the audio format FLAC is `66 4C 61 43` in hexadecimal, which becomes `fLaC` when translated to text.
+
+---
+# Programming languages
+
+Programming languages are also like translation devices between you and your computer, just bigger. 
+
+There are many different types of programming languages. Here are some loose categories by which they are often defined:
+
+- functional
+- imperative
+- declarative
+- object-oriented
+- procedural
+- logic
+
+---
+# Programming languages
+
+These languages can be `compiled` or `interpreted`: Do you have to do an extra step to put your code together before you run it, or can you just run it? For example, QCTools is build in C++ and I have to build it every time I went to test some code. A Python script can be run by typing `python cool-script.py` into Terminal.
 
 ---
 # Networks 
