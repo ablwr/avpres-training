@@ -318,6 +318,18 @@ BFF = Bottom Field First (BFF)
 When interlacing, every other line is skipped. Which gets skipped depends on if the Scan Order is set to TFF or BFF. 
 
 ---
+# De-interlacing 
+
+MBAFF	Macroblock-Level Adaptive Frame/Field 
+PAFF Picture Adaptive Frame Field
+
+
+* PAFF allows to decide, on a frame basis, whether to encode each frame as a frame or as two fields. When encoded as two fields, it's as if you would have done a separatefields() on the frame.
+* MBAFF allows to decide, on a macroblock basis, whether to encode as field or frame. Actually, it works on vertical pairs of macroblocks, so on 16x32 areas. You can easily put two frame macroblocks ( on under the other ), or two field ones ( one with the top lines, the other with the bottom lines ).  
+
+[source](http://forum.doom9.org/showthread.php?p=927647) 
+
+---
 # 3D and beyond?
 
 - 3D 
