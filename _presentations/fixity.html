@@ -19,24 +19,28 @@ class: center, middle
 ---
 # What is a checksum? 
 
-Just a random string... sorta. What matters is that that string is the same now as it is later.
+These are defined sometimes as "digital fingerprints."
+
+I think this word is heard quite often but not well-explained or well-understood, but the absolute essence of a checksum is just a "random" string... sorta. At least that is what it looks like, and underneath it is a complex algorithm that is able to compare your file to itself-from-the-past. 
+
+What matters is that that string is the same now as it is later in the future and as it was before in the past.
 
 ---
-# Crytopgraphy 
+# Cryptography 
 
-Prevents man-in-the-middle attacks during transfer across insecure lines.
+How are checksums used most commonly? Cryptography!
 
-It allows encrypted passwords or other sensitive information can pass through a network to another location without that information being compromised. 
+This prevents man-in-the-middle attacks during transfer across insecure lines. It allows encrypted passwords or other sensitive information can pass through a network to another location without that information being compromised. 
 
 ---
 # Salting 
 
-Salt is a random string, which is linked to existing password hashes and then hashed again for extra layers of protection. The salt value and resulting hash is then stored in the database. You are able to encrypt that information, but without both parts, it cannot be un-encrypted. 
+A "Salt" is another random string which is linked to existing password hashes and then hashed again for extra layers of protection. The salt value and resulting hash can then be stored in a database. You are able to encrypt that information, but without both parts, it cannot be un-encrypted. Extra safe!
 
 ---
 # Hash collision 
 
-A collision attack attempts to find two arbitrary outputs which produce the same hash value -- hence, a collision.
+A collision attack is an attempt to find two arbitrary outputs which produce the same hash value -- hence, causing a collision.
 
 If someone can fake your checksum, they can get to the information they want. 
 
