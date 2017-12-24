@@ -2,7 +2,7 @@
 
 ### What is this?
 
-[https://training.ashleyblewer.com](https://training.ashleyblewer.com)  
+[http://training.ashleyblewer.com](http://training.ashleyblewer.com)  
 
 This is a repository of educational material suitable for presentations, workshops, or independently-driven self-education focused around audiovisual preservation, broadly defined.
 
