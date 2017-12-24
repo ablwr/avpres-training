@@ -14,6 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   background-color: #aededd;
   padding: 0.3em;
+  margin: 0;
 }
 
 .remark-container {
@@ -41,5 +42,5 @@ a:visited {
 
 img {
   max-width: 800px;
-  max-height: 500px;
+  max-height: 450px;
 }
