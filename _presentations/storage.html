@@ -1,25 +1,117 @@
 ---
 layout: presentation
 title: Storage
-published: false
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
 ---
+class: middle, center
+
 # Storage 
 
 ---
 # Storage 
 
-- LTO 
-- HDD 
-- NAS 
+*Note: This is about storage formats, not the theory and recommendations for digital preservation storage.* 
+
+---
+# Storage 
+
 - Film 
+- Tape
+- HDD 
+- RAID
+- Network attached storage 
+- Networks 
+- Cloud
+- DAM
+- Virtual Machines 
 
 ---
-# LTO  
+# Film 
+
+Unlike other media formats, film can be stored on film. Stable conditions of cool temperatures and low humidity can keep film safe for many years. 
 
 ---
-# HDD  
+# Tape  
+
+History of tape 
+
+---
+# Types of Tape 
+
+- Enterprise tape libraries
+- High density magnetic media
+- Linear-Tape Open (LTO) 
+
+---
+# Drives (HDD)  
+
+If you want to keep bits as bits, you can store your data on hard drives. There are several kinds. Here are two common ones used for storage:
+
+- Hard disk drives (HDD): Spinning disks  
+- Solid-state drive (SSD): Memory chips without moving parts
+
+---
+# Formatting 
+
+Drive file systems come in different formats, which is annoying. Some only work with the Windows operating system, and some only work with macOS. 
+
+On the next page are the most common modern file systems, but [there are many more](https://en.wikipedia.org/wiki/Comparison_of_file_systems).
+
+---
+
+Ext2, Ext3, Ext4 (Extended File System)
+- Linux preferred filesystem 
+- Ext2 Maximum file/volume size: 16GB-2TB/2TB-32TB
+- Ext3 Maximum file/volume size: 16GB-2TB/2TB-32TB
+- Ext4 Maximum file/volume size: 16TB/1EiB
+
+FAT32 (File Allocation Table)  
+- Natively read/write on Windows and macOS.
+- Maximum file/volume size: 4GB/2TB
+
+NTFS (Windows NT File System)  
+- Natively read/write on Windows. 
+- Read-only NTFS on macOS
+- Maximum file/volume size: 16 TB/256TB
+
+HFS+ (Hierarchical File System, aka macOS Extended)  
+- Natively read/write HFS+ on macOS
+- Required for Time Machine
+- Maximum file/volume size: 8EiB/8EiB
+
+---
+# Journaling 
+
+Harddrives can be journaled or non-journaled.
+
+"A journaling file system is a file system that keeps track of changes not yet committed to the file system's main part by recording the intentions of such changes in a data structure known as a "journal", which is usually a circular log." [wikipedia](https://en.wikipedia.org/wiki/Journaling_file_system)
+
+See [Anatomy of Linux journaling file systems](https://www.ibm.com/developerworks/library/l-journaling-filesystems/index.html) for more.
+
+[Here](https://apple.stackexchange.com/questions/7609/what-are-the-differences-between-journaling-hfs-and-non-journaling-hfs) is a good breakdown of the differences when choosing to journal or not.
+
+---
+# RAID 
+
+RAID = Redundant Array of Inexpensive (or Independent) Disks  
+
+A RAID is composed of multiple drives connected by a small software/firmware layer that allows the units to act as one cohesive storage, as well as efficiently create data redundancy or sometimes optimize data transaction performance.
+
+---
+# Networks 
+
+Data storage doesn't have to be accessed directly on the same operating system or wired by way of USB or FireWire. Storage can be accessed via a network connection.
+ 
+---
+# Network attached storage 
+
+NAS are servers that hold data and are also attached to a computer network. They can be connected to a router like the one in your home that gives you wifi. A NAS can be used in conjunction with RAID technology to create redundant storage server that can easily be accessed and controlled through the browser of connected computers.
+
+---
+# Cloud 
+
+Storage that you access via the internet is colloquially known as "cloud storage." The way the data is stored is not necessarily known, only the knowledge that it is present and accounted for somewhere else.
 
 ---
 # Additional Resources
