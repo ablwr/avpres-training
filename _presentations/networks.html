@@ -1,0 +1,126 @@
+---
+layout: presentation
+title: Networks
+---
+This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
+---
+class: center, middle
+
+# Networks 
+
+---
+# Networks 
+
+A network is two or more devices that are connected together, and are able to communicate or share resources with each other.
+
+.center[![network-fire]({{ site.baseurl }}/img/network-fire.png)]
+
+---
+# Protocols 
+
+This communication can happen because of established rules and standards around the sending of data. 
+
+Some common protocols for networking are:
+
+- TCP/IP 
+- FTP (sending files)
+- SMTP (email)
+- HTTP
+- Wi-Fi
+- Bluetooth 
+- LTE
+
+---
+# TCP/IP 
+
+TCP: Transmission Control Protocol
+IP: Internet Protocol 
+
+It is a set of rules that govern how data is transferred over the internet.  
+
+TCP/IP was standardized via the [Internet Engineering Task Force](https://www.ietf.org/), and in fact the organization itself was established in order to properly identify and formalize TCP/IP as a standard. 
+
+---
+# HTTP, FTP, SMTP
+
+These are all internet protocols that work at the application level to help you access websites (HTTP), send files (FTP) and send email (SMTP) over the network.  
+
+HTTPS is a protocol developed on top of HTTP that takes extra steps to ensure security, privacy, and integrity of the communication channel between you and the website.  
+
+# Wi-Fi, Bluetooth, LTE 
+
+These are all protocols for allowing devices to connect to each other wirelessly.  
+
+LTE (Long Term Evolution) is what my phone is always saying its connected as. 
+
+---
+class: center, middle
+
+# The Internet 
+
+"The best-known computer network"
+
+![map-of-internet]({{ site.baseurl }}/img/map-of-internet.png)
+
+[source](http://www.opte.org/maps/)
+
+---
+# Submarine cables 
+
+Large networked systems are connected to each other via undersea cables.
+
+.center[![submarine-cables]({{ site.baseurl }}/img/submarine-cables.png)]
+
+[source: submarinecablemap.com](https://www.submarinecablemap.com/)
+
+---
+# Activity: 🐠 Test your network 🦈
+
+Use [WireShark](https://www.wireshark.org/) to understand your surroundings. 
+
+What is WireShark?  
+
+"Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level and is the de facto (and often de jure) standard across many commercial and non-profit enterprises, government agencies, and educational institutions." [source: website](https://www.wireshark.org/)
+
+---
+# Activity: ping 
+
+Running `ping [site]` in your shell will test your connection between you and the site you are trying to connect to. It should look something like: 
+
+Running `ping -c 5 google.com`:
+
+```
+PING google.com (172.217.10.46): 56 data bytes
+64 bytes from 172.217.10.46: icmp_seq=0 ttl=54 time=14.954 ms
+64 bytes from 172.217.10.46: icmp_seq=1 ttl=54 time=13.729 ms
+64 bytes from 172.217.10.46: icmp_seq=2 ttl=54 time=20.970 ms
+64 bytes from 172.217.10.46: icmp_seq=3 ttl=54 time=15.135 ms
+64 bytes from 172.217.10.46: icmp_seq=4 ttl=54 time=16.923 ms
+
+--- google.com ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 13.729/16.342/20.970/2.529 ms
+```
+
+---
+# Activity: trace
+
+Maybe you want to know more than you can connect to google and not lose any data along the way. Maybe you want to know how those pings got there, and where "there" is. For this you can use trace! 
+
+On Mac/Linux, it's `traceroute` and on Windows it is `tracert`
+
+The first hop will probably be from your computer to your router. After that, it's out on the internet. Hopping somewhere close like from NYC to google.com or loc.gov might take something like 8 hops. Hopping from NYC to Cambodia might take 16 or so hops.
+
+Some sites end up returning `* * *` between hops or near the end. What is that? It means your packets are not sending back a response and have timed out, waiting for it. They could be getting ignored or not being received, or they are bouncing around inside a firewall and you cannot directly reach your specified server.
+ 
+---
+# Additional Resources
+
+- [Evolution of the Web](http://www.evolutionoftheweb.com/?hl=en)
+- [Quartz: Map of the Internet](https://qz.com/se/map-of-the-internet/)
+- [Ingrid Burrington: Networks of New York](https://www.mhpbooks.com/books/networks-of-new-york/)
+- [Do Not Track: A Personalized Documentary](https://donottrack-doc.com/en/intro/)
+---
+# Learning more  
+
+[Home]({{ site.baseurl}}/)  
