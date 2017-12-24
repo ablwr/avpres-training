@@ -30,3 +30,12 @@ Remark has some shortcuts to keep in mind:
 ### How to contribute
 
 I would love to have contributions of content and/or corrections/additions to existing content. If you are familiar with Github and Markdown, you can submit a pull request directly to the presentation in question. If not, you can file an [Issue](https://github.com/ablwr/avpres-training/issues).
+
+## How to run this locally:
+
+1. Clone repository
+2. Navigate to repository
+3. If you don't already have it, `gem install bundler`
+4. Run `bundle`
+5. Run `jekyll serve`
+6. Navigate browser to http://localhost:4000
