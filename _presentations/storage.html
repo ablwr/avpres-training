@@ -29,22 +29,62 @@ class: middle, center
 ---
 # Film 
 
-Unlike other media formats, film can be stored on film. Stable conditions of cool temperatures and low humidity can keep film safe for many years. 
+Unlike other media formats, film can be stored on film. Stable conditions of  
+cool temperatures and low humidity can keep film safe for many years. 
+
+.center[![film-storage]({{ site.baseurl }}/img/film-storage.jpg)]
 
 ---
 # Tape  
 
-History of tape 
+Magnetic tape has been used to store media for over 50 years in various forms,  
+from early IBM computers to cheap consumer media vehicles. 📼
+  
+.center[![ibm-tape]({{ site.baseurl }}/img/ibm-tape.jpg)]
 
 ---
 # Types of Tape 
 
-- Enterprise tape libraries
+- Enterprise tape libraries (maybe with robots 🤖)
 - High density magnetic media
 - Linear-Tape Open (LTO) 
 
+LTO is commonly used in archives.  
+
+.right[![tape-robot]({{ site.baseurl }}/img/tape-robot.gif)]
+.right[[source](http://www.popularmechanics.com/technology/robots/a20808/ibm-tape-swapping-robot/)]
+
 ---
-# Drives (HDD)  
+# LTO 
+
+LTO is cheap, sturdy, and environmentally reasonable (as far as storage solutions go).  
+
+As of now, there are 8 generations of LTO technology.   
+
+LTO-8 has the capacity of 12TB, 360 MB/s speed, and writing takes approximately 9h15m.  
+LTO-7 has the capacity of 6TB, 300 MB/s speed, and writing takes approximately 6 hours.  
+LTO-6 has the capacity of 2.5TB, 160 MB/s speed, and writing takes approximately 5h30m.  
+
+.right[![lto-tape]({{ site.baseurl }}/img/lto-tape.png)]
+
+---
+# LTFS 
+
+LTO is used in conjunction with Linear Tape File System (LTFS). This allows LTO to be accessed in a way similar to other data storage people are already used to, like disk drives.
+
+Something to note is that file name normalization may be required when storing data using an LTFS system, as it cannot handle ampersands, backslashes, and other "illegal" characters.
+
+---
+# Some other LTO factors 
+
+WORM (Write Once, Read Many): Possible as of LTO-3 and later  
+Encryption: Possible as of LTO-4 and later  
+Partitioning: Possible as of LTO-5 and later   
+
+.right[![worm]({{ site.baseurl }}/img/worm.png)]
+
+---
+# Drives (HDD, SSD)  
 
 If you want to keep bits as bits, you can store your data on hard drives. There are several kinds. Here are two common ones used for storage:
 
@@ -60,22 +100,22 @@ On the next page are the most common modern file systems, but [there are many mo
 
 ---
 
-Ext2, Ext3, Ext4 (Extended File System)
+**Ext2, Ext3, Ext4 (Extended File System)**
 - Linux preferred filesystem 
 - Ext2 Maximum file/volume size: 16GB-2TB/2TB-32TB
 - Ext3 Maximum file/volume size: 16GB-2TB/2TB-32TB
 - Ext4 Maximum file/volume size: 16TB/1EiB
 
-FAT32 (File Allocation Table)  
+**FAT32 (File Allocation Table)**  
 - Natively read/write on Windows and macOS.
 - Maximum file/volume size: 4GB/2TB
 
-NTFS (Windows NT File System)  
+**NTFS (Windows NT File System)**  
 - Natively read/write on Windows. 
 - Read-only NTFS on macOS
 - Maximum file/volume size: 16 TB/256TB
 
-HFS+ (Hierarchical File System, aka macOS Extended)  
+**HFS+ (Hierarchical File System, aka macOS Extended)**  
 - Natively read/write HFS+ on macOS
 - Required for Time Machine
 - Maximum file/volume size: 8EiB/8EiB
@@ -103,20 +143,33 @@ A RAID is composed of multiple drives connected by a small software/firmware lay
 
 Data storage doesn't have to be accessed directly on the same operating system or wired by way of USB or FireWire. Storage can be accessed via a network connection.
  
+.center[![network-fire]({{ site.baseurl }}/img/network-fire.png)]
+ 
 ---
 # Network attached storage 
 
 NAS are servers that hold data and are also attached to a computer network. They can be connected to a router like the one in your home that gives you wifi. A NAS can be used in conjunction with RAID technology to create redundant storage server that can easily be accessed and controlled through the browser of connected computers.
 
+.center[![nas-written]({{ site.baseurl }}/img/nas-written.png)]
 ---
 # Cloud 
 
 Storage that you access via the internet is colloquially known as "cloud storage." The way the data is stored is not necessarily known, only the knowledge that it is present and accounted for somewhere else.
 
+# ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️
+# ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ 
+# ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️
+
+---
+# The future? 
+
+.center[![dna]({{ site.baseurl }}/img/dna.png)]
+
 ---
 # Additional Resources
 
-- [ScienceFriday](https://apps.sciencefriday.com/data/ghosts.html)
+- [The History of Magnetic Tape and Computing: A 65-Year-Old Marriage Continues to Evolve](http://www.ironmountain.com/resources/general-articles/t/the-history-of-magnetic-tape-and-computing-a-65-year-old-marriage-continues-to-evolve)
+- [ScienceFriday: Ghosts in the Reels](https://apps.sciencefriday.com/data/ghosts.html)
 
 ---
 # Learning more  

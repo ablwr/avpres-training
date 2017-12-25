@@ -1,0 +1,145 @@
+---
+layout: presentation
+title: Scripting (Bash)
+---
+This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
+---
+class: center, middle
+
+# Scripting (Bash) 
+
+---
+# Writing a program 
+
+Here is an example of a very simple program written in bash and run in Terminal.  
+
+Save this to a `.sh` file called `hello-world`
+
+```
+#!/bin/bash
+STRING="Hello World"
+echo $STRING
+```
+---
+# Writing a program 
+
+You can write the program without leaving Terminal by typing the following: 
+
+`touch hello-world.sh`
+`vi hello-world.sh`
+
+`vi` will open the empty file. Type `i` to allow input, paste in the string on the last page (or type it in) and then hit ESC.  
+
+Then you might seem stuck. To get out of `vi` while also saving your information, type `:wq`. If you want to quit without saving, just type `:q`.  
+
+Sometimes it will request that you use an exclamation point afterwards to show you really mean it!
+
+---
+# Running a program 
+
+Assuming you are in the same folder as where you wrote your script,  
+
+`./hello-world.sh` will run the program you just created!
+
+---
+# Loops 
+
+"For" loop:  
+`for f in $( ls /var/ ); do echo $f; done`
+
+"While" loop:  
+`let x=1; while test $x -le 10;do echo "x is currently $x";let x=$x+1; done`
+
+---
+# Testing files 
+
+`-b filename` 	Block special file  
+`-c filename` 	Special character file  
+`-e filename` 	Check for file existence  
+`-f filename` 	Check for regular file existence not a directory  
+`-r filename` 	Check if file is a readable  
+`-S filename` 	Check if file is socket  
+`-s filename` 	Check if file is nonzero size  
+`-u filename` 	Check if file set-ser-id bit is set  
+`-w filename` 	Check if file is writable  
+`-x filename` 	Check if file is executable  
+`-k filename` 	Sticky bit  
+`-L filename` 	Symbolic link  
+`-G filename` 	Check if file exists and is owned by group  
+`-g filename` 	True if file exists and is group  
+`-O filename` 	True if file exists and is owned by user  
+`-d directoryname` 	Check for directory existence  
+
+---
+# String Comparisons 
+
+`=` is equal   
+`!=` is not equal   
+`<` is less then   
+`>` is greater then   
+`-n s1` is	string s1 is not empty  
+`-z s1` is	string s1 is empty  
+
+---
+# Mathematical Comparisons 
+
+`-lt` is 	<  
+`-gt` is 	>  
+`-le` is 	<=  
+`-ge` is 	>=  
+`-eq` is 	==  
+`-ne` is 	!=  
+
+---
+# Learning more
+
+Use `man` or, often, the `-h` flag after a program name to get to the manual or help page.
+
+Time to learn some built-in commands!
+
+---
+# Disk usage 
+
+This will give you disk usage information for all files in a chosen directory.  
+
+`du -sch /set/your/path/here/*`  
+
+**du**  
+    starts the command, which lists directory contents.  
+**-sch**  
+    -sch is a series of flags. This could also be written out as -s -c -h instead. Each letter represents a different, chosen option for the command.  
+    -s indicates that you want one entry per file.  
+    -c indicates that you want to calculate the grand total.  
+    -h indicates that you want these results in human-readable units.   
+**/set/your/path/here/\***  
+    Defines the file path you want to search. The asterisk at the end of this file path indicates that you want information about everything in the chosen directory.   
+    
+Taken from [Script Ahoy!](http://dd388.github.io/crals/#disk_usage)
+
+---
+# Symbolic links 
+
+Creating a soft link binds two directories together, which can be useful if you have a program that sends or pulls from a specific folder, but that folder needs to live in a different place, like a server. For example, you may have a "media" folder on a server that renders digital assets, but those assets take up a lot of space and have to be stored elsewhere. 
+
+`ln -s /The/stuff /Empty/folder/where/you/want/folder/of/stuff/to/go`
+
+---
+# rsync 
+
+`rsync` is a way to synchronize files between two different places. It checks to see what the difference is between the directories, recursively, and sends over only the changes instead of copying everything all over again. This can save time and transfer costs when syncing across a network.
+
+Below is the command to sync files locally, but it can also be used over a network via `ssh`.
+
+`rsync [options] /The/stuff /where/you/want/folder/of/stuff/to/go`
+
+---
+# Additional Resources
+
+- [ExplainShell.com](https://explainshell.com/)
+- [Script Ahoy](http://dd388.github.io/crals/)
+- [the sourcecaster](https://datapraxis.github.io/sourcecaster/)
+
+---
+# Learning more  
+
+[Home]({{ site.baseurl}}/)  
