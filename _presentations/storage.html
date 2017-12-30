@@ -16,23 +16,13 @@ class: middle, center
 ---
 # Storage 
 
-- Film 
 - Tape
-- HDD 
+- Drives 
 - RAID
 - Network attached storage 
 - Networks 
 - Cloud
-- DAM
-- Virtual Machines 
-
----
-# Film 
-
-Unlike other media formats, film can be stored on film. Stable conditions of  
-cool temperatures and low humidity can keep film safe for many years. 
-
-.center[![film-storage]({{ site.baseurl }}/img/film-storage.jpg)]
+- Film
 
 ---
 # Tape  
@@ -92,6 +82,32 @@ If you want to keep bits as bits, you can store your data on hard drives. There 
 - Solid-state drive (SSD): Memory chips without moving parts
 
 ---
+# HDD 
+
+Pros:
+- Cheap 
+- Well-known 
+- Large sizes available 
+
+Cons:
+- Slow 
+- Big 
+- Has moving parts; more fragile
+- Consumes more power 
+
+---
+#SSD 
+
+Pros:
+- Fast
+- Durable 
+- No moving parts 
+
+Cons:  
+- Expensive
+- Large sizes are VERY expensive 
+
+---
 # Formatting 
 
 Drive file systems come in different formats, which is annoying. Some only work with the Windows operating system, and some only work with macOS. 
@@ -136,7 +152,23 @@ See [Anatomy of Linux journaling file systems](https://www.ibm.com/developerwork
 
 RAID = Redundant Array of Inexpensive (or Independent) Disks  
 
-A RAID is composed of multiple drives connected by a small software/firmware layer that allows the units to act as one cohesive storage, as well as efficiently create data redundancy or sometimes optimize data transaction performance.
+A RAID is composed of multiple drives connected by a small software/firmware layer that 
+
+- allows the units to act as one cohesive storage, 
+- as well as efficiently create data redundancy or 
+- sometimes optimize data transaction performance.
+
+---
+# RAID 
+
+RAID comes in different flavors, or *levels*. Higher levels are generally better about protecting. 
+
+RAID 0: Striping. Stores data across drives but does not mirror, so there is no backup to the backup. No parity.  
+RAID 1: Mirrors (backs up) but does not stripe (across drives). If you have 2 drives, it means 1 is duplicated twice.   
+RAID 2 and RAID 3: Not used very often, but they use striping and parity methods (scheme for error protection).  
+RAID 4: Has striping and parity (dedicated).   
+RAID 5: Has striping and parity (distributed). Can handle one failed drive.  
+RAID 6: Has striping and parity (double distributed). Can handle two failed drives.  
 
 ---
 # Networks 
@@ -146,11 +178,19 @@ Data storage doesn't have to be accessed directly on the same operating system o
 .center[![network-fire]({{ site.baseurl }}/img/network-fire.png)]
  
 ---
-# Network attached storage 
+# NAS, DAS, SAN 
 
 NAS are servers that hold data and are also attached to a computer network. They can be connected to a router like the one in your home that gives you wifi. A NAS can be used in conjunction with RAID technology to create redundant storage server that can easily be accessed and controlled through the browser of connected computers.
 
 .center[![nas-written]({{ site.baseurl }}/img/nas-written.png)]
+
+---
+# NAS, DAS, SAN
+
+DAS is storage attached directly to a computer or server. Very fast! 
+
+SAN is a group of computers conneced through a network with shared directly-attached storage. 
+
 ---
 # Cloud 
 
@@ -159,6 +199,20 @@ Storage that you access via the internet is colloquially known as "cloud storage
 # ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️
 # ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ 
 # ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️ ☁️
+
+---
+# Film 
+
+Unlike other media formats, film can be stored on film. 
+
+.center[![film-storage]({{ site.baseurl }}/img/film-storage.jpg)]
+
+---
+# Film 
+
+Stable conditions of cool temperatures and low humidity can keep film safe for many years. The bummer, though, is you won't be able to access it easily.
+
+"Film should be stored in a colder environment than magnetic media. Color film should be stored at the coldest possible temperature to reduce fading–0º F is preferred, but if that is not realistic, temperatures up to 30º F with 25 to 35% relative humidity will suffice. Black-and-white film can be stored at 25 to 50º F, also with 25 to 35% relative humidity." -- [IMAP](http://www.imappreserve.org/pres_101/index.html)
 
 ---
 # The future? 
