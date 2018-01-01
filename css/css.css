@@ -29,15 +29,15 @@ h1 {
 }
 
 a {
-  color: #028602;
+  color: #0aaba4;
 }
 
-a:hover {
-  color: #5cb85c;
+a:hover, a:visited:hover {
+  color: #0ee7de;
 }
 
 a:visited {
-  color: #028602;
+  color: #0a847f;
 }
 
 img {

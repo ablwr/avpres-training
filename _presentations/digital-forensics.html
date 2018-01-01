@@ -1,0 +1,119 @@
+---
+layout: presentation
+title: Digital Forensics
+---
+This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
+---
+class: center, middle 
+
+# 💿 📀 💿
+# Digital Forensics
+# 📀 💿 📀
+
+---
+# Digital Forensics
+
+- Imaging
+- Write blockers
+- Virtualization
+- Data recovery
+- Tools 
+
+---
+# Imaging 
+
+Imaging is making a complete copy of everything on a storage device. Imaging is a fundamental part of digital forensics -- whether migrating optical media off of fragile medium or copying a partition of an acquired hard drive without tampering with the content. It is usually a complete clone of the original content, but stored differently.
+
+---
+# Write blockers 
+
+Write blockers prevent the computer for writing anything on the content -- this saves the original material from having technical/descriptive metadata overwritten. A notable example is the "last modified" date stored within files.
+
+---
+# Virtualization 
+
+Virtualization is the creation of a "virtual" version of something. It is a way for a computer to interpret and read an image as if it were being presented as its original format. Platform virtualization allows an operating system to be run inside of an already-running operating system. 
+
+Software emulation is a form of virtualization.
+
+---
+# Data recovery 
+
+Data recovery practices are anything involved with the restoration of data thought to be lost. Digital storage tends to "suppress memories" rather than actually wipe data clean. When you delete something from your computer (and also "empty the trash can"), it is gone according to you, but the data could still be held on the drive. The computer's file system has merely decided that the place where this data was stored can acceptably be written over. But it remains there until it needs to use that part of the storage system; you just cannot access it via the operating system any longer.
+
+---
+# Tools 
+
+There are many, many software and hardware tools. See a comprehensive table at the pages 72-80 of [this document](https://www.clir.org/wp-content/uploads/sites/6/pub149.pdf). Here are a few: 
+
+Machines   
+- [Kryoflux](https://kryoflux.com/)
+- [Forensic Recovery of Evidence Device (FRED)](https://www.digitalintelligence.com/forensicsystems.php)
+
+Software  
+- [Binwalk](https://tools.kali.org/forensics/binwalk)
+- [BitCurator](https://www.bitcurator.net/)
+- [Sleuth Kit](http://www.sleuthkit.org/)
+
+---
+# FRED 
+
+.left[![fred-small]({{ site.baseurl }}/img/fred-small.gif)]
+.center[A computer designed for forensic analysis.]
+.right[![fred-small]({{ site.baseurl }}/img/fred-small2.gif)]
+
+---
+# Kryoflux 
+
+For 3.5" and 5.25" floppy disk imaging, featuring a write blocker and a GUI with data visualization.
+
+.center[![kryoflux]({{ site.baseurl }}/img/kryoflux.png)]
+
+---
+# Binwalk 
+
+Binwalk is a tool for searching a given binary image for embedded files and executable code. Specifically, it is designed for identifying files and code embedded inside of firmware images.  
+
+---
+# BitCurator 
+
+An open source digital forensics environment that incorporates a variety of functionality and processing for born-digital materials.
+
+- Pre-imaging data triage
+- Forensic disk imaging
+- File system analysis and reporting
+- Identification of private and individually identifying information
+- Export of technical and other metadata
+
+---
+# Sleuth Kit and Autopsy
+
+Open source digital investigation tools.
+
+Sleuth Kit is a series of command-line tools. Autopsy is a graphical user interface to support Sleuth Kit.
+---
+# Optical disk tools 📀
+
+- [Dvdisaster](http://dvdisaster.net/en/index.html): "a computer program aimed to enhance data survivability on optical discs by creating error detection and correction data, which is used for data recovery. dvdisaster works exclusively at the image level." 
+- [disktype](http://disktype.sourceforge.net/): "detects the content format of a disk or disk image" 
+- [Guymager](http://guymager.sourceforge.net/): "a free forensic imager for media acquisition" 
+- [Handbrake](https://handbrake.fr/): "a free and open-source transcoder for digital video files"
+- [Isolyzer](https://github.com/KBNLresearch/isolyzer): "verifies size of ISO 9660 image against Volume Descriptor fields" 
+
+---
+# Additional Resources
+
+- [An Introduction to Optical Media Preservation](http://journal.code4lib.org/articles/9581)
+- [Denver Art Museum Disk Imaging Workflow](https://docs.google.com/document/d/1Z4LP8shWtdRYTkZrq1Q7nPomPWzJeoV369WC87kj0rM/edit)
+- [Forensics Wiki](http://forensicswiki.org/wiki/Main_Page)
+- [Extending Digital Repository Architectures to Support Disk Image Preservation and Access](https://ils.unc.edu/callee/p57-woods.pdf)
+- [CLIR Digital Forensics and Born-Digital Content in Cultural Heritage Collections](https://www.clir.org/wp-content/uploads/sites/6/pub149.pdf)
+
+---
+# Learning more  
+
+- [Digital Preservation]({{ site.baseurl }}/presentations/digital-preservation.html) 
+- [Storage]({{ site.baseurl }}/presentations/storage.html) 
+- [Other Analysis Tools]({{ site.baseurl }}/presentations/other-analysis-tools.html) 
+
+[Home]({{ site.baseurl}}/)  
