@@ -54,6 +54,9 @@ As of now, there are 8 generations of LTO technology.
 LTO-8 has the capacity of 12TB, 360 MB/s speed, and writing takes approximately 9h15m.  
 LTO-7 has the capacity of 6TB, 300 MB/s speed, and writing takes approximately 6 hours.  
 LTO-6 has the capacity of 2.5TB, 160 MB/s speed, and writing takes approximately 5h30m.  
+LTO-5 has the capacity of 1.5TB, 140 MB/s speed, and writing takes approximately 3h10m.  
+
+LTO-5, of these listed, can also have only 2 partitions (instead of 4) and 2:1 compression (instead of 2.5:1).  
 
 .right[![lto-tape]({{ site.baseurl }}/img/lto-tape.png)]
 
@@ -96,7 +99,7 @@ Cons:
 - Consumes more power 
 
 ---
-#SSD 
+# SSD 
 
 Pros:
 - Fast
@@ -170,6 +173,9 @@ RAID 4: Has striping and parity (dedicated).
 RAID 5: Has striping and parity (distributed). Can handle one failed drive.  
 RAID 6: Has striping and parity (double distributed). Can handle two failed drives.  
 
+???
+
+Note that if something bad happens while RAID 5 is repairing itself, you can lose everything!
 ---
 # Networks 
 
@@ -212,7 +218,11 @@ Unlike other media formats, film can be stored on film.
 
 Stable conditions of cool temperatures and low humidity can keep film safe for many years. The bummer, though, is you won't be able to access it easily.
 
-"Film should be stored in a colder environment than magnetic media. Color film should be stored at the coldest possible temperature to reduce fading–0º F is preferred, but if that is not realistic, temperatures up to 30º F with 25 to 35% relative humidity will suffice. Black-and-white film can be stored at 25 to 50º F, also with 25 to 35% relative humidity." -- [IMAP](http://www.imappreserve.org/pres_101/index.html)
+Temperature, color: -18-0º C or 0-30º F (± 2º)  
+Temperature, b&w: -4-10º C or 25-50º F (± 2º)  
+Relative Humidity: 30% (±5%)  
+
+Colder is better BUT that consistency of temperature is much more important than being cooler. Better to have a temp and humidity level at something sustainable and does not fluctuate, rather than something "best practices" but unreliable. 
 
 ---
 # The future? 
