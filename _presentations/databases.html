@@ -1,7 +1,6 @@
 ---
 layout: presentation
 title: Databases
-published: false
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
 ---
@@ -10,19 +9,130 @@ class: center, middle
 # Databases 🥞
 
 ---
-# Things Databases Do 
+# Databases
 
+A database is an organized collection of data that can easily be accessed and modified. 
+
+By this broad definition, a list is a database. An Excel spreadsheet is a database. Everything is a database!
 
 ---
-# Database Types
+# DBMS 
 
-- Relational 
-- Object-oriented
-- NoSQL
+*Database Management System* 
+
+But usually, when using the word "database," someone is referring to an entire database system. 
+
+Examples of DBMS are Microsoft Access, FileMaker, or Oracle, MySQL, PostgreSQL and Microsoft SQL Server 
+---
+# Relational Databases
+
+All of the previous examples were types of relational database framework. This relational model has been extremely popular since it was invented in the 1970s and is probably what people mean or are using when they talk about a database.   
+
+A relational database is a collection of schemas, tables, queries, reports, views, and other elements.
+
+---
+# How do databases work? 
+
+[This article](http://coding-geek.com/how-databases-work/) does a great job at in-depth explanations of how databases work. Here is an overview of some of the significant components of a database:  
+
+- Process manager
+- Network manager
+- File system manager
+- Memory manager
+- Security manager
+- Client manager
+- Backup manager
+- Recovery manager
+- Monitor manager
+- Administration manager
+- Query manager
+- Data manager
+
+---
+# How do databases work? 
+
+That's a lot of management! And many of the components do multiple tasks. Databases are doing a lot of work so that you don't have to.
+
+# (Very) basic pattern of interaction 
+
+- You deliver a command to the database, probably written or parsed down into SQL (more on that later)
+- The client manager determines if you are allowed to do that 
+- The query manager checks your statement and optimizes it (determines the fastest way to get the answer)
+- The hunt begins! (A lot of complex things happen here, computers doing computer stuff)
+- The answer is returned to you, the user
+
+---
+# CRUD 
+
+The four basic functions of persistent storage.  
+
+**C** reate  
+**R** ead  
+**U** pdate  
+**D** elete  
+
+---
+# ACID 
+
+*Atomicity, Consistency, Isolation, Durability*
+
+**A** tomicity: each transaction be complete fully or not at all; no partial transactions.    
+**C** onsistency: any transaction will bring the database from one valid state to another.  
+**I** solation: if multiple transactions occur, they must have the same result regardless of order.  
+**D** urability: once a transaction has been committed, it will remain so, even if there's a crash or error.
+
+---
+# SQL 
+
+*Structured Query Language*
+
+A way to talk to databases using simple but powerful, declarative statements. 
+
+It can be very finicky and frustrating, but appreciate all the work a database is doing for you!
+
+Here are some major elements used in composing statements: 
+
+- SELECT
+- FROM
+- WHERE
+- ORDER BY
+
+---
+# SQL 
+Commands look like this:  
+
+`SELECT * FROM Cats`: returns everything in the Cat table.  
+
+`SELECT Name FROM Cats WHERE Status = 'Kitten'`: returns the names of all cats with a kitten status.  
+
+Maybe you forgot to make a kitten status when you designed your database, but you do have all the cat birthdays. You can do something like this:   
+
+`SELECT Name FROM Cats WHERE BirthDate >= 2018-01-01` to find all cats born in the year 2018.  
+
+---
+# SQL 
+
+Honestly, I find writing raw SQL statements to be a total nightmare and it feels impossible to get the syntax exactly right, which is made more frustrating by the syntax seeming to be so simple. A lot of database systems or interaction languages exist to translate SQL on your behalf, so you can more naturally tell the computer what you want. 
+
+---
+# NoSQL 
+
+Some databases are "NoSQL" and work differently from relational databases. 
+
+Example frameworks:  
+
+- CouchDB 
+- MongoDB 
+- Redis 
 
 ---
 # Additional Resources
 
+- [Codecademy: Intro to SQL](https://www.codecademy.com/learn/learn-sql)
+- [Database Design for Mere Mortals](https://www.goodreads.com/book/show/31159597-database-design-for-mere-mortals)
+- [How Databases Work](http://coding-geek.com/how-databases-work/)
+- [GalaXQL](http://sol.gfxile.net/g3/) (a browser-based SQL learning game)
+- [Khan Academy: Intro to SQL](https://www.khanacademy.org/computing/computer-programming/sql)
 
 ---
 # Learning more  
