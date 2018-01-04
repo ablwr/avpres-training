@@ -123,7 +123,7 @@ HTTPS used to use SHA-1, but that's been broken for a while. It now uses SHA-2 (
 
 Archives like MD5. BitTorrent files also use MD5 for fixity and file integrity.
 
-MD5 stands for Message Digest algorithm 5 (y'know, because computer scientists are great at naming things) and was invented by Ronald Rivest in 1991 to replace the old MD4 standard (you can guess what MD4 stood for). It's broken, though.
+MD5 stands for Message Digest algorithm 5 (y'know, because computer scientists are great at naming things) and was invented by Ronald Rivest in 1991 to replace the old MD4 standard (you can guess what MD4 stood for). It's "broken", though, so do not use it for security! But it is fine to use for fixity.
 
 ---
 # Tools 
@@ -133,6 +133,16 @@ MD5 stands for Message Digest algorithm 5 (y'know, because computer scientists a
 - Windows Command Prompt: `certutil -hashfile MD5`
 
 And more. See [this section](http://mattersinmediaart.org/sustaining-your-collection.html#checksum-tools) of Matters in Media Art for more.
+
+---
+# Making an MD5 
+
+Mac/Linux: `md5 your-file-here`  
+
+Windows: `CertUtil -hashfile your-file-here MD5`  
+
+???
+for Mac/Linux, this will make an MD5 hash and then print it to the screen, but you will have to take extra steps if you want to save it somewhere (which you probably do, because why did you make it?).
 ---
 # Additional Resources
 
