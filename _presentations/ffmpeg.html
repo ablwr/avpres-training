@@ -144,7 +144,7 @@ libpostproc    54.  7.100 / 54.  7.100
 
 Make a file out of nothing! 
 
-`ffmpeg -f lavfi -i smptebars=size=720x576:rate=25 -f lavfi -i "sine=frequency=1000:sample_rate=48000" -c:a pcm_s16le -t 10 -c:v ffv1 new_file.mkv`
+`ffmpeg -f lavfi -i smptebars=size=720x576:rate=25 -f lavfi -i "sine=frequency=1000:sample_rate=48000" -c:a pcm_s16le -t 10 -c:v v210 new_file.mov`
 
 This makes a file that plays SMPTE bars and a 1kHz audio testsignal sine wave for 10 seconds.
 
