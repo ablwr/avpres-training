@@ -250,6 +250,13 @@ If your computer has permission restrictions or you cannot install software on i
 ![mediainfo]({{ site.baseurl }}/img/mi-online.png)
 
 ---
+# Testing 
+
+Do you need a test file? You can make one with FFmpeg: 
+
+`ffmpeg -f lavfi -i smptebars=size=720x576:rate=25 -f lavfi -i "sine=frequency=1000:sample_rate=48000" -c:a pcm_s16le -t 10 -c:v v210 new_file.mov`
+
+---
 # Additional Resources
 
 - [MediaInfo official website](https://mediaarea.net/en/MediaInfo)
