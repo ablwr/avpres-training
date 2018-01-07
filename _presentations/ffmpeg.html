@@ -144,7 +144,7 @@ libpostproc    54.  7.100 / 54.  7.100
 
 Make a file out of nothing! 
 
-`ffmpeg -f lavfi -i smptebars=size=720x576:rate=25 -f lavfi -i "sine=frequency=1000:sample_rate=48000" -c:a pcm_s16le -t 10 -c:v v210 new_file.mov`
+`ffmpeg -f lavfi -i smptebars=size=720x576:rate=25 -f lavfi -i "sine=frequency=1000:sample_rate=48000" -c:a pcm_s16le -t 10 -c:v libx264 new_file.mov`
 
 This makes a file that plays SMPTE bars and a 1kHz audio testsignal sine wave for 10 seconds.
 
@@ -161,8 +161,17 @@ This makes a file that plays SMPTE bars and a 1kHz audio testsignal sine wave fo
 **`-i "sine=frequency=1000:sample_rate=48000"`** Sets the signal to 1000 Hz, sampling at 48 kHz.  
 **`-c:a pcm_s16le`** encodes the audio codec in pcm_s16le (the default encoding for wav files). pcm represents pulse-code modulation format (raw bytes), 16 means 16 bits per sample, and le means "little endian"  
 **`-t 10`** specifies recording time of 10 seconds  
-**`-c:v ffv1`** Encodes to FFV1. Alter this setting to set your desired codec.  
+**`-c:v libx264`** Encodes to libx264. Alter this setting to set your desired codec, like `ffv1` or `v210`.  
 **`new_file.mkv`** path, name and extension of the output file. This can be set to any video container's file extension. Here, we are using .mkv, but something like .avi also works.  
+
+---
+# Example 1 (learning about codecs)
+
+In the previous example, we are encoding the file to the h.264 codec, a popular codec that is read by most video players. If you adjust the video codec to something else, it might have a harder time playing on major commercial media players. Encoding to `ffv1` will create a file that cannot be played in Quicktime Player. Encoding to `v210` will make a file that cannot be played back in the default Windows media player.  
+
+I recommend [VLC media player](https://www.videolan.org/vlc/) for playing back a large and diverse video set and for testing videos.
+
+Your version of FFmpeg may be installed with `ffplay`, which can also be used to play video files (`ffplay your-video-here`).
 
 ---
 # Example 2: Re-wrapping
@@ -217,7 +226,7 @@ Transcoding is changing a media file's encoding format (commonly referred to as 
 **`-c:v prores`** tells FFmpeg to transcode the video stream into Apple ProRes 422  
 **`-profile:v`** 1 Declares profile of ProRes you want to use.  
   
-The profiles are: 0 = ProRes 422 (Proxy) 1 = ProRes 422 (LT) 2 = ProRes 422 (Standard) 3 = ProRes 422 (HQ)  
+The profiles are: 0 = ProRes 422 (Proxy); 1 = ProRes 422 (LT); 2 = ProRes 422 (Standard); 3 = ProRes 422 (HQ)  
   
 **`-vf yadif`** Runs a deinterlacing video filter (yet another deinterlacing filter) on the new file. -vf is an alias for -filter:v.  
 **`-c:a pcm_s16le`** tells FFmpeg to encode the audio stream in 16-bit linear PCM  
@@ -247,10 +256,8 @@ Sometimes ffmpeg knows what to do and you don't need to be explicit to get the f
 - [ffmprovisr](https://amiaopensource.github.io/ffmprovisr/)
 - [ffmpeg documentation](https://www.ffmpeg.org/ffmpeg.html)
 
-# OPP (Other People's Presentations)
-
-- [Demystifying ffmpeg](https://github.com/privatezero/NDSR/blob/master/Demystifying_FFmpeg_Slides.pdf) (Andrew Weaver)
-- [ffmpeg](https://docs.google.com/presentation/d/1NuusF948E6-gNTN04Lj0YHcVV9-30PTvkh_7mqyPPv4/edit#slide=id.g2974defaca_0_231) (Ben Turkus)
+- [Andrew Weaver: Demystifying ffmpeg](https://github.com/privatezero/NDSR/blob/master/Demystifying_FFmpeg_Slides.pdf) (Andrew Weaver)
+- [Ben Turkus: ffmpeg](https://docs.google.com/presentation/d/1NuusF948E6-gNTN04Lj0YHcVV9-30PTvkh_7mqyPPv4/edit#slide=id.g2974defaca_0_231) (Ben Turkus)
 
 ---
 # Learning more 
