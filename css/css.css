@@ -1,5 +1,10 @@
 body { 
-  font-family: 'Iowan Old Style', 'Athelas', 'Century Schoolbook', 'Century';
+  font-family: 'Calibri', 'Helvetica Neue', 'Helvetica', 'Gill Sans';
+  font-size: 14px;
+}
+
+.remark-slide-content {
+    font-size: 24px;
 }
 
 .remark-slide-scaler {
@@ -7,7 +12,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Gill Sans';
+  font-family: 'Calibri', 'Helvetica Neue', 'Helvetica', 'Gill Sans';
   font-weight: normal;
 }
 

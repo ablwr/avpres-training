@@ -1,7 +1,7 @@
 /*http://www.colorhexa.com/4cb6b4*/
 
 body { 
-  font-family: 'Gill Sans';
+  font-family: 'Calibri', 'Helvetica Neue', 'Helvetica', 'Gill Sans';
   background-color: #fff;
 }
 
@@ -19,6 +19,7 @@ body {
   grid-column-gap: 1em;
   grid-row-gap: 4em;
   margin: 4em; 
+  font-size: 1.2em;
 }
 
 .wrapper {
