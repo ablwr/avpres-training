@@ -19,6 +19,7 @@ class: middle
 - Codecs 
 - Streams 
 - Colorspaces 
+- Color bars 
 - Compression
 - Chroma subsampling
 - Television display
@@ -29,6 +30,7 @@ class: middle
 - Frame rates 
 - Aspect ratios 
 - Interlacing 
+- Timecodes  
 - 3D and beyond
 
 ---
@@ -159,6 +161,42 @@ YPbPr: Analog components... kindaaaaa
 Co and Cg re **orange-difference** and **green-difference**
 
 ---
+# Color bars 
+
+Let's look at the SMPTE color bars:
+
+.center[![mediainfo]({{ site.baseurl }}/img/smpte.png)]
+
+What does this do? Yeah, it checks your colors and makes sure they look good! But how does it do that?
+
+---
+# Color bars 
+
+Top part: Different colors (white, primary, and secondary colors) set at 75% saturation (Why 75%? Because 100% would be too much and may cause clipping). 
+Middle row: "Reverse bars"  
+Bottom left: Subcarrier frequency at -/ phase, white, subcarrier frequency at +Q phase  
+Bottom right: "PLUGE" element.
+
+.center[![mediainfo]({{ site.baseurl }}/img/smpte.png)]
+
+???
+
+Most of this isn't really useful anymore, not useful digitally, although the bottom-left is especially not-useful.
+
+---
+# Color bars 
+
+Reverse bars?  
+- If display is set to "blue-only", reverse bars should be the identical color as above bars. Saturation can be checked this way.
+
+Subcarrier frequency?  
+- the wavelength frequency at which the video is set to stream
+
+PLUGE?  
+- "Picture Line-Up Generating Equipment"
+- Reference black, one slightly more negative, and one slightly more positive
+
+---
 # Compression 
 
 - Uncompressed: Raw data stream  
@@ -205,6 +243,9 @@ z = number of chroma samples in the second row
 ⬛️ ⬜️ ⬛️ ⬜️  
 ⬜️ ⬜️ ⬜️ ⬜️  
 
+???
+
+This is, of course, a simplification. Some algorithms (JPG?) don't just sample the first pixel, but sample both together and take the average results. So it's smarter than as basically outlined above.
 
 ---
 # Television display systems 
@@ -351,8 +392,6 @@ When interlacing, every other line is skipped. Which gets skipped depends on if 
 TFF = Top Field First (TFF)  
 BFF = Bottom Field First (BFF)  
 
-
-
 ---
 # De-interlacing 
 
@@ -364,6 +403,17 @@ PAFF Picture Adaptive Frame Field
 * MBAFF allows to decide, on a macroblock basis, whether to encode as field or frame. Actually, it works on vertical pairs of macroblocks, so on 16x32 areas. You can easily put two frame macroblocks ( on under the other ), or two field ones ( one with the top lines, the other with the bottom lines ).  
 
 [source](http://forum.doom9.org/showthread.php?p=927647) 
+
+---
+# Timecodes 
+
+Timecodes assign a number to each frame.
+
+BCD: Binary Coded Decimal (HH:MM:SS:FF)
+
+BITC: Burnt-In Time Code  
+LTC: Linear Timecode  
+VITC: Vertical Interval Time Code  
 
 ---
 # 3D and beyond?

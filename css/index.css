@@ -1,7 +1,7 @@
 /*http://www.colorhexa.com/4cb6b4*/
 
 body { 
-  font-family: 'Gill Sans';
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Calibri';
   background-color: #fff;
 }
 
@@ -19,6 +19,7 @@ body {
   grid-column-gap: 1em;
   grid-row-gap: 4em;
   margin: 4em; 
+  font-size: 1.2em;
 }
 
 .wrapper {
@@ -33,10 +34,14 @@ body {
   .wrapper, .suggest, .head {
     grid-template-columns: 1fr;
   }
+  .head, .header {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 h1, h2, h3, h4 {
-  font-weight: normal;
+  font-weight: 500;
 }
 
 h1 {
@@ -91,7 +96,7 @@ a {
 }
 
 .header h1 {
-  font-size: 5em;
+  font-size: 5vmax;
   margin-bottom: 0;
 }
 
