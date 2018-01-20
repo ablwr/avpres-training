@@ -34,6 +34,10 @@ body {
   .wrapper, .suggest, .head {
     grid-template-columns: 1fr;
   }
+  .head, .header {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 h1, h2, h3, h4 {
@@ -92,7 +96,7 @@ a {
 }
 
 .header h1 {
-  font-size: 5em;
+  font-size: 5vmax;
   margin-bottom: 0;
 }
 
