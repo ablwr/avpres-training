@@ -1,0 +1,197 @@
+---
+layout: presentation
+title: Data Wrangling
+---
+This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
+---
+class: middle, center 
+
+# Data Wrangling 
+
+#  🐎🤠🐎 
+
+---
+# Data Wrangling
+
+- extraction (get data out of something)
+- scraping (get some data from a source)
+- preparation (change data to fit into a system or process)
+- cleaning (tidy up the data)
+- joining (pairing data points)
+- integrating (combining data sets)
+- deduplicating (removing extra same data)
+- bulk editing (change data)
+- manipulation (modify the data)
+- transformation (turn data into something else)
+- curation (refine data)
+- arrangement (putting data in order)
+- storage (putting data somewhere)
+- validation (making sure the data is correct)
+- visualizing (representing data in visual way)
+
+---
+# Data wrangling 
+
+Data wrangling can be:
+- manual 
+- automated 
+- semi-automated 
+
+and done: 
+
+- once 
+- a few times 
+- regularly scheduled 
+
+---
+# Tools 
+
+- Multi-cursor
+- OpenRefine
+- MarcEdit
+- Pandoc 
+- XSLT
+- Scripting
+- Libraries
+- Jupyter 
+- R 
+- Visualization
+
+---
+# Multi-cursor 
+
+I get away with a lot of bulk data manipulation operations by utilizing the multi-cursor feature of a text editing program. This can also be understood as "strategic find-and-replace." 
+
+For example, I use [Atom](https://atom.io/) for a text editor. You can create multiple cursors by... 
+
+- holding `cmd` while clicking elsewhere in the doc,
+- `cmd + d` to grab matching strings of text like what you have highlighted currently, or 
+- `ctrl + shift + arrowkey` to grab adjacent lines!
+
+---
+# OpenRefine 
+
+OpenRefine defines itself as "a powerful tool for working with messy data: cleaning it; transforming it from one format into another; and extending it with web services and external data."
+
+Website: [http://openrefine.org/](http://openrefine.org/)
+
+Library Carpentry offers a good workshop on OpenRefine, so I won't repeat work and just link to it:
+
+[https://data-lessons.github.io/library-openrefine/](https://data-lessons.github.io/library-openrefine/)
+
+---
+# MarcEdit 
+
+MarcEdit is a metadata editing software suite used primarily to create and manipulate MARC records.
+
+Website: [http://marcedit.reeset.net/](http://marcedit.reeset.net/)
+
+Official tutorials are available: [http://marcedit.reeset.net/tutorials](http://marcedit.reeset.net/tutorials)
+
+---
+# Pandoc 
+
+Pandoc is a powerful, open source command line document conversion tool.  
+
+For example, it can translate docx files into html, html into markdown, or text into pdf.   
+
+Example command: `pandoc -o output.html input.txt`  
+
+[http://pandoc.org/](http://pandoc.org/)
+
+---
+# SPARQL 
+
+SPARQL is a language used for querying RDF-based databases. 
+
+[https://www.w3.org/TR/sparql11-query/](https://www.w3.org/TR/sparql11-query/)
+
+Demo/practice here: [http://www.sparql.org/query.html](http://www.sparql.org/query.html) (but seems to be down, so maybe not)  
+
+Demo/practice HERE!: [http://dbpedia.org/isparql/](http://dbpedia.org/isparql/)
+---
+# XSLT 
+
+There's a whole deck dedicated to XSLT! 
+
+XSLT is a *transformation language* for changing XML into other kinds of XML (usually).
+
+[Go here]({{ site.baseurl }}/presentations/xslt.html)
+
+---
+# Scripting 
+
+Like XSLT, general-use programming languages can be used to create scripts that transform similar data or one very large dataset for you.
+
+Example: [XML into CSV using Ruby](http://bits.ashleyblewer.com/blog/2016/09/21/lorena-parsing-xml-into-csv-with-ruby/)
+
+---
+# Libraries
+
+Programming languages don't have to be used alone -- you can rely on libraries (a collection of methods that allow you to easily do a general task instead of having to write all of the code from scratch by yourself).
+
+---
+# Libraries in Python 
+
+- ElementTree: [here](http://www.blog.pythonlibrary.org/2013/04/30/python-101-intro-to-xml-parsing-with-elementtree/)'s a blog post on how to use this 
+- [NumPy](http://www.numpy.org/): for computing scientific data
+- [pandas](https://pandas.pydata.org/): a data analysis library 
+- [xmltodict](https://github.com/martinblech/xmltodict): good to try if familiar with JSON manipulation but are working with XML
+
+---
+# Libraries in Ruby 
+
+Python really is a leader in this space, but I like Ruby (and a lot of #GLAM web apps run on Rails)
+
+- [daru](https://github.com/SciRuby/daru): data manipulation in Ruby (inspired by pandas)
+- [Nokogiri](http://www.nokogiri.org/): for XML, HTML, web-scraping, and other things
+
+---
+# Jupyter 
+
+"Project Jupyter exists to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages."
+
+[https://jupyter.org](https://jupyter.org)
+
+## The Jupyter Notebook
+
+"The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more."
+
+[Tutorials](https://jupyter.org/try)
+
+---
+# R 
+
+R is a language used for statistical computation. It's good for creating data visualizations for reports.
+
+
+[https://www.r-project.org/](https://www.r-project.org/)
+
+A helpful library to use with R is [Tidyverse](https://www.tidyverse.org/)
+
+---
+# Visualization
+
+Now that data has been wrangled, how can you represent it? 
+
+- [Charted](https://www.charted.co/): Drop in a spreadsheet and see results
+- [D3.js](https://d3js.org): Javascript library for manipulating HTML and SVG
+- [Leaflet.js](http://leafletjs.com/): for visualizing map data 
+- [Processing.js](http://processingjs.org/): Javascript general-use visualization library
+- [p5.js](https://p5js.org/): a simpler, easier version of Processing
+- [Sheetsee.js](http://jlord.us/sheetsee.js/): Visualize spreadsheets on the web
+
+---
+# Additional Resources
+
+- [Library Carpentry](https://librarycarpentry.github.io/)
+- [CRALS](https://dd388.github.io/crals/)
+- [Sourcecaster](https://datapraxis.github.io/sourcecaster/)
+
+---
+# Learning more  
+
+- [Metadata]({{ site.baseurl }}/presentations/metadata.html)  
+- [XSLT]({{ site.baseurl }}/presentations/xslt.html)  
+
+[Home]({{ site.baseurl}}/)  
