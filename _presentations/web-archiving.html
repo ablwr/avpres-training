@@ -1,0 +1,241 @@
+---
+layout: presentation
+title: Web Archiving
+---
+This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
+---
+class: center, middle
+
+# 🕷 Web Archiving 🕷
+
+---
+# Web Archiving
+
+- what 
+- why 
+- how
+
+---
+# What 
+
+**Web Archiving** is collecting portions of the World Wide Web to ensure the information is preserved in an archive for the future.
+
+---
+# Why 
+<br>
+# ¯\\\_(ツ)\_/¯ 
+
+---
+# How 
+
+## harvesting 
+*crawling sites and saving them*  
+## database preservation  
+*retrieving and storing the database of database-driven websites*  
+## transactional archiving  
+*storing during the act of transferring data*  
+
+---
+# Web curation 
+
+A discipline of itself within web archiving is the decision-making around what to save, how to save it, and how to define collections and content, with considerations also to what can be and cannot be seen, and how to scope collection projects adequately.
+
+---
+# WARC 
+
+- WARC (Web ARCive) files assemble all the digital resources and related relevant information.
+
+The specification is standardized under ISO so it is a closed standard, which really sucks but [here it is](https://www.iso.org/standard/68004.html). But a very close equivalent can be found [here](http://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.1/).
+
+---
+# WARC goals 
+
+- Ability to store both the payload content and control information from mainstream Internet application layer protocols, such as - HTTP, DNS, and FTP.
+- Ability to store arbitrary metadata linked to other stored data (e.g., subject classifier, discovered language, encoding)
+- Support for data compression and maintenance of data record integrity.
+- Ability to store all control information from the harvesting protocol (e.g., request headers), not just response information.
+- Ability to store the results of data transformations linked to other stored data.
+- Ability to store a duplicate detection event linked to other stored data (to reduce storage in the presence of identical or - substantially similar resources).
+- Ability to be extended without disruption to existing functionality
+- Support handling of overly long records by truncation or segmentation where desired
+
+---
+# How does WARC work?
+
+- container file format (different from but not unlike the more-ubiquitous .zip)
+- content can be in any format 
+
+---
+# What does a WARC contain? 
+
+A WARC *file* (.warc) contains one or more WARC *records*.
+
+---
+# WARC records 
+
+There are eight types of WARC record: 
+
+- warcinfo
+- response
+- resource
+- request
+- metadata
+- revisit
+- conversion
+- continuation
+
+and each record in the WARC file must have one of these types.
+
+---
+# WARC records: warcinfo 
+
+- warcinfo: should be the first record, only occur once, and describes the other records in the file
+
+fields: 
+- operator 
+- software 
+- robots 
+- hostname 
+- ip
+- http-header-user-agent
+- http-header-from 
+
+---
+# WARC records: response
+
+This is where the HTTP or HTTPS response goes, in its complete form, as defined by the record type and URI scheme of the target-URI.
+
+---
+# WARC records: resource
+
+This is where the content goes, which is the same as the stuff in the response record but without the transfer information. 
+
+---
+# WARC records: request
+
+The request record contains the request and network protocol information.
+
+---
+# WARC records: response/resource/request 
+
+That's right, the response contains the full response, the resource contains only the content information, and the request contains only the network information. This response/resource pattern is similar to http-based query payloads. Response contains both request and resource in one payload.
+
+---
+# WARC records: metadata
+
+Information describing the resource in addition than what can be found in the other records.
+
+---
+# WARC records: revisit
+
+This record is used when visiting a site again and updating the difference, if any, between the site as it previously existed and as it exists upon the supplemental difference. This is mostly for saving space.
+
+Some revisit profiles are "Identical Payload Digest" or "Server Not Modified".
+
+---
+# WARC records: conversion
+
+If the content has been transformed or changed in any way, that will be tracked here.
+
+---
+# WARC records: continuation
+
+If a WARC file is very big and has to be broken into multiple files, the data about that would be stored here.
+
+---
+# WARC record fields 
+
+WARC records have fields! Those can be:  
+
+<table>
+<tr>
+<td>
+WARC-Record-ID (required)<br>
+Content-Length (required)<br>
+WARC-Date (required)<br>
+WARC-Type (required)<br>
+Content-Type<br>
+WARC-Concurrent-To<br>
+WARC-Block-Digest <br>
+WARC-Payload-Digest<br>
+WARC-IP-Address<br>
+WARC-Refers-To<br>
+WARC-Refers-To-Target-URI<br>
+</td>
+<td width="200px">  </td>
+<td>
+WARC-Refers-To-Date<br>
+WARC-Target-URI<br>
+WARC-Truncated<br>
+WARC-Warcinfo-ID<br>
+WARC-Filename<br>
+WARC-Profile<br>
+WARC-Identified-Payload-Type<br>
+WARC-Segment-Number<br>
+WARC-Segment-Origin-ID<br>
+WARC-Segment-Total-Length<br>
+</td>
+</tr>
+</table>
+
+
+
+
+---
+# WARC records and record fields 
+
+What's the point of knowing about all of these fields? 
+
+You normally won't have to interact with them or inspect them, but understanding what fields are associated with the records inside of a WARC file can give insight into the kinds of information WARC files can hold and what messages will be transferred to those accessing the files in the future, or what kinds of software can be built to render WARC files. 
+
+---
+# Make your site archive-friendly 
+
+- Follow web standards and accessibility guidelines.
+- Be careful with robots.txt exclusions.
+- Use a site map, transparent links, and contiguous navigation.
+- Maintain stable URIs and redirect when necessary.
+- Consider using a Creative Commons license.
+- Use sustainable data formats.
+- Embed metadata, especially the character encoding.
+- Use archiving-friendly platform providers and content management systems.
+
+From the [Library of Congress Guide to Creating Preservable Websites](https://www.loc.gov/webarchiving/preservable.html)
+
+---
+# Is your site archive-friendly?
+
+Use [Archive Ready](http://www.archiveready.com/) to see,  
+
+or use an existing archiving tool.
+
+
+Like what? Glad you asked...
+
+---
+# Tools 
+
+## Archiving lots of stuff 
+
+- [ArchiveIt](https://archive-it.org/)
+- [wget](https://www.gnu.org/software/wget/)
+
+## Archiving individual sites 
+
+- [Wayback Machine](http://web.archive.org/)
+- [WebRecorder](https://webrecorder.io/)
+
+---
+# Additional Resources
+
+- [Sustainability of Digital Formats: Planning for Library of Congress Collections](https://www.loc.gov/preservation/digital/formats/fdd/fdd000236.shtml)
+- [Web Archiving for You, Web Archiving for Us by Amy Wickner](https://osf.io/ex6ny/)
+- [Web Archive Analysis Workshop](https://ianmilligan1.github.io/webarchive-workshop/)
+
+---
+# Learning more  
+
+- [Computers]({{ site.baseurl}}/presentations/computers.html)  
+- [Networks]({{ site.baseurl}}/presentations/networks.html)  
+
+[Home]({{ site.baseurl}}/)  
