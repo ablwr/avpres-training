@@ -1,0 +1,162 @@
+---
+layout: presentation
+title: Video Codecs
+---
+This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
+---
+class: middle    
+### 📼
+### 📼 📼 📼
+### 📼 📼 📼 📼 📼
+### 📼 📼 📼 Video
+### 📼 📼 📼 📼 Codecs
+### 📼 📼 📼 
+### 📼
+---
+# Codecs
+
+A codec encodes and decodes a data stream or a signal for transmission and storage. Within the context of video, that data stream can be video or audio.
+
+[Full list supported by FFmpeg](https://www.ffmpeg.org/general.html#Supported-File-Formats_002c-Codecs-or-Features)
+
+---
+# Some popular codecs (video)
+
+- AV1
+- Daala 
+- Dirac
+- DV
+- GIF 😎
+- HuffYUV
+- JPEG2000 📟
+- FFV1 
+- ProRes 
+- VP8 (4:2:0 8-bit)
+- v210 (Uncompressed 4:2:2 10-bit)
+- x264
+- x265
+
+---
+# Some popular codecs (audio)
+
+You'll see some repeats from the containers section. 
+
+- AAC 
+- FLAC 
+- PCM (Uncompressed)
+- MP3 
+- Ogg 
+- Opus
+
+---
+# Note on containers/wrappers
+
+Sometimes the wrapper and the codec have the same name. Sometimes it's because they can only be used with each other.
+
+For example, the Windows Media Player container can only contain the Windows Media Player codec. They are tied together in that way.
+
+---
+# Example of encoder 
+
+```
+Encoder ffv1 [FFmpeg video codec #1]:
+    General capabilities: delay threads 
+    Threading capabilities: slice
+    Supported pixel formats: yuv420p yuva420p yuva422p yuv444p yuva444p yuv440p yuv422p yuv411p yuv410p bgr0 bgra yuv420p16le yuv422p16le yuv444p16le yuv444p9le yuv422p9le yuv420p9le yuv420p10le yuv422p10le yuv444p10le yuv420p12le yuv422p12le yuv444p12le yuva444p16le yuva422p16le yuva420p16le yuva444p10le yuva422p10le yuva420p10le yuva444p9le yuva422p9le yuva420p9le gray16le gray gbrp9le gbrp10le gbrp12le gbrp14le gbrap10le gbrap12le ya8 gray10le gray12le gbrp16le rgb48le gbrap16le rgba64le gray9le yuv420p14le yuv422p14le yuv444p14le yuv440p10le yuv440p12le
+ffv1 encoder AVOptions:
+  -slicecrc          <boolean>    E..V..... Protect slices with CRCs (default auto)
+  -coder             <int>        E..V..... Coder type (from -2 to 2) (default rice)
+     rice                         E..V..... Golomb rice
+     range_def                    E..V..... Range with default table
+     range_tab                    E..V..... Range with custom table
+     ac                           E..V..... Range with custom table (the ac option exists for compatibility and is deprecated)
+  -context           <int>        E..V..... Context model (from 0 to 1) (default 0)
+
+```
+
+---
+# Example of decoder 
+
+```
+Decoder mpeg4 [MPEG-4 part 2]:
+    General capabilities: horizband dr1 trunc delay threads 
+    Threading capabilities: frame
+    Supported pixel formats: videotoolbox_vld yuv420p
+MPEG4 Video Decoder AVOptions:
+```
+
+---
+# Techniques 
+
+Two principal techniques are used in codecs, pulse-code modulation and delta modulation.
+
+Pulse code modulation (PCM) digitally represents sampled analog signals.
+
+Delta modulation builds on PCM but adds some functionalities based on the prediction of the samples of the signal.
+
+---
+# Uncompressed, compression 
+
+"Uncompressed" data is still a codec because there are rules around the streams of data, including information like chroma subsampling choice, colorspace data, etc. Uncompressed is different from raw data.
+
+---
+# Uncompressed 
+
+```
+D.VI.S 012v                 Uncompressed 4:2:2 10-bit
+DEVI.S avui                 Avid Meridien Uncompressed
+DEVI.S ayuv                 Uncompressed packed MS 4:4:4:4
+D.VI.S frwu                 Forward Uncompressed
+D.VI.S m101                 Matrox Uncompressed SD
+DEVI.S r210                 Uncompressed RGB 10-bit
+DEVI.S v210                 Uncompressed 4:2:2 10-bit
+D.VI.S v210x                Uncompressed 4:2:2 10-bit
+DEVI.S v308                 Uncompressed packed 4:4:4
+DEVI.S v408                 Uncompressed packed QT 4:4:4:4
+DEVI.S v410                 Uncompressed 4:4:4 10-bit
+DEVI.S y41p                 Uncompressed YUV 4:1:1 12-bit
+DEVI.S yuv4                 Uncompressed packed 4:2:0
+```
+
+---
+# Lossy, lossless compression 
+
+Compression makes files smaller but does not necessarily mean that the files will lose data, so codecs are described as being either lossless or lossy. Lossy means the original stream of data, after encoding, cannot be decoded back to its original state. Lossless compression means that the encoding process is reversible and the data can be returned to the same state as prior to encoding/compression. 
+
+A higher-level analogy to this compressing a PDF into a .zip file for storage or transfer. When the file is unzipped, it is the same as it was before it was zipped. This is the same concept for other forms of compression, like video. This is lossless compression.
+
+---
+# Open, closed formats
+
+Codecs that offer lossless compression and are open formats are safe to use for preservation because the information for decoding that data and bringing it back to its original state is available. 
+
+---
+# Perceptually lossless
+
+Perceptually lossless is not the same as being as lossless encoding, but rather a codec that asserts itself as being so good at encoding that the image is not able to be identified as lossless by the human eye.
+
+---
+# Codec profile
+
+Codecs don't necessary inform video quality, as some codecs can have profiles that modify the algorithm to compress more tightly (for smaller file size) or prioritize quality (with bigger file size), among other things.
+
+For example, h.264 as a codec can mean wildly different things based on the profile applied when encoding. h.264 refers to the algorithm used to compress media, but that algorithm can be tweaked. h.264's Baseline Profile will be more lossy but a smaller filesize and more appropriate for streaming media, while its High 4:4:4 Predictive Profile (Hi444PP) supportsup to 4:4:4 chroma sampling, up to 14 bits per sample, and additionally supporting efficient lossless region coding and the coding of each picture as three separate color planes.
+
+---
+# Codec profile example
+
+via `mediainfo -f`:
+
+```
+Codec profile                            : High@L2.1
+Codec settings                           : CABAC / 4 Ref Frames
+Codec settings, CABAC                    : Yes
+Codec_Settings_RefFrames                 : 4
+```
+
+---
+# Learning more 
+
+- [Video]({{ site.baseurl }}/presentations/video.html)   
+
+[Home]({{ site.baseurl}}/) 

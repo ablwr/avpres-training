@@ -1,0 +1,133 @@
+---
+layout: presentation
+title: Video Containers
+---
+This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
+---
+class: middle    
+### 📼
+### 📼 📼 📼
+### 📼 📼 📼 📼 📼
+### 📼 📼 📼 📼 Video
+### 📼 📼 📼 📼 Containers
+### 📼 📼 📼 
+### 📼
+---
+# Containers 
+
+These may also be known as "formats" or "wrappers." These are used interchangeably.
+
+[Full list supported by FFmpeg](https://www.ffmpeg.org/general.html#Supported-File-Formats_002c-Codecs-or-Features)
+
+---
+# Containers 
+
+Containers hold the contents of a video file together. They also are responsible for identifying the data, how much of the data there is, what kind of data streams there are, time information, self-identification, and metadata about itself and its contents.
+
+Containers also establish the appropriate file extension for the file.
+
+A video file can only have one container but can (and probably do) contain multiple codecs.
+
+---
+# Some popular containers (video)
+
+- AVI 
+- Matroska (.mkv, .mk3d, .mka, .mks, .webm)
+- MP4 
+- MXF 
+- Ogg 
+- Quicktime (.mov, .qt)
+
+---
+# Some popular containers (audio)
+
+- AAC 
+- AIFF
+- FLAC 
+- MP3 
+- Ogg 
+- WAV
+
+---
+# Isn't that a Codec?
+
+Sometimes the container and the codec have the same name. Sometimes this is because they must be tied together.
+
+For example, the Windows Media Player container can only contain the Windows Media Player codec. They are tied together in that way.
+
+Other containers, especially open ones, do not care about the bitstream inside (or they care... less).
+
+---
+# Opinionated containers 
+
+Some containers will only allow certain codecs to live inside of them.
+
+[This chart](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats) notes the containers that regulate their contents.
+
+---
+# Mux and demux
+
+
+Short for Multiplexing/Demultiplexing.
+
+Muxing is the process of combining multiple signal streams into one. Video is made up of different kinds of streams, like:
+
+- video (maybe encoded)
+- audio (maybe encoded)
+- metadata and general info
+- subtitles
+
+etc., etc. All of this has to be put together and synced 
+
+---
+# Mux and demux and remux
+
+Demuxing is the opposite of muxing. 
+
+Remuxing is the process of recombining streams. 
+
+A muxer is the engine that does the muxing (and likewise for demuxer).
+
+For any video manipulation, demuxing and remuxing will likely be required to separate the streams and then perform the transformations on them, whatever that may be. Like if you want to change the encoding of a video stream but leave the audio as-is, you will need to demux, perform that operation, and then remux the file to put it back the way it was before, with the modified stream.
+
+---
+# Example of muxer
+
+`ffmpeg -h muxer=matroska`
+
+```
+Muxer matroska [Matroska]:
+    Common extensions: mkv.
+    Mime type: video/x-matroska.
+    Default video codec: h264.
+    Default audio codec: ac3.
+    Default subtitle codec: ass.
+matroska muxer AVOptions:
+  -reserve_index_space <int>        E........ Reserve a given amount of space (in bytes) at the beginning of the file for the index (cues). (from 0 to INT_MAX) (default 0)
+  -cluster_size_limit <int>        E........ Store at most the provided amount of bytes in a cluster.  (from -1 to INT_MAX) (default -1)
+  -cluster_time_limit <int64>      E........ Store at most the provided number of milliseconds in a cluster. (from -1 to I64_MAX) (default -1)
+  -dash              <boolean>    E........ Create a WebM file conforming to WebM DASH specification (default false)
+  -dash_track_number <int>        E........ Track number for the DASH stream (from 0 to 127) (default 1)
+  -live              <boolean>    E........ Write files assuming it is a live stream. (default false)
+  -allow_raw_vfw     <boolean>    E........ allow RAW VFW mode (default false)
+  -write_crc32       <boolean>    E........ write a CRC32 element inside every Level 1 element (default true)
+```
+
+---
+# Example of demuxer
+
+```
+Demuxer gif [CompuServe Graphics Interchange Format (GIF)]:
+GIF demuxer AVOptions:
+  -min_delay         <int>        .D....... minimum valid delay between frames (in hundredths of second) (from 0 to 6000) (default 2)
+  -max_gif_delay     <int>        .D....... maximum valid delay between frames (in hundredths of seconds) (from 0 to 65535) (default 65535)
+  -default_delay     <int>        .D....... default delay between frames (in hundredths of second) (from 0 to 6000) (default 10)
+  -ignore_loop       <boolean>    .D....... ignore loop setting (netscape extension) (default true)
+```
+
+---
+# Learning more 
+
+- [Video]({{ site.baseurl }}/presentations/video.html)   
+
+[Home]({{ site.baseurl}}/) 

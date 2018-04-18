@@ -12,12 +12,13 @@ class: middle
 ### 📼 📼 📼 📼 📼
 ### 📼 📼 📼 
 ### 📼
+
 ---
 # What is Video?
 
+- Streams 
 - Container 
 - Codecs 
-- Streams 
 - Colorspaces 
 - Color bars 
 - Compression
@@ -34,79 +35,16 @@ class: middle
 - 3D and beyond
 
 ---
+# Streams 🌊🌊🌊
 
-# Containers 
-
-These may also be known as "formats" or "wrappers."
-
-[Full list supported by FFmpeg](https://www.ffmpeg.org/general.html#Supported-File-Formats_002c-Codecs-or-Features)
-
----
-# Some popular containers (video)
-
-- AVI 
-- Matroska (.mkv, .mk3d, .mka, .mks, .webm)
-- MP4 
-- MXF 
-- Ogg 
-- Quicktime (.mov, .qt)
-
----
-# Some popular containers (audio)
-
-- AAC 
-- AIFF
-- FLAC 
-- MP3 
-- Ogg 
-- WAV
-
----
-# Codecs
-
-A codec is an encoder/decoder responsible for a video or audio stream in a video file.
-
-[Full list supported by FFmpeg](https://www.ffmpeg.org/general.html#Supported-File-Formats_002c-Codecs-or-Features)
-
----
-# Some popular codecs (video)
-
-- Daala 
-- Dirac
-- DV
-- GIF 😎
-- HuffYUV
-- JPEG2000 📟
-- FFV1 
-- ProRes 
-- VP8 (4:2:0 8-bit)
-- v210 (Uncompressed 4:2:2 10-bit)
-- x264
-- x265
-
----
-# Some popular codecs (audio)
-
-You'll see some repeats from the containers section. 
-
-- AAC 
-- FLAC 
-- PCM (Uncompressed)
-- MP3 
-- Ogg 
-- Opus
-
----
-# Both?
-
-I know, sometimes it can get confusing because the wrapper and the codec have the same name. Sometimes it's because they can only be used with each other.
-
-For example, the Windows Media Player container can only contain the Windows Media Player codec. They are tied together in that way.
-
-Other containers, especially open ones, do not care about the bitstream inside (or they care... less).
+Video is made up of streams,
+wrapped in a container,
+and some of those streams are encoded with a codec
 
 ---
 # Streams
+
+What is inside the video file can be thought of in terms of streams:
 
 - General/metadata
 - Video
@@ -115,6 +53,16 @@ Other containers, especially open ones, do not care about the bitstream inside (
 - Chapters
 
 The extent and availability of the above is contingent on the parameters of the container in use.  
+
+---
+# Containers 
+
+See [Video - Containers]({{ site.baseurl }}/presentations/video-containers.html)   
+
+---
+# Codecs 
+
+See [Video - Codecs]({{ site.baseurl }}/presentations/video-codecs.html)   
 
 ---
 # Colorspaces
@@ -130,13 +78,15 @@ How is color organized, translated, conveyed, and presented?
 ---
 # RGB 
 
+❤️ 💚 💙
+
 Red, Green, Blue, like most modern computer monitors.
  
 ---
 # YUV 
 
 - Y = luma (brightness)
-- U and V = chrominance (color)
+- U 💙 and V ❤️ = chrominance (color)
 
 U and V are **red-difference** and **blue-difference**
 
@@ -165,7 +115,7 @@ Co and Cg re **orange-difference** and **green-difference**
 
 Let's look at the SMPTE color bars:
 
-.center[![mediainfo]({{ site.baseurl }}/img/smpte.png)]
+.center[![smpte bars]({{ site.baseurl }}/img/smpte.png)]
 
 What does this do? Yeah, it checks your colors and makes sure they look good! But how does it do that?
 
@@ -177,7 +127,7 @@ Middle row: "Reverse bars"
 Bottom left: Subcarrier frequency at -/ phase, white, subcarrier frequency at +Q phase  
 Bottom right: "PLUGE" element.
 
-.center[![mediainfo]({{ site.baseurl }}/img/smpte.png)]
+.center[![smpte bars]({{ site.baseurl }}/img/smpte.png)]
 
 ???
 
@@ -199,9 +149,10 @@ PLUGE?
 ---
 # Compression 
 
-- Uncompressed: Raw data stream  
-- Compressed: Data is smushed in some way, but can be un-smushed  
-- Losslessly compressed: Data is smushed and this cannot be undone 
+- Uncompressed: Data stream with no attempts to decrease size
+- Compressed: Data is smushed in some way 
+- Losslessly compressed: Data is smushed in some way, but can be un-smushed  
+- Lossily Compressed: Data is smushed and this cannot be undone 
 
 ---
 # Chroma subsampling 
@@ -420,7 +371,7 @@ VITC: Vertical Interval Time Code
 
 - 3D 
 - 360 video 
-- Virtual Reality
+- Virtual reality
 - all of the above???
 
 ---
