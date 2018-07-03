@@ -25,6 +25,33 @@ class: center, middle
 Imaging is making a complete copy of everything on a storage device. Imaging is a fundamental part of digital forensics -- whether migrating optical media off of fragile medium or copying a partition of an acquired hard drive without tampering with the content. It is usually a complete clone of the original content, but stored differently.
 
 ---
+# Types of disks 
+
+- Optical media (CDs, VCDs, DVDs)
+- External hard drive systems (NTFS, HFS+, ExFAT, FAT32)
+- Computers (the whole thing)
+
+---
+# Examples of types of disk formats 
+
+.dd (Linux raw image)
+.img (raw image)
+.iso (optical images)
+.e01 (Expert Witness format, sub-format Encase5, increments upwards e.g. ".e01, .e02, .e03")
+.aff (Advanced forensic image)
+
+---
+# Examples of types of disk formats 
+
+RAW files are just sector-by-sector copies of the imaged device/sector. Other formats may be represented differently or include supplemental information. ISO files are often also sector-by-sector copies but may be ISO 9660, as used with CD-ROMs. An ISO image might also contain a UDF (ISO/IEC 13346) file system (commonly used by DVDs and Blu-ray Discs). [wiki](https://en.wikipedia.org/wiki/ISO_image)
+
+---
+# Example workflows 
+
+- [Denver Art Museum Disk Imaging Workflow](https://docs.google.com/document/d/1Z4LP8shWtdRYTkZrq1Q7nPomPWzJeoV369WC87kj0rM/edit)
+- [Harvard Disk Image Formats](https://wiki.harvard.edu/confluence/display/digitalpreservation/Disk+Image+Formats)
+
+---
 # Write blockers 
 
 Write blockers prevent the computer for writing anything on the content -- this saves the original material from having technical/descriptive metadata overwritten. A notable example is the "last modified" date stored within files.
@@ -53,7 +80,9 @@ Machines
 Software  
 - [Binwalk](https://tools.kali.org/forensics/binwalk)
 - [BitCurator](https://www.bitcurator.net/)
+- [Guymager](http://guymager.sourceforge.net/)
 - [Sleuth Kit](http://www.sleuthkit.org/)
+- [Forensic Toolkit (FTK)](https://accessdata.com/products-services/forensic-toolkit-ftk)
 
 ---
 # FRED 
@@ -85,18 +114,42 @@ An open source digital forensics environment that incorporates a variety of func
 - Identification of private and individually identifying information
 - Export of technical and other metadata
 
+For a list of the tools within the suite, see the [Tasks and Tools](https://confluence.educopia.org/display/BC/Tasks+and+Tools+Overview) section of BitCurator's documentation resource.
+
+---
+# Guymager 
+
+[Guymager](http://guymager.sourceforge.net/): "a free forensic imager for media acquisition."
+
+- It's open source, which is cool. And because of this...
+- it can be found and used inside of BitCurator.
+- According to [forensicswiki](https://www.forensicswiki.org/wiki/Guymager), it focuses on user friendliness and high speed and...
+- it is one of the first forensic imaging tools to utilize multi-threading for the imaging process. 
+
 ---
 # Sleuth Kit and Autopsy
 
-Open source digital investigation tools.
+Open source digital investigation tools. Sleuth Kit is a series of command-line tools. Autopsy is a graphical user interface to support Sleuth Kit.
 
-Sleuth Kit is a series of command-line tools. Autopsy is a graphical user interface to support Sleuth Kit.
+.center[![tsk]({{ site.baseurl }}/img/sleuth-pups.jpg)]
+
 ---
-# Optical disk tools 📀
+# The Sleuth Kit!
+
+List of commands: [TSK 4 command list](http://wiki.sleuthkit.org/index.php?title=The_Sleuth_Kit_commands)
+
+Video: [Beginner Introduction to The Sleuth Kit (command line)](https://www.youtube.com/watch?v=R-IE2j04Chc)
+
+---
+# Forensic ToolKit
+
+[Forensic Toolkit (FTK)](https://accessdata.com/products-services/forensic-toolkit-ftk): computer forensics software made by AccessData.
+
+---
+# More optical disk tools 📀
 
 - [Dvdisaster](http://dvdisaster.net/en/index.html): "a computer program aimed to enhance data survivability on optical discs by creating error detection and correction data, which is used for data recovery. dvdisaster works exclusively at the image level." 
 - [disktype](http://disktype.sourceforge.net/): "detects the content format of a disk or disk image" 
-- [Guymager](http://guymager.sourceforge.net/): "a free forensic imager for media acquisition" 
 - [Handbrake](https://handbrake.fr/): "a free and open-source transcoder for digital video files"
 - [Isolyzer](https://github.com/KBNLresearch/isolyzer): "verifies size of ISO 9660 image against Volume Descriptor fields" 
 
@@ -104,7 +157,6 @@ Sleuth Kit is a series of command-line tools. Autopsy is a graphical user interf
 # Additional Resources
 
 - [An Introduction to Optical Media Preservation](http://journal.code4lib.org/articles/9581)
-- [Denver Art Museum Disk Imaging Workflow](https://docs.google.com/document/d/1Z4LP8shWtdRYTkZrq1Q7nPomPWzJeoV369WC87kj0rM/edit)
 - [Forensics Wiki](http://forensicswiki.org/wiki/Main_Page)
 - [Extending Digital Repository Architectures to Support Disk Image Preservation and Access](https://ils.unc.edu/callee/p57-woods.pdf)
 - [CLIR Digital Forensics and Born-Digital Content in Cultural Heritage Collections](https://www.clir.org/wp-content/uploads/sites/6/pub149.pdf)
