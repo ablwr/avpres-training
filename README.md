@@ -2,7 +2,7 @@
 
 ### What is this?
 
-[http://training.ashleyblewer.com](http://training.ashleyblewer.com)  
+[https://training.ashleyblewer.com](https://training.ashleyblewer.com)  
 
 This is a repository of educational material suitable for presentations, workshops, or independently-driven self-education focused around audiovisual preservation, broadly defined.
 
@@ -37,5 +37,5 @@ I would love to have contributions of content and/or corrections/additions to ex
 2. Navigate to repository
 3. If you don't already have it, `gem install bundler`
 4. Run `bundle`
-5. Run `jekyll serve`
+5. Run `bundle exec jekyll serve`
 6. Navigate browser to http://localhost:4000
