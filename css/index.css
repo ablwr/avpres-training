@@ -115,6 +115,12 @@ a {
   text-align: right;
 }
 
+.footer {
+  font-size: 8vw;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
 a {
   color: #45a9a7;
 }
