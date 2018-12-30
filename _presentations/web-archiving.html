@@ -11,19 +11,21 @@ class: center, middle
 ---
 # Web Archiving
 
-- what 
-- why 
-- how
+What? Why? How?
+
+.right[![]({{ site.baseurl }}/img/woman-throwing-papers.jpg)]
 
 ---
 # What 
 
 **Web Archiving** is collecting portions of the World Wide Web to ensure the information is preserved in an archive for the future.
 
+.right[![]({{ site.baseurl }}/img/woman-with-chart.jpg)]
+
 ---
 # Why 
-<br>
-# ¯\\\_(ツ)\_/¯ 
+
+.right[![]({{ site.baseurl }}/img/woman-at-desk.jpg)]
 
 ---
 # How 
@@ -37,6 +39,8 @@ class: center, middle
 
 ---
 # Web curation 
+
+What is it?
 
 A discipline of itself within web archiving is the decision-making around what to save, how to save it, and how to define collections and content, with considerations also to what can be and cannot be seen, and how to scope collection projects adequately.
 
@@ -65,10 +69,14 @@ The specification is standardized under ISO so it is a closed standard, which re
 - container file format (different from but not unlike the more-ubiquitous .zip)
 - content can be in any format 
 
+.right[![]({{ site.baseurl }}/img/computer-training.jpg)]
+
 ---
 # What does a WARC contain? 
 
 A WARC *file* (.warc) contains one or more WARC *records*.
+
+.right[![]({{ site.baseurl }}/img/woman-desk-files.jpg)]
 
 ---
 # WARC records 
@@ -105,15 +113,21 @@ fields:
 
 This is where the HTTP or HTTPS response goes, in its complete form, as defined by the record type and URI scheme of the target-URI.
 
+.right[![]({{ site.baseurl }}/img/woman-biz-meeting.jpg)]
+
 ---
 # WARC records: resource
 
 This is where the content goes, which is the same as the stuff in the response record but without the transfer information. 
 
+.right[![]({{ site.baseurl }}/img/woman-biz-meeting.jpg)]
+
 ---
 # WARC records: request
 
 The request record contains the request and network protocol information.
+
+.right[![]({{ site.baseurl }}/img/woman-biz-meeting.jpg)]
 
 ---
 # WARC records: response/resource/request 
@@ -124,6 +138,8 @@ That's right, the response contains the full response, the resource contains onl
 # WARC records: metadata
 
 Information describing the resource in addition than what can be found in the other records.
+
+.right[![]({{ site.baseurl }}/img/woman-biz-meeting.jpg)]
 
 ---
 # WARC records: revisit
@@ -137,10 +153,14 @@ Some revisit profiles are "Identical Payload Digest" or "Server Not Modified".
 
 If the content has been transformed or changed in any way, that will be tracked here.
 
+.right[![]({{ site.baseurl }}/img/woman-biz-meeting.jpg)]
+
 ---
 # WARC records: continuation
 
 If a WARC file is very big and has to be broken into multiple files, the data about that would be stored here.
+
+.right[![]({{ site.baseurl }}/img/woman-biz-meeting.jpg)]
 
 ---
 # WARC record fields 
@@ -177,9 +197,6 @@ WARC-Segment-Total-Length<br>
 </td>
 </tr>
 </table>
-
-
-
 
 ---
 # WARC records and record fields 
