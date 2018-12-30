@@ -13,55 +13,57 @@ class: center, middle
 
 Sometimes, you have to work with computers that are not the one in front of you -- computers (servers) that live elsewhere (either in another location on your network or cloud-based systems, or maybe a virtual machine somewhere). To do this, you'll have to navigate that computer using only the command line. Here are some helpful commands when doing this work (when you don't normally use the command line in your day-to-day operations). 
 
+.right[![]({{ site.baseurl }}/img/calm-waters.gif)]
+
 ---
 # SSH into a machine/server
 
-`ssh username@url`
+## `ssh username@url`
 
 ---
 # Download a file to your computer
 
-`scp your_username@remotehost.url:your-file.txt /your/local/directory`
+## `scp your_username@remotehost.url:your-file.txt /your/local/directory`
 
 ---
 # Send a file to your machine
 
-`scp path/to/your-file.txt your_username@remotehost.url:/some/remote/directory`
+## `scp path/to/your-file.txt your_username@remotehost.url:/some/remote/directory`
 
 ---
 # Check disk usage
 
 The du command shows how much space you have left on your machine.
 
-`du`
+## `du`
 
 ---
 # Check system stats
 
 The top program provides a dynamic real-time view of a running system. Just type top!
 
-`top`
+## `top`
 
 ---
 # See most recent logs
 
 The tail program shows the last ten lines of a text file, although you can specify showing more, like below.
 
-`tail -100 path/to/the/text.txt`
+## `tail -100 path/to/the/text.txt`
 
 ---
 # Read text files
 
 The less program is a simple text viewer and good for opening and viewing files via the command line. To leave less, type `q`. Typing a Capital G to jump to end of file, good for reading the end of a log and being able to scroll up instead of just printing to screen.
 
-`less /path/to/the/text.txt`
+## `less /path/to/the/text.txt`
 
 ---
 # Find a phrase
 
 The grep program searches files for a specific pattern, usually a string of text. This is useful when looking at logs for important phrases like WARNING or ERROR, or tracking down a UUID of a specific file for more information.
 
-`grep`
+## `grep`
 
 ---
 ## Saying goodbye
