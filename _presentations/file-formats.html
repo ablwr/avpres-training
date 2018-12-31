@@ -1,30 +1,77 @@
 ---
 layout: presentation
-title: WIP File Formats
-published: false
+title: File Formats
 ---
 This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
 ---
+class: middle
 
 # .center[💻 File Formats 💻]
-
 
 ---
 # ToC
 
+- What is a file?
 - What is a file format?
+- Magic numbers
+- File structures
 - Standardization
+- Registries
 
 ---
-# What is?
+# Files
 
-http://exponentialdecay.co.uk/blog/genesis-of-a-file-format/
+Things that can be
+- Open
+- Read 
+- Changed
+- Closed
+- Permissions modified
+
+---
+# File Formats
+
+We have many different types of files! These are categorized into different formats, with different ways to determine what to do with the data inside the file.
+
+---
+# Magic numbers
+
+What separates a file from the rest of the binary landscape?
+### Magic numbers!
+Magic numbers are sometimes known as file signatures. They are a short string of hexadecimal code that  allow a file to identify itself as a certain type of file.
+
+---
+# File structure
+
+- Magic numbers (file signature)
+- Header
+- Body (or payload)
+
+---
+# File standardization
+
+- Outlines all the rules required to follow to have a valid file
+- Can be standardized through a standards body (but not required)
+- Can be open (anyone can read) or closed (proprietary, only people in a company/organization can access)
+
+---
+# Standardization example
+
+A great resource for explaining how a file format is made, by Ross Spencer:
+[http://exponentialdecay.co.uk/blog/genesis-of-a-file-format/](http://exponentialdecay.co.uk/blog/genesis-of-a-file-format/)
 
 ---
 # Learning about file formats
 
 - [ArchiveTeam's File Format Wiki](http://fileformats.archiveteam.org)
 
+---
+# Registries 
+
+- [PRONOM](http://www.nationalarchives.gov.uk/PRONOM/Default.aspx) (UK National Archives)
+- [Format Descriptions](https://www.loc.gov/preservation/digital/formats/fdd/browse_list.shtml) (US Library of Congress)
+- [`file`](https://en.wikipedia.org/wiki/File_(command)) (Unix command)
+- [File Formats Wiki](http://fileformats.archiveteam.org/wiki/Main_Page) (ArchiveTeam)
 
 ---
 # Additional Resources
@@ -35,6 +82,7 @@ http://exponentialdecay.co.uk/blog/genesis-of-a-file-format/
 # Learning more  
 
 - [Computers]({{ site.baseurl}}/presentations/computers.html)  
+- [Digital Forensics]({{ site.baseurl}}/presentations/digital-forensics.html)  
 - [File Systems]({{ site.baseurl}}/presentations/file-systems.html)  
 
 
