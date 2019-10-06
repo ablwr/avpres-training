@@ -1,0 +1,145 @@
+---
+layout: presentation
+title: XML
+---
+This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
+---
+
+# XML
+
+---
+# XML
+
+XML is a means of sharing data between computers. It can be read and understood
+by humans, but its primary purpose is to be a way of exchanging information
+between computers or systems.
+
+By doing this in a structured, standardized way, it allows for data to be
+passed from one system to the other without any ambiguity. 
+
+If you think of the game "Telephone" where people pass a message between each
+other through whispering, it is easy to have that original message distorted
+somewhere along the way. XML is a way to prevent data distortion.
+
+---
+# XML
+
+XML is a relative of HTML
+
+- XML is **extensible**: it does not consist of a fixed (limited) set of tags
+- XML must be **well-formed** according to a defined specification
+- XML documents can be **validated** against a specific schema (not just one global schema)
+- XML is about the data (its contents) and not about how that data is presented
+
+---
+# XML structure
+
+- XML must have a **declaration**
+- XML can have **namespaces**
+- XML has **elements**
+- XML can have **attributes**
+---
+
+---
+# Namespaces
+
+.center[![]({{ site.baseurl }}/img/ns.png)]
+
+---
+# Document declaration
+
+`
+<?xml version="1.0" ?>`
+
+This is to let the software reading an XML file that you are going to present it
+with XML. Computers don't always trust the file extension or other indicators
+that a document is what it says it is. This says "I have prepared this XML, and
+this declaration at the top of the file lets you know that XML is coming through
+next."
+
+---
+# Simple Example
+
+```
+<?xml version="1.0" ?>
+<books>
+  <book>
+    <title>My Father's Dragon</title>
+    <author>Ruth Stiles Gannett</author>
+    <subjects>
+      <subject>Children's</subject>
+    </subjects>
+  </book>
+</books>
+```
+
+---
+# Example with attributes
+
+```
+<movies>
+  <movie id="3">
+    <title language="french">Jeanne Dielman, 23, Quai du Commerce, 1080 Bruxelles</title>
+    <director nationality="belgian">Chantal Akerman</director>
+  </movie>
+</movies>
+```
+
+---
+# How to expand?
+
+```
+<?xml version="1.0" ?>
+<books>
+  <book>
+    <title>My Father's Dragon</title>
+    <author>Ruth Stiles Gannett</author>
+    <subjects>
+      <subject>Children's</subject>
+    </subjects>
+  </book>
+</books>
+```
+
+---
+# Simple Example
+
+```
+<?xml version="1.0" ?>
+<books>
+  <book>
+    <title lang="en">My Father's Dragon</title>
+    <title lang="es">El Dragon de papa</title>
+    <title lang="jp">エルマーの冒険</title>
+    <people>
+      <author>Ruth Stiles Gannett</author>
+      <illustrator>Ruth Chrisman Gannett</illustrator>
+    </people>
+    ...
+  </book>
+</books>
+```
+---
+# Where else can you find XML?
+
+XML as a way to exchange data is the foundation of several well-known file
+formats:
+
+- SVG files
+- PDF files
+- Microsoft Office files (.docx, .xlsx, and .pptx)
+
+---
+# Additional Resources
+
+- [Getting started with XML: A workshop](http://infomotions.com/musings/getting-started/getting-started.pdf)
+
+---
+# Learning more
+
+- [Computers]({{ site.baseurl }}/presentations/computers.html)
+- [Metadata]({{ site.baseurl }}/presentations/metadata.html)
+- [Data wrangling]({{ site.baseurl }}/presentations/data-wrangling.html)
+- [XSLT]({{ site.baseurl }}/presentations/xslt.html)
+
+[Home]({{ site.baseurl}}/)
