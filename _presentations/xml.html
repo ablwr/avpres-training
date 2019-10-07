@@ -38,7 +38,6 @@ XML is a relative of HTML
 - XML can have **namespaces**
 - XML has **elements**
 - XML can have **attributes**
----
 
 ---
 # Namespaces
@@ -120,6 +119,83 @@ next."
 </books>
 ```
 ---
+# XML has rules
+
+You must follow these rules when you create XML syntax:
+
+- All XML elements must have a closing tag.
+- XML tags are case sensitive.
+- All XML elements must be properly nested.
+- All XML documents must have a root element.
+- Attribute values must always be quoted.
+
+---
+# All XML elements must have a closing tag
+
+Not OK:
+```
+<books
+  <book></book>
+</books>
+```
+
+---
+# XML tags are case sensitive
+
+Not OK:
+```
+<Books>
+  <book>
+  </book>
+</books>
+```
+
+---
+# All XML elements must be properly nested.
+
+Not OK:
+```
+<books>
+<book>
+</books>
+</book>
+```
+
+---
+# All XML documents must have a root element
+
+```
+<?xml version="1.0" ?>
+<books></books>
+<books></books>
+<books></books>
+```
+---
+# Attribute values must always be quoted
+
+
+Not OK:
+```
+<books>
+  <book id=num123>
+  </book>
+</books>
+```
+
+---
+# What if I want to use characters that are already being used?
+
+You will have to "escape" them by using other characters that are designed to
+represent what you want. Some examples:
+
+- type <code>& amp ;</code> to display the `&` character
+- type <code>& lt ;</code> to display the `<` character
+- type <code>& gt ;</code> to display the `>` character 
+- type <code>& quot ;</code> to display the `"` character 
+- type <code>& apos ;</code> to display the `'` character
+
+(Without spaces, and including the semicolon!)
+---
 # Where else can you find XML?
 
 XML as a way to exchange data is the foundation of several well-known file
@@ -128,6 +204,35 @@ formats:
 - SVG files
 - PDF files
 - Microsoft Office files (.docx, .xlsx, and .pptx)
+
+---
+# A note on validation 
+
+XML can be validated against its specification, to make sure it is well-formed
+structured data, with no errors like described above.
+
+But XML can also be validated against other XML files known as XSD. 
+
+XSD stands for XML Schema Definition.
+
+These XSD
+files describe the intended structure of a document -- so not only checking to
+see if the metadata is well-formed, but if it adheres to more rigid standards
+like the expectation of specific fields or attributes, or in a specific order.
+
+---
+# Also, DTDs
+
+DTD stands for "Document type definition". It is another way to define a desired
+XML structure, but the syntax is different from XML itself (although similar, I
+guess).
+
+A `DTD` can be seen at the top of every valid HTML page:
+
+`<!DOCTYPE html>`
+
+Note this is different from the XML declaration (`<?xml version="1.0"
+encoding="utf-8"?>`) at the top of XML documents, and note how the structure is different.
 
 ---
 # Additional Resources
