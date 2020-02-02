@@ -9,9 +9,16 @@ class: center, middle
 # Networks 
 
 ---
+# Networks
+
+- protocols
+- infrastructure
+- the internet
+
+---
 # Networks 
 
-A network is two or more devices that are connected together, and are able to communicate or share resources with each other.
+A network is two or more devices that are connected together, and are able to communicate or share resources with each other. I like this picture because the firewall is on fire for some reason.
 
 .center[![network-fire]({{ site.baseurl }}/img/network-fire.png)]
 
@@ -36,6 +43,36 @@ Some common protocols for networking are:
 - LTE
 
 ---
+# Intermission: The early days
+
+[telnet starwars](https://itsfoss.com/star-wars-linux/)
+
+![telnet starwars]({{ site.baseurl }}/img/telnet-c3PO.png)
+
+- `telnet towel.blinkenlights.nl` (try it, it works!)
+- No terminal access? [here](https://www.youtube.com/watch?v=Dgwyo6JNTDA)'s a video (but it's not as fun!)
+
+---
+# telnet 
+
+- short for "teletype network"
+- developed in 1969!
+- a pre-internet network communication
+
+---
+
+![]({{ site.baseurl }}/img/reabracadabra.jpg)
+
+- [source: Rhizome Net Art Anthology: Reabracadabra](https://anthology.rhizome.org/reabracadabra)
+- [wikipedia page on the Minitel](https://en.wikipedia.org/wiki/Minitel)
+
+---
+
+![network protocols]({{ site.baseurl }}/img/b0rk-network-protocols.jpeg)
+
+- [source](https://twitter.com/b0rk/status/1222273122986024961)
+---
+
 # TCP/IP 
 
 TCP: Transmission Control Protocol
@@ -48,12 +85,14 @@ TCP/IP was standardized via the [Internet Engineering Task Force](https://www.ie
 ---
 # Introduction to TCP/IP
 
+The 4-Layer Model (4m32s)
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KEWe-5Bk3Q0"
 frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
-# Introduction to TCP/IP
+# The 4 layers
 
 - Application layer (sends information to transport layer)
 - Transport (TCP) layer (breaks packets down, ensures reliable byte stream)
@@ -65,14 +104,55 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 
 These are all internet protocols that work at the application level to help you access websites (HTTP), send files (FTP) and send email (SMTP) over the network.  
 
+![]({{ site.baseurl }}/img/computer_e-mail.gif) ![]({{ site.baseurl }}/img/computer_e-mail.gif) ![]({{ site.baseurl }}/img/computer_e-mail.gif)
+
+---
+# HTTPS?
+
 HTTPS is a protocol developed on top of HTTP that takes extra steps to ensure security, privacy, and integrity of the communication channel between you and the website.  
+
+![]({{ site.baseurl }}/img/computerhorsepics.gif)
+
+Why is this such a big deal?
+
+---
+# Activity: 🐠 Test your network 🦈
+
+Use [WireShark](https://www.wireshark.org/) to understand your surroundings. 
+
+What is WireShark?  
+
+"Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level and is the de facto (and often de jure) standard across many commercial and non-profit enterprises, government agencies, and educational institutions." [source: website](https://www.wireshark.org/)
+
+---
+# Wireshark non-live demo
+
+[HakTip - How to Capture Packets with Wireshark - Getting Started](https://www.youtube.com/watch?v=6X5TwvGXHP0)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6X5TwvGXHP0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 # Wi-Fi, Bluetooth, LTE 
 
+![]({{ site.baseurl }}/img/phone.gif)
+
 These are all protocols for allowing devices to connect to each other wirelessly.  
 
-LTE (Long Term Evolution) is what my phone is always saying its connected as. 
+LTE (Long Term Evolution) is what my phone is always saying its connected as (when it's not wifi). 
+
+---
+# Cell phone towers
+
+- [Gizmodo: How cell towers work](https://gizmodo.com/giz-explains-how-cell-towers-work-5177322)
+
+![]({{ site.baseurl }}/img/phone-veronica.gif)
+
+---
+# Example: LinkNYC
+
+![]({{ site.baseurl }}/img/linknyc.jpg)
+
+- [article](https://theintercept.com/2018/09/08/linknyc-free-wifi-kiosks/)
 
 ---
 class: center, middle
@@ -86,6 +166,28 @@ class: center, middle
 [source](http://www.opte.org/maps/)
 
 ---
+# The Internet
+
+- [Quartz: Map of the Internet](https://qz.com/se/map-of-the-internet/)
+
+- size and scope
+- built up of things
+
+---
+# The internet is a real place
+
+- Data centers
+- Cables
+- Towers
+- Satellites
+- in the air around us right now
+
+---
+# Short video
+
+- [http://www.thepeoplescloud.org/](http://www.thepeoplescloud.org/) (introduction video, 2min)
+
+---
 # Submarine cables 
 
 Large networked systems are connected to each other via undersea cables.
@@ -95,13 +197,11 @@ Large networked systems are connected to each other via undersea cables.
 [source: submarinecablemap.com](https://www.submarinecablemap.com/)
 
 ---
-# Activity: 🐠 Test your network 🦈
+# Access
 
-Use [WireShark](https://www.wireshark.org/) to understand your surroundings. 
+Access to the internet is not a given
 
-What is WireShark?  
-
-"Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level and is the de facto (and often de jure) standard across many commercial and non-profit enterprises, government agencies, and educational institutions." [source: website](https://www.wireshark.org/)
+![ireland access]({{ site.baseurl }}/img/ireland-access.jpg)
 
 ---
 # Activity: ping 
@@ -135,15 +235,84 @@ The first hop will probably be from your computer to your router. After that, it
 Some sites end up returning `* * *` between hops or near the end. What is that? It means your packets are not sending back a response and have timed out, waiting for it. They could be getting ignored or not being received, or they are bouncing around inside a firewall and you cannot directly reach your specified server.
  
 ---
+# Is this a lot?
+
+.center[![eye-martini]({{ site.baseurl }}/img/eye-martini.gif)]
+
+Almost done!
+
+---
+# Talking to other computers
+
+- [SSH]({{ site.baseurl }}/presentations/ssh.html) 
+
+.center[![ssh-astral-projection]({{ site.baseurl }}/img/ssh-astral-projection.jpeg)]
+
+---
+# People make networks
+
+Not everything has to be super technical, there is a very large and chaotic "people" layer when it comes to computer networks.
+
+.center[![dollz]({{ site.baseurl }}/img/dollz.gif)]
+
+---
+# Moment of zen 1
+
+[Simon Weckert: Google Maps Hacks (2020)](http://www.simonweckert.com/googlemapshacks.html)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/k5eL_al_m7Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+# Moment of zen 2
+
+- [Rhizome write-up](https://anthology.rhizome.org/everythingiveeverwantedtoknow-com)
+- [everythingiveeverwantedtoknow.com](http://everythingiveeverwantedtoknow.com/)
+
+.center[![people_line]({{ site.baseurl }}/img/people_line.gif)]
+
+---
+# Network-based Communication 
+
+Computers talk to each other via a network. You can instruct your computer to talk to other computers over the internet by using different protocols such as:
+
+- APIs (they are protocols)
+- REST 
+
+---
+# APIs 
+
+*Application programming interface*
+
+A set of rules that explain how a resource can be used.  
+
+In the context of the web... a preferred methods to communicate with a website.  Allows the web to be more collaborative.
+
+---
+# REST 
+
+*Representational state transfer.*    
+
+An architecture for communication between a client’s interface and a website’s server.  
+
+- GET
+- POST
+- PUT
+- DELETE 
+
+Sites are described as being RESTful when complying with this architecture.  
+
+---
 # Additional Resources
 
 - [Do Not Track: A Personalized Documentary](https://donottrack-doc.com/en/intro/)
 - [Evolution of the Web](http://www.evolutionoftheweb.com/?hl=en)
 - [Quartz: Map of the Internet](https://qz.com/se/map-of-the-internet/)
-- [Ingrid Burrington: Networks of New York](https://www.mhpbooks.com/books/networks-of-new-york/)
+- [Ingrid Burrington: Networks of New York](http://lifewinning.com/projects/networks-of-new-york/)
+- [Julia Evan: Networking zine](https://jvns.ca/networking-zine.pdf)
 - [The People's Cloud](http://www.thepeoplescloud.org/)
 - [Miriam Posner: Systems & Infrastructures Syllabus](http://miriamposner.com/classes/is270w18/)
 - [Radia Perlman - "Computer Networks: Myths, Missteps, and Mysteries" (TCSDLS 2018-2019)](https://www.youtube.com/watch?v=qXz_RxBFQ20)
+- [Vox: How Does the Internet Work? - Glad You Asked S1](https://www.youtube.com/watch?v=TNQsmPf24go)
 
 ---
 # Learning more  
@@ -151,5 +320,7 @@ Some sites end up returning `* * *` between hops or near the end. What is that? 
 - [Computers]({{ site.baseurl }}/presentations/computers.html)  
 - [Fixity]({{ site.baseurl }}/presentations/fixity.html) 
 - [Storage]({{ site.baseurl }}/presentations/storage.html)  
+- [SSH]({{ site.baseurl }}/presentations/ssh.html) 
+- [World Wide Web]({{ site.baseurl }}/presentations/world-wide-web.html) 
 
 [Home]({{ site.baseurl}}/)  

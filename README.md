@@ -1,4 +1,4 @@
-# avpres-training
+# training.ashleyblewer.com
 
 ### What is this?
 
@@ -39,3 +39,20 @@ I would love to have contributions of content and/or corrections/additions to ex
 4. Run `bundle`
 5. Run `bundle exec jekyll serve`
 6. Navigate browser to http://localhost:4000
+
+
+## Acknowledgements
+
+This site was made by me in my spare time. In addition to that, some organizations have inadvertently funded improvements to this site by paying me to come do training, workshops, or course-teaching for them.
+
+I would like to acknowledge the following organizations:
+
+- Centre National De L’Audiovisuel of Luxembourg
+- New York University (Moving Image Archiving and Preservation)
+- Pratt Institute (School of Information)
+- Tate (Perciles Project)
+- University of South Carolina (Library and Information Science)
+- WGBH (Public Broadcasting Preservation Fellowship)
+
+
+By the way, you can also do this! [See here](https://ashleyblewer.com/how-to-hire-me.html) for more details on that.
