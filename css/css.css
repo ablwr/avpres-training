@@ -23,7 +23,7 @@ h1 {
 .remark-code, .remark-inline-code {
   word-break: break-all;
   word-wrap: break-word;
-  white-space: normal; 
+/*  white-space: normal; */
   font-family: monospace; 
 }
 

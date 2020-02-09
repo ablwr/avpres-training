@@ -1,0 +1,238 @@
+---
+layout: presentation
+title: HTML
+---
+This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
+---
+# HTML
+
+.center[![]({{ site.baseurl }}/img/spingreenguy.gif)]
+
+---
+# HTML
+
+- Needed to convey information over the internet
+- neutral way of writing that can be read by any application
+- based on SGML (Standard Generalized Mark-up Language)
+- a sibling to XML (eXtensible Mark-up Language)
+- was created for sharing documents
+
+---
+# HTML5
+
+- Like all languages, HTML has changed over time
+- Some things go away: `<blink></blink>`
+- Another example of the web changing: [Seasonal Restoration](https://blog.geocities.institute/archives/6620)
+- Many new attributes are added to make the web easier to view
+- expanded to handle more than just documents
+
+---
+# Let's learn some elements
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title></title>
+    </head>
+    <body>
+	    <h1>My page</h1>
+    </body>
+</html>
+```
+
+---
+# HTML
+
+## `<html></html>`
+
+- holds everything together
+
+---
+# Head and Body
+
+## `<head></head>`
+## `<body></body>`
+
+---
+# Head
+
+```html
+<head>
+	<title>Information in your browser tab</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+</head>
+```
+---
+# Body
+
+```html
+<body>
+	<h1>Everything you see on the page</h1>
+	<p>Everything you see on the page will go in the body of the HTML</p>
+</body>
+```
+
+---
+# Heading tags
+
+```html
+<h1></h1>
+<h2></h2>
+<h3></h3>
+<h4></h4>
+<h5></h5>
+<h6></h6>
+```
+---
+# HTML5 Semantic elements
+
+```html
+<header></header>
+<nav></nav>
+<aside></aside>
+<footer></footer>
+```
+... and [more](https://guide.freecodecamp.org/html/html5-semantic-elements/)
+
+---
+# Tables
+(spreadsheets on the web)
+
+<table style="border:4px solid black;font-size:1.4em;">
+  <tr>
+    <td style="border:4px solid darksalmon">Row 1, column 1</td>
+    <td style="border:4px solid darksalmon">Row 1, column 2</td>
+    <td style="border:4px solid darksalmon">Row 1, column 3</td>
+  </tr>
+  <tr>
+    <td style="border:4px solid green">Row 2, column 1</td>
+    <td style="border:4px solid green">Row 2, column 2</td>
+    <td style="border:4px solid green">Row 2, column 3</td>
+  </tr>
+</table>
+
+---
+# Tables
+
+```html
+<table>
+  <tr>
+    <td>Row 1, column 1</td>
+    <td>Row 1, column 2</td>
+    <td>Row 1, column 3</td>
+  </tr>
+  <tr>
+    <td>Row 2, column 1</td>
+    <td>Row 2, column 2</td>
+    <td>Row 2, column 3</td>
+  </tr>
+</table>
+```
+
+- [Mozilla web docs: Tables](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics)
+
+
+---
+# Definition lists
+
+<dl style="border:4px solid black">
+  <dt style="border:4px solid darksalmon">Definition 1</dt>
+  <dd style="border:4px solid green">Value 1</dd>
+  <dt style="border:4px solid darksalmon">Definition 2</dt>
+  <dd style="border:4px solid green">Value 1</dd>
+</dl>
+
+---
+# Definition lists
+
+```html
+<dl>
+  <dt>Definition 1</dt>
+  <dd>Value 1</dd>
+  <dt>Definition 2</dt>
+  <dd>Value 1</dd>
+</dl>
+```
+
+---
+# Comments
+
+## `<!-- This is a comment -->`
+
+---
+# Elements and Attributes
+
+- Everything we just covered were HTML **elements**
+- Elements can have **attributes**
+- Attributes are "key-value pairs" that fit inside HTML elements
+- The next few pages are examples
+
+---
+# Linking
+
+## `<a href="http://training.ashleyblewer.com">Link text</a>`
+
+- `a` is the HTML element
+- `href` is the attribute
+- the website is the value of the attribute
+
+---
+# Embedding images
+
+## `<img src="/img/greenguy.gif">`
+
+- `img` is the HTML element
+- `src` ("source") is the attribute
+- the path to where the image is is `src`'s value
+- Note that this is one of the few "self-closing" elements
+
+---
+# Embedded images and ALT text
+
+`<img src="/img/greenguy.gif" alt="rotating alien">`
+
+- `alt` is the HTML attribute for images that provide screenreaders with a brief decsription of the word, or show up when the image itself cannot load
+
+---
+Here's an example of what that looks like:
+
+
+With a bad URL: <img src="{{site.baseurl}}/img/spingreenguy2.gif" alt="rotating alien" title="rotating alien" />
+
+With a good URL: <img src="{{site.baseurl}}/img/spingreenguy.gif" alt="rotating alien" title="rotating alien" />
+
+---
+# What about that DOCTYPE?
+
+`<!DOCTYPE html>`
+
+- "document type declaration"
+- lets the computer know what kind of file this is, even though your browser can probably guess
+
+---
+# ...and more!
+
+There are many more elements and aspects to HTML than covered here; this is just an overview of some of the major concepts.
+
+---
+# Things to remember
+
+- Most HTML elements need an "opening" and "closing" tags.
+- The exception to this is if they are "self-closing" (for elements that don't need any text content in between, like `img` or `br`)
+
+---
+# Additional resources
+
+- [Mozilla web docs: Introduction to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)
+- [Definition Lists vs Tables (for accessibility)](https://snook.ca/archives/html_and_css/definition-lists-v-tables)
+
+---
+# Learning more
+
+- [World Wide Web]({{ site.baseurl }}/presentations/world-wide-web.html)
+- [XML]({{ site.baseurl }}/presentations/xml.html)
+
+[Home]({{ site.baseurl}}/)  
+
