@@ -31,6 +31,7 @@ This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start sl
 # HTML is for structure, CSS is for design
 
 - (demo on page)
+- [CSS Zen Garden](http://www.csszengarden.com/)
 - alternatively, [ashleyblewer.com](https://ashleyblewer.com)
 
 ---
@@ -49,7 +50,7 @@ Something like this goes between your HTML `<head>` tags:
 # `<link rel="stylesheet" href="style.css">`
 
 ---
-# CSS works on
+# Applying CSS
 
 - HTML elements
 - HTML elements with a specific *class* attribute
@@ -83,11 +84,19 @@ h1 {
 ---
 # Basic syntax
 
+```css
+h1 {
+	color: red;
+}
+```
+
 - `h1` is the *selector*
 - `{` and `}` hold the rules (called *declarations*)
 - `color` is the property
 - `red` is the value
 - the semi-colon ends the declaration, and a new one can begin
+
+
 
 ---
 # Multiple declarations
@@ -134,6 +143,17 @@ h1 {
 (Every paragraph tag nested inside of an element with an ID of "red")
 
 ---
+# Sibling selectors
+
+```css
+h1 ~ p {
+  color: red;	
+}
+```
+
+(The paragraph tag that are at the same nested level as the h1 tag, and no others)
+
+---
 # Adjacent selectors
 
 ```css
@@ -154,6 +174,19 @@ input[type=text] {
 ```
 
 (HTML forms that are text will have a red border)
+
+---
+# pseudo-elements
+
+- h1::before
+- h1::after
+
+---
+# psuedo-classes
+
+- :checked
+- :focus
+- and more...
 
 ---
 # `!important`
