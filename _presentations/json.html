@@ -1,0 +1,89 @@
+---
+layout: presentation
+title: JSON
+---
+This page intentionally left blank. ⬇️, ➡️, or spacebar 🛰 to start slidedeck.
+---
+
+# JSON
+
+(work in progress)
+
+.center[![under-construction]({{ site.baseurl }}/img/under-construction.gif)]
+
+---
+# JSON
+
+- "JavaScript Object Notation"
+- a way to exchange informations (computers talking to computers)
+- a standard, which means it has a [written specification](https://www.json.org/json-en.html) and rules for how it works.
+- related to javascript but doesn't have to be used only with javascript
+
+---
+# Example
+
+```
+{
+  "firstName": "Ashley",
+  "lastName": "Blewer",
+  "isAlive": true,
+  "age": 100,
+  "address": {
+    "streetAddress": "123 Main Street",
+    "city": "New York",
+    "state": "NY",
+    "postalCode": "11111"
+  },
+  "phoneNumbers": [
+    {
+      "type": "home",
+      "number": "555 555-1234"
+    },
+    {
+      "type": "mobile",
+      "number": "123 456-7890"
+    }
+  ]
+}
+```
+
+---
+# Data types
+
+- numbers (e.g. 1)
+- strings (e.g. "Hello")
+- booleans (e.g. `true`)
+- no value (e.g. `null`)
+
+---
+# Data structures
+
+- elements in curly braces! (`{` and `}`)
+- arrays (things inside of `[` and `]`)
+- objects ("key": "value" pairs)
+
+---
+# Other bits to notice
+
+- String literals (e.g. "\"Phrase in Double Quotes, inside of Quotes\"")
+- Quotation marks = strings
+- Booleans are not wrapped in quotation marks
+- Elements can repeat but you must use a comma
+
+`{ "a":123, "b":[1,2,3], "c": { "a":1, "b":2 } }`
+
+
+---
+# Additional Resources
+
+- WIP!
+
+---
+# Learning more
+
+- [Computers]({{ site.baseurl }}/presentations/computers.html)
+- [Metadata]({{ site.baseurl }}/presentations/metadata.html)
+- [Data wrangling]({{ site.baseurl }}/presentations/data-wrangling.html)
+- [XML]({{ site.baseurl }}/presentations/xml.html)
+
+[Home]({{ site.baseurl}}/)
