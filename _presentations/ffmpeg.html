@@ -93,17 +93,18 @@ After FFmpeg is installed, it gets a lot easier from there. 😘
 
 General advice on installation from Reto Kromer: [ffmpeg cookbook](https://avpres.net/FFmpeg/#ch1)
 
-`brew install ffmpeg`
+`brew tap avpres/formulae`
+
+`brew install --with-openjpeg  --with-x265 --with-rubberband --with-svt-av1 --with-tesseract avpres/formulae/ffmpeg`
 
 #### What does this mean? 
 
 These flags, used during install, allow for...
 
-- *sdl2* include ffplay
-- *freetype* include type for (sub)titles
 - *openjpg* include JPEG2000 encoding/decoding
 - *x265* include H.265(HEVC) encoding
 - *rubberband* include audio filtering
+- *svt-av1* include Scalable Video Technology for AV1 (SVT-AV1 encoder and decoder)
 - *tesseract* include optical character recognition (OCR)
 
 ---
