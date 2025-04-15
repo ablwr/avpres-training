@@ -11,7 +11,7 @@ class: middle, center
 ---
 # Hello 
 
-This assumes you already have a basic understanding of how to use git and have used the command line before. If not, try check out [Git101: GitHub]({{ site.baseurl}}/presentations/git-on-github.html) and [CLI]({{ site.baseurl}}/presentations/cli.html) first! 
+This assumes you already have a basic understanding of how to use git and have used the command line before. If not, try check out [Git100: GitHub]({{ site.baseurl}}/presentations/git-on-github.html) and [CLI]({{ site.baseurl}}/presentations/cli.html) first! 
 
 ---
 # Part 1: Starting things 
@@ -118,14 +118,14 @@ Speaking of `git`'s index -- which is its foundation, but kind of complicated, s
 
 You are pulling from another place to get changes from there. Sometimes you have to be explicit in this:
 
-`git pull origin master`
+`git pull origin main`
 
 In the above command:  
 
 git: calling git  
 pull: telling it to pull in changes  
 origin: the name of the remote source you are pulling from  
-master: the name of the branch you are pulling from  
+main: the name of the branch you are pulling from  
 
 This does not always go smoothly, but I will save that for later.
 
@@ -136,7 +136,7 @@ Likewise, `git push` is pushing your changes out to another place.
 
 Just like above, you sometimes have to be explicit in telling git where to go:  
 
-`git push origin master`
+`git push origin main`
 
 ---
 # git remote 
@@ -172,7 +172,7 @@ Branch: Working in and on top of the same repository. 🤔
 ---
 # git branch 
 
-Typing `git branch` by itself will list all of the branches associated with your repository. If you haven't set any up, you'll just have `master`. 
+Typing `git branch` by itself will list all of the branches associated with your repository. If you haven't set any up, you'll just have `main`. 
 
 To make a new branch, the command is `git checkout -b name-of-new-branch`
 
