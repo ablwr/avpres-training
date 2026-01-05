@@ -55,4 +55,4 @@ I would like to acknowledge the following organizations:
 - WGBH (Public Broadcasting Preservation Fellowship)
 
 
-By the way, you can also do this! [See here](https://ashleyblewer.com/how-to-hire-me.html) for more details on that.
+By the way, you can also do this! [See here](https://archivesoftomorrow.com) for more details on that.
